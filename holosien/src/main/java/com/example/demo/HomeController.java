@@ -14,7 +14,7 @@ public class HomeController {
    
    @RequestMapping(value="/join")
    public String join() {
-      System.out.println("*******");
+      System.out.println("*join 가자*****");
          return "join";
       }
    
