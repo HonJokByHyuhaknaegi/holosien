@@ -43,7 +43,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="homepage.html">Mogo</a>
+						<a class="navbar-brand" href="homepage.html"><br>Holosien</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,9 +52,9 @@
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
 								<li><a href="#nino-story">together</a></li>
-								<li><a href="#nino-services">Service</a></li>
+								<li><a href="#nino-services">review</a></li>
+								<li><a href="#nino-portfolio">tip</a></li>
 								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="#nino-portfolio">Work</a></li>
 								<li><a href="#nino-latestBlog">Blog</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
@@ -72,8 +72,8 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Creative Template</span>
-							Welcome <br>to holosien
+							<span class="nino-subHeading">Welcome</span>
+							holosien
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
@@ -419,58 +419,48 @@
 				Meet our team
 			</h2>
 			<p class="nino-sectionDesc">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-			</p>
+			휴학내기			</p>
 			<div class="sectionContent">
 				<div class="row nino-hoverEffect">
 					<div class="col-md-4 col-sm-4">
 						<div class="item">
 							<div class="overlay" href="#">
 								<div class="content">
-									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+									<a href="https://www.instagram.com/k__ryoung/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
 								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-1.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
-							<h4 class="name">Matthew Dix</h4>
-							<span class="regency">Graphic Design</span>
+							<h4 class="name">kyung ryoung Kim</h4>
+							<span class="regency">Developer</span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="item">
 							<div class="overlay" href="#">
 								<div class="content">
-									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+									<a href="https://www.instagram.com/sosoexn/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
 								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-2.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
-							<h4 class="name">Christopher Campbell</h4>
-							<span class="regency">Branding/UX design</span>
+							<h4 class="name">Soeun Park</h4>
+							<span class="regency">Developer</span>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="item">
 							<div class="overlay" href="#">
 								<div class="content">
-									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
-									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+									<a href="https://www.instagram.com/s_6v6_/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
-								<img src="images/our-team/img-3.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-3.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
-							<h4 class="name">Michael Fertig </h4>
+							<h4 class="name">Yukyung Shin </h4>
 							<span class="regency">Developer</span>
 						</div>
 					</div>
