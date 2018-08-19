@@ -236,6 +236,11 @@ img.img-full-width {
 	font-family: 'Montserrat', sans-serif;
 	background: url(../images/eiffel.jpg) no-repeat center center ;
 }
+#nav-header {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	background: url(../images/eiffel.jpg) no-repeat center center ;
+}
 #nino-header:after {
 	content: "";
 	position: absolute;
