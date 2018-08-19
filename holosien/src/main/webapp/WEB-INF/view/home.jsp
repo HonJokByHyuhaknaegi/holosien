@@ -43,7 +43,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="homepage.html"><br>Holosien</a>
+						<a class="navbar-brand" href="homepage.html">Holosien</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,7 +73,7 @@
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Welcome</span>
-							holosien
+							<br>holosien
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>

@@ -234,7 +234,7 @@ img.img-full-width {
 #nino-header {
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
-	background: url(../images/bg-header-copy.jpg) no-repeat center center / cover;
+	background: url(../images/eiffel.jpg) no-repeat center center ;
 }
 #nino-header:after {
 	content: "";
