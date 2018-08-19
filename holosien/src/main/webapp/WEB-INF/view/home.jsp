@@ -55,11 +55,11 @@
 								<li><a href="#nino-services">review</a></li>
 								<li><a href="#nino-portfolio">tip</a></li>
 								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="${pageContext.request.contextPath}/join">Blog</a></li>
+								<a href="${pageContext.request.contextPath}/join">Blog</a>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
-							<li><a href="#"><i class="mdi mdi-cart-outline nino-icon"></i></a></li>
+							<li><a href="${pageContext.request.contextPath}/join"><i class="mdi mdi-cart-outline nino-icon"></i></a></li>
 							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>
@@ -73,7 +73,7 @@
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Welcome</span>
-							<br>holosien
+							holosien
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
