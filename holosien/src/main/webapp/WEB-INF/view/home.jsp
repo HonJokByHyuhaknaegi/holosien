@@ -55,7 +55,7 @@
 								<li><a href="#nino-services">review</a></li>
 								<li><a href="#nino-portfolio">tip</a></li>
 								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="#nino-latestBlog">Blog</a></li>
+								<li><a href="${pageContext.request.contextPath}/join">Blog</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
