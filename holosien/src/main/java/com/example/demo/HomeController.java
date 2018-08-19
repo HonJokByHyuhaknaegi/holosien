@@ -12,4 +12,22 @@ public class HomeController {
          return "home";
       }
    
+   @RequestMapping(value="/join")
+   public String join() {
+      System.out.println("*******");
+         return "join";
+      }
+   
+   @RequestMapping(value="/emailJoin")
+   public String emailJoin() {
+      System.out.println("*******");
+         return "emailJoin";
+      }
+   
+   @RequestMapping(value="/login")
+   public String login() {
+      System.out.println("*******");
+         return "login";
+      }
+   
 }
