@@ -239,7 +239,7 @@ img.img-full-width {
 #nav-header {
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
-	background: url(../images/eiffel.jpg) no-repeat center center ;
+	background: rgba(241, 114, 114, 0.96);
 }
 #nino-header:after {
 	content: "";

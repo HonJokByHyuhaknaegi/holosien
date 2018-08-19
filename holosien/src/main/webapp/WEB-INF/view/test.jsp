@@ -22,9 +22,9 @@
 
 </head>
 <body>
-<header id="nino-header">
+<header id="nav-header">
 		<div id="nino-headerInner">					
-			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
+			<nav id="nino-navbar" class="navbar nino-fixed-nav" role="navigation">
 				<div class="container">
 
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -42,7 +42,7 @@
 					<div class="nino-menuItem pull-right">
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
+								<li class="active"><a href="${pageContext.request.contextPath}">Home <span class="sr-only">(current)</span></a></li>
 								<li><a href="https://naver.com">together</a></li>
 								<li><a href="#nino-services">review</a></li>
 								<li><a href="#nino-portfolio">tip</a></li>
