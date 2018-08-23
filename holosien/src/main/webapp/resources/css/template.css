@@ -164,6 +164,23 @@ img.img-full-width {
 .nino-btn:hover {
 	color: #fff;
 }
+.custom-border-btn {
+  color:#8C8C8C;
+  border: solid 2px #8C8C8C;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  transition: border-width 0.6s linear;
+}
+
+.custom-border-btn:hover { 
+	color: #FC5185;
+	border : 2px solid #FC5185; 
+}
+.bg-white {
+	background-color: #fff !important;
+}
 .bg-white {
 	background-color: #fff !important;
 }
@@ -610,7 +627,7 @@ section {
 	margin-bottom: 10px;
 }
 .nino-testimonialSlider .name {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     position: relative;
     padding-left: 50px;
