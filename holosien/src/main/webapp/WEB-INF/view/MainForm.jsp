@@ -30,9 +30,23 @@ if(contentPage == null)
         <div id="header">
             <jsp:include page="header.jsp" />
         </div>
- 		<div id = "main">
- 			<jsp:include page ="<%=contentPage %>"/>
- 		</div>
+ 		 <section id="join">
+      <div class="container">
+         <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">How to sign up.</span>
+            회원가입 방법을 선택하세요!
+         </h2>
+ <div style="text-align:center;">
+							<img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
+							<br>
+							<img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
+							<br>
+							<img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
+						<br>
+						기존 홀로지앵의 회원이신가요? <a href="${pageContext.request.contextPath}/login">로그인</a>
+						</div>
+      </div>      
+   </section>
  		
 </div>
 </body>

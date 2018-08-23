@@ -19,22 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
-	
-	<script type="text/javascript">
-        
-        function changeView(value){
-            
-            if(value == "0") // HOME 버튼 클릭시 첫화면으로 이동
-            {
-                location.href="home";
-            }
-            else if(value == "1") // 로그인 버튼 클릭시 로그인 화면으로 이동
-            {
-                location.href="emailJoin";
-            }
 
-        }
-    </script>
 </head>
 <body>
 <header id="nav-header">
@@ -57,7 +42,7 @@
 					<div class="nino-menuItem pull-right">
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
-								<li class="active"><a style="cursor:pointer" onclick="changeView(0)"> Home <span class="sr-only">(current)</span></a></li>
+								<li class="active"><a href="${pageContext.request.contextPath}"> Home <span class="sr-only">(current)</span></a></li>
 								<li><a href="https://naver.com">together</a></li>
 								<li><a href="#nino-services">review</a></li>
 								<li><a href="#nino-portfolio">tip</a></li>
@@ -67,7 +52,7 @@
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
-							<li><a style="cursor:pointer" onclick="changeView(1)"><i class="glyphicon glyphicon-user"></i></a></li>
+							<li><a href="${pageContext.request.contextPath}/join"><i class="glyphicon glyphicon-user"></i></a></li>
 							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>
