@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="header">
+            <jsp:include page="header.jsp" />
+        </div>
 it's together.
 </body>
 </html>
