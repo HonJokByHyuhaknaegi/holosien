@@ -28,13 +28,6 @@
 </head>
 
 <body>
-
-	<!-- Header
-    ================================================== -->
-	 <div id="header">
-	 <jsp:include page="header.jsp" />
-     </div><!--/#header-->
-   
 	<!-- Sign Up
 	================================================== -->
 	<section id="join">

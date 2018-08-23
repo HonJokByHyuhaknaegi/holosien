@@ -21,4 +21,25 @@ public class JoinController {
 	        
 	        return "SuccessJoin";
 	    }
+	   
+	   /*@RequestMapping("emailAuth.do")
+	   public ModelAndView emailAuth(httpServletResponse response, httpServletRequest request) throws Exception {
+		   String email = request.getParameter("email");
+		   String authNum ="";
+		   
+		   authNum = RandomNum();
+		   
+		   sendEmail(email.toString(), authNum);
+		   
+		   ModelAndView mw = new ModelAndView();
+		   mv.setViewName("emailAuth.jsp");
+		   mv.addObject("email",email);
+		   mv.addObject("authNum",authNum);
+		   
+		   return mv;
+	   }
+	   
+	   private void sendEmail(String email, String authNum){
+		   St
+	   }*/
 }
