@@ -24,6 +24,17 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+	 $(document).ready(function() {
+		 $(".confirmEmail_Send").click(function() {
+				console.log("click!");
+				$("confirmEmail").removeAttr("disabled");
+			});
+		  } );
+		
+	</script>
 
 </head>
 
@@ -44,7 +55,7 @@
 			</div>
 			<div class="form-group" style="clear:right">
 			 <label for="confirmEmail">이메일 인증번호</label>
-			  <input type="text" class="form-control" name="confirmEmail" placeholder="인증번호을 입력하세요" disabled>
+			  <input type="text" class="form-control" name="confirmEmail" id="confirmEmail" placeholder="인증번호을 입력하세요" disabled>
 			</div>
 			<div class="form-group" style="float:right">
 			 <button type="button" class="btn btn-default btn-sm" id="confirmEmail_Send">인증번호 받기</button>
