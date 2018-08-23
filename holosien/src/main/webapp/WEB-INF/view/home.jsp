@@ -74,31 +74,30 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Welcome</span>
+							<span class="nino-subHeading"><br>Welcome <br>to</span>
 							holosien
 						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
+					</div>
+					<div class="item">
+						<h2 class="nino-sectionHeading">
+							<span class="nino-subHeading">do you need a friend?</span>
+							동행 <br>구하기
+						</h2>
+						<a href="${pageContext.request.contextPath}/together" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Creative Template</span>
 							Welcome <br>to MoGo
 						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/review" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Creative Template</span>
 							Welcome <br>to MoGo
 						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
-					</div>
-					<div class="item">
-						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Creative Template</span>
-							Welcome <br>to MoGo
-						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/tip" class="nino-btn">Learn more</a>
 					</div>
 				</div>
 
