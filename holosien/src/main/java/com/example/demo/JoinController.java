@@ -8,6 +8,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -26,17 +27,20 @@ public class JoinController {
 	        return "SuccessJoin";
 	    }
 	   
-	   @RequestMapping("emailAuth.do")
-	   public ModelAndView emailAuth(HttpServletResponse response, HttpServletRequest request) throws Exception {
-		   String email = request.getParameter("email");
+	   @RequestMapping("/emailAuth")
+	   public ModelAndView emailAuth(@RequestParam String email,HttpServletResponse response, HttpServletRequest request) throws Exception {
+		   /*String email = request.getParameter("InputEmail");*/
 		   String authNum ="";
 		   
 		   authNum = RandomNum();
 		   
-		   sendSimpleMessage("holosien",email.toString(), authNum);
+		   System.out.println(email);
+		   System.out.println(authNum);
+		   
+		   sendSimpleMessage(email.toString(),"holosien id Auth...", authNum);
 		   
 		   ModelAndView mv = new ModelAndView();
-		   mv.setViewName("emailAuth.jsp");
+		   mv.setViewName("/emailJoin");
 		   mv.addObject("email",email);
 		   mv.addObject("authNum",authNum);
 		   
@@ -49,10 +53,12 @@ public class JoinController {
 	    public void sendSimpleMessage(
 	      String to, String subject, String text) {
 	        
-	        SimpleMailMessage message = new SimpleMailMessage(); 
+	        SimpleMailMessage message = new SimpleMailMessage();
+	        message.setFrom("kryeeong@gmail.com");
 	        message.setTo(to); 
 	        message.setSubject(subject); 
 	        message.setText(text);
+	        System.out.println(message);
 	        emailSender.send(message);
 	    }
 	    

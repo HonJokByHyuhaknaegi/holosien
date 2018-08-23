@@ -26,19 +26,25 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<% String path=request.getContextPath(); %>
 	<script>
 	 $(document).ready(function() {
-		 $(".confirmEmail_Send").click(function() {
-				console.log("click!");
-				$("confirmEmail").removeAttr("disabled");
+		 $('#confirmEmail_Send').click(function(){
+				$("#confirmEmail").removeAttr("disabled");
+					location.href="${pageContext.request.contextPath}/emailAuth?email="+$("#InputEmail").val();
 			});
-		  } );
+		  });
 		
 	</script>
 
 </head>
 
 <body>
+	
+	<div id="header">
+	<jsp:include page="header.jsp" />
+	</div>
+	
 	<!-- Sign Up
 	================================================== -->
 	<section id="join">
@@ -51,7 +57,7 @@
 			<form name="joinForm" id="joinForm" method="post" action="${pageContext.request.contextPath}/SuccessJoin">
 			<div class="form-group">
 			 <label for="InputEmail">이메일 주소</label>
-			  <input type="email" class="form-control" name="InputEmail" placeholder="이메일을 입력하세요" required>
+			  <input type="email" class="form-control" name="InputEmail" id="InputEmail" placeholder="이메일을 입력하세요" required>
 			</div>
 			<div class="form-group" style="clear:right">
 			 <label for="confirmEmail">이메일 인증번호</label>
