@@ -7,7 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class testController {
+public class JoinController {
+	   
 	   @RequestMapping(value="/SuccessJoin")
 	   public String SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
