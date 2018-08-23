@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-it's tip
+it's tip.
 </body>
 </html>
