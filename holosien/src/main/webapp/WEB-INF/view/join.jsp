@@ -1,12 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holosien</title>
+ <link rel="shortcut icon" href="images/ico/favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-57-precomposed.png">
+	
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/materialdesignicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
+
+
 </head>
 <body>
+<header id="nino-header">
 		<div id="nino-headerInner">					
 			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
 				<div class="container">
@@ -19,7 +36,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="homepage.html">Mogo</a>
+						<a class="navbar-brand" href="${pageContext.request.contextPath}">Holosien</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,11 +44,11 @@
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
-								<li><a href="#nino-story">together</a></li>
-								<li><a href="#nino-services">Service</a></li>
+								<li><a href="https://naver.com">together</a></li>
+								<li><a href="#nino-services">review</a></li>
+								<li><a href="#nino-portfolio">tip</a></li>
 								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="#nino-portfolio">Work</a></li>
-								<li><a href="#nino-latestBlog">Blog</a></li>
+								<li><a href="${pageContext.request.contextPath}/join">Blog</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
@@ -41,6 +58,25 @@
 					</div>
 				</div><!-- /.container-fluid -->
 			</nav>
-
+			</div>
+			</header>
+			   <section id="join">
+      <div class="container">
+         <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">How to sign up.</span>
+            회원가입 방법을 선택하세요!
+         </h2>
+ <div style="text-align:center;">
+							<img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
+							<br>
+							<img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
+							<br>
+							<img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
+						<br>
+						기존 홀로지앵의 회원이신가요? <a href="${pageContext.request.contextPath}/login">로그인</a>
+						</div>
+      </div>      
+   </section>
+						
 </body>
 </html>
