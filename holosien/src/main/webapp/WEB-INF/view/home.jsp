@@ -51,9 +51,9 @@
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
-								<li><a href="#nino-story">together</a></li>
-								<li><a href="#nino-services">review</a></li>
-								<li><a href="#nino-portfolio">tip</a></li>
+								<li><a href="#nino-portfolio">together</a></li>
+								<li><a href="#nino-story">review</a></li>
+								<li><a href="#nino-happyClient">tip</a></li>
 								<li><a href="#nino-ourTeam">Our Team</a></li>
 								<li><a href="#nino-map">map</a></li>
 								
@@ -74,31 +74,30 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Welcome</span>
+							<span class="nino-subHeading"><br>Welcome <br>to</span>
 							holosien
 						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
+					</div>
+					<div class="item">
+						<h2 class="nino-sectionHeading">
+							<span class="nino-subHeading">do you need a friend?</span>
+							동행 <br>구하기
+						</h2>
+						<a href="${pageContext.request.contextPath}/together" class="nino-btn">Learn more</a>
+					</div>
+					<div class="item">
+						<h2 class="nino-sectionHeading">
+							<span class="nino-subHeading">hot place</span>
+							코스<br>후기
+						</h2>
+						<a href="${pageContext.request.contextPath}/review" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Creative Template</span>
 							Welcome <br>to MoGo
 						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
-					</div>
-					<div class="item">
-						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Creative Template</span>
-							Welcome <br>to MoGo
-						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
-					</div>
-					<div class="item">
-						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Creative Template</span>
-							Welcome <br>to MoGo
-						</h2>
-						<a href="#" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/tip" class="nino-btn">Learn more</a>
 					</div>
 				</div>
 
@@ -491,14 +490,11 @@
 	<section id="nino-portfolio">
 		<div class="container">
 			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">What we do</span>
-				some of our work
+				<span class="nino-subHeading">Do you need a friend?</span>
+				동행 구하기 
 			</h2>
-			<p class="nino-sectionDesc">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-			</p>
 		</div>
-		<div class="sectionContent">
+		<%-- <div class="sectionContent">
 			<ul class="nino-portfolioItems">
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-1.jpg">
@@ -585,7 +581,7 @@
 					</a>
 				</li>
 			</ul>
-		</div>
+		</div> --%>
 	</section><!--/#nino-portfolio-->
 
 	<!-- Testimonial
@@ -600,8 +596,8 @@
 								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt="">
 							</div>
 							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Joshua Earle</span>
+								<p class="quote">"서울 디뮤지엄 전시 같이 보러 가실 분!"</p>
+								<span class="name">원가연</span>
 							</div>
 						</div>
 					</li>
@@ -611,8 +607,8 @@
 								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-2.jpg" alt="">
 							</div>
 							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Jon Doe</span>
+								<p class="quote">"지금 혼자 여수 여행중인데 동해하실 분 구합니다"</p>
+								<span class="name">박수철</span>
 							</div>
 						</div>
 					</li>
@@ -622,14 +618,19 @@
 								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-3.jpg" alt="">
 							</div>
 							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Jon Doe</span>
+								<p class="quote">"충무로 근처 자취방 룸메 구해요"</p>
+								<span class="name">김경석</span>
 							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
-    	</div>
+			</div>
+			
+			<div layout="row" class="verticalCenter">
+		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">Learn more</a>
+			
+    	</div>    	
     </section><!--/#nino-testimonial-->
 
     <!-- Happy Client

@@ -10,6 +10,6 @@
 <div id="header">
             <jsp:include page="header.jsp" />
         </div>
-it's tip.
+it's map.
 </body>
 </html>

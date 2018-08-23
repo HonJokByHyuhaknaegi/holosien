@@ -43,11 +43,10 @@
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="${pageContext.request.contextPath}"> Home <span class="sr-only">(current)</span></a></li>
-								<li><a href="https://naver.com">together</a></li>
-								<li><a href="#nino-services">review</a></li>
-								<li><a href="#nino-portfolio">tip</a></li>
-								<li><a href="#nino-ourTeam">Our Team</a></li>
-								<li><a href="#nino-map">map</a></li>
+								<li><a href="${pageContext.request.contextPath}/together">together</a></li>
+								<li><a href="${pageContext.request.contextPath}/review">review</a></li>
+								<li><a href="${pageContext.request.contextPath}/tip">tip</a></li>
+								<li><a href="${pageContext.request.contextPath}/map">map</a></li>
 								
 							</ul>
 						</div><!-- /.navbar-collapse -->
