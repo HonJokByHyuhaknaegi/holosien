@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-
-<!DOCTYPE html>
+    <%
+String contentPage = request.getParameter("contentPage");
+if(contentPage == null)
+	contentPage = "home.jsp";
+%>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>login page</title>
-
- <link rel="shortcut icon" href="images/ico/favicon.jpg">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="images/ico/favicon.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-72-precomposed.png">
@@ -23,6 +25,15 @@
 </head>
 <body>
 
+<div id="wrap">
 
+        <div id="header">
+            <jsp:include page="header.jsp" />
+        </div>
+ 		<div id = "main">
+ 			<jsp:include page ="<%=contentPage %>"/>
+ 		</div>
+ 		
+</div>
 </body>
 </html>

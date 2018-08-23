@@ -30,9 +30,9 @@ public class HomeController {
          return "login";
       }
    
-   @RequestMapping(value="/test")
-   public String test() {
+   @RequestMapping(value="/main")
+   public String main() {
       System.out.println("*******");
-         return "test";
+         return "MainForm";
       }  
 }
