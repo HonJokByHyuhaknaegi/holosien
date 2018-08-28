@@ -10,20 +10,20 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#togetherAll').click(function(){
-		  $('#together-board').text("this is all");
+		/*   $('#together-board').text("this is all"); */
 		});
 	
 $('#friend').click(function(){
-  $('#together-board').text("this is friend");
+  /* $('#together-board').text("this is friend"); */
 });
 $('#roomMate').click(function(){
-	  $('#together-board').text("this is roomMate");
+	  /* $('#together-board').text("this is roomMate"); */
 	});
 $('#animal').click(function(){
-	  $('#together-board').text("this is animal");
+	  /* $('#together-board').text("this is animal"); */
 	});
 $('#food').click(function(){
-	  $('#together-board').text("this is food");
+	  /* $('#together-board').text("this is food"); */
 	});
 });
 </script>
@@ -54,14 +54,8 @@ $('#food').click(function(){
   
   <!-- BOARD ALL -->
 <div id="together-board">
-this is all
+<jsp:include page="list.jsp" />
 </div>  <!-- /BOARD ALL -->
-  
-  it's together.
-
-<%-- <div id="together">
-<jsp:include page="header.jsp" />
-</div> --%>
 
 </body>
 </html>
