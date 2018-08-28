@@ -37,7 +37,8 @@
 							<br>
 							<img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
 							<br>
-							<img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
+							<a href="${pageContext.request.contextPath}/emailJoin"><img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
+							</a>
 						<br>
 						기존 홀로지앵의 회원이신가요? <a href="${pageContext.request.contextPath}/login">로그인</a>
 						</div>

@@ -211,8 +211,8 @@ img.img-full-width {
 }
 
 .custom-border-btn:hover { 
-	color: #FC5185;
-	border : 2px solid #FC5185; 
+	color: #B483D9;
+	border : 2px solid #B483D9; 
 }
 .bg-white {
 	background-color: #fff !important;
@@ -292,7 +292,7 @@ img.img-full-width {
 #nav-header {
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
-	background: rgba(241, 114, 114, 0.96);
+	background: rgba(180, 131, 217, 0.96);
 }
 #nino-header:after {
 	content: "";
@@ -301,10 +301,10 @@ img.img-full-width {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(243,129,129,0.9); /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-	background: -webkit-linear-gradient(top, rgba(243,129,129,0.9), rgba(252, 227, 138, 0.9));
-	background: -o-linear-gradient(top, rgba(243,129,129,0.9), rgba(252, 227, 138, 0.9));
-	background: linear-gradient(to bottom, rgba(243,129,129,0.9), rgba(252, 227, 138, 0.9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: rgba(180, 131, 217, 0.96); /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(top, rgba(180, 131, 217, 0.56), rgba(63, 0, 153, 0.5));
+	background: -o-linear-gradient(top, rgba(180, 131, 217, 0.56), rgba(63, 0, 153, 0.5));
+	background: linear-gradient(to bottom,rgba(180, 131, 217, 0.56), rgba(63, 0, 153, 0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #nino-headerInner {
 	position: relative;
@@ -418,7 +418,7 @@ img.img-full-width {
 	top: 0;
 	left: 0;
     width: 100%;
-    background: rgba(241, 114, 114, 0.96);
+    background: rgba(180, 131, 217, 0.96);
     z-index: 2;
     -webkit-animation-duration: .5s;
     		animation-duration: .5s;

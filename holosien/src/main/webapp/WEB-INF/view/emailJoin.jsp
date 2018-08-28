@@ -10,21 +10,6 @@
 	<meta name="copyright" content="ninodezign.com"> 
 	<title>Sign Up</title>
 	
-	<!-- favicon -->
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/ico/favicon.jpg">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-57-precomposed.png">
-	
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/materialdesignicons.min.css" />
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery.mCustomScrollbar.min.css" />
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
-	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<% String path=request.getContextPath(); %>
 	<script>
@@ -41,9 +26,9 @@
 
 <body>
 	
-	<div id="header">
-	<jsp:include page="header.jsp" />
-	</div>
+<div id="header">
+            <jsp:include page="header.jsp" />
+        </div>
 	
 	<!-- Sign Up
 	================================================== -->
@@ -92,7 +77,7 @@
 		</div>		
 	</section>
 	<!--Sign Up-->
-	
+	<%-- 
     <!-- Footer
     ================================================== -->
     <footer id="footer">
@@ -204,7 +189,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/unslider-min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/template.js"></script>
-
+ --%>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
