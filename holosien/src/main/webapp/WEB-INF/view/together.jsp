@@ -20,7 +20,7 @@ $('#roomMate').click(function(){
 	  /* $('#together-board').text("this is roomMate"); */
 	});
 $('#animal').click(function(){
-	  /* $('#together-board').text("this is animal"); */*/
+	  /* $('#together-board').text("this is animal"); */
 	});
 $('#food').click(function(){
 	  /* $('#together-board').text("this is food"); */
