@@ -10,6 +10,12 @@
 <div id="header">
             <jsp:include page="header.jsp" />
       </div>
-it's review
+     <div class="container">
+         <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">Review.</span>
+            혼자 가기 좋은 코스 후기.
+         </h2>
+         </div>
+         <br>
 </body>
 </html>

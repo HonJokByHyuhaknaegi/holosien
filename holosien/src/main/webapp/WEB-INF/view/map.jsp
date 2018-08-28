@@ -15,7 +15,7 @@
       <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">Map.</span>
-            지도로 한 눈에 보기
+            지도로 한 눈에 보기.
          </h2>
          </div>
          <br>
