@@ -83,21 +83,21 @@
 							<span class="nino-subHeading">do you need a friend?</span>
 							동행 <br>구하기
 						</h2>
-						<a href="${pageContext.request.contextPath}/together" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/together" class="nino-btn">More</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">hot place</span>
 							코스<br>후기
 						</h2>
-						<a href="${pageContext.request.contextPath}/review" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/review" class="nino-btn">More</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
 							<span class="nino-subHeading">Creative Template</span>
 							Welcome <br>to MoGo
 						</h2>
-						<a href="${pageContext.request.contextPath}/tip" class="nino-btn">Learn more</a>
+						<a href="${pageContext.request.contextPath}/tip" class="nino-btn">More</a>
 					</div>
 				</div>
 
@@ -626,13 +626,13 @@
 				</ul>
 			</div>
 			</div>
+  	<div align="center" >
+		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">More</a>
 			
-			<div layout="row" class="verticalCenter">
-		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">Learn more</a>
-			
-    	</div>    	
+    	</div>  
     </section><!--/#nino-testimonial-->
-
+			
+			
     <!-- Happy Client
     ================================================== -->
     <section id="nino-happyClient">
