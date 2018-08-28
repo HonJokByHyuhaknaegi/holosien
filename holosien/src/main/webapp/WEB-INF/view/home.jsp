@@ -24,6 +24,12 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
+
+<script type="text/javascript">
+function goLogin() {
+	location.href="${pageContext.request.contextPath}/join";
+}
+</script>
 </head>
 
 <body data-target="#nino-navbar" data-spy="scroll">
@@ -61,7 +67,7 @@
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
-							<li><a href="${pageContext.request.contextPath}/join"><i class="mdi mdi-cart-outline nino-icon"></i></a></li>
+							<li><a href="#" onclick ="goLogin();"><i class="glyphicon glyphicon-user"></i></a></li>
 							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>
