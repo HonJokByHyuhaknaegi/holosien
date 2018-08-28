@@ -31,7 +31,7 @@ $('#food').click(function(){
 </head>
 <body>
 <div id="header">
-<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
 </div>
 
 <div id="together-menu" align="center">

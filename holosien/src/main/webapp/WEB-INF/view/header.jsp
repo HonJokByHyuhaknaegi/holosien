@@ -41,13 +41,12 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="nino-menuItem pull-right">
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="${pageContext.request.contextPath}"> Home <span class="sr-only">(current)</span></a></li>
+							<ul class="nav navbar-nav" id="menubar">
+								<li><a href="${pageContext.request.contextPath}" > Home <span class="sr-only">(current)</span></a></li>
 								<li><a href="${pageContext.request.contextPath}/together">together</a></li>
 								<li><a href="${pageContext.request.contextPath}/review">review</a></li>
 								<li><a href="${pageContext.request.contextPath}/tip">tip</a></li>
-								<li><a href="${pageContext.request.contextPath}/map">map</a></li>
-								
+								<li><a href="${pageContext.request.contextPath}/map">map</a></li>	
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
