@@ -50,4 +50,9 @@ public class HomeController {
       System.out.println("*******");
          return "map";
       }
+   @RequestMapping(value="/list")
+   public String list() {
+      System.out.println("*******");
+         return "list";
+      }
 }
