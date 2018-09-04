@@ -17,5 +17,17 @@
          </h2>
          </div>
          <br>
+         <div id="together-menu" align="center">
+  <button autofocus class="together together-bnt" id="togetherAll">
+    <span>전체보기</span>
+  </button>
+  <button class="together together-bnt" id="local">
+    <span>국내</span>
+  </button>
+    <button class="together together-bnt" id="overseas">
+    <span>해외</span>
+  </button>
+
+  </div>
 </body>
 </html>
