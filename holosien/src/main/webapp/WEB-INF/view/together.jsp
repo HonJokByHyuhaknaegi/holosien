@@ -33,7 +33,12 @@ $('#food').click(function(){
 <div id="header">
 <jsp:include page="header.jsp"/>
 </div>
-
+  <div class="container">
+         <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">Together.</span>
+            동행 구하기.
+         </h2>
+         </div>
 <div id="together-menu" align="center">
   <button autofocus class="together together-bnt" id="togetherAll">
     <span>전체보기</span>
