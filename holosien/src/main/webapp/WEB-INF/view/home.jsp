@@ -134,15 +134,174 @@ function goLogin() {
 		</div>
 	</header><!--/#header-->
 
+	<!-- 동행구하기
+    ================================================== -->
+	<section id="nino-portfolio">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">Do you need a friend?</span>
+				동행 구하기 
+			</h2>
+		</div>
+		<%-- <div class="sectionContent">
+			<ul class="nino-portfolioItems">
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-1.jpg">
+						<img src="images/our-work/img-1.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-crown nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-2.jpg">
+						<img src="images/our-work/img-2.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-cube-outline nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-3.jpg">
+						<img src="images/our-work/img-3.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-desktop-mac nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-4.jpg">
+						<img src="images/our-work/img-4.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-flower nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-5.jpg">
+						<img src="images/our-work/img-5.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-gamepad-variant nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-6.jpg">
+						<img src="images/our-work/img-6.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-gnome nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="item">
+					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-7.jpg">
+						<img src="images/our-work/img-7.jpg" />
+						<div class="overlay">
+							<div class="content">
+								<i class="mdi mdi-guitar-electric nino-icon"></i>
+								<h4 class="title">creatively designed</h4>
+								<span class="desc">Lorem ipsum dolor sit</span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div> --%>
+	</section><!--/#nino-portfolio-->
+	<!-- Testimonial
+    ================================================== -->
+    <section class="nino-testimonial bg-white">
+    	<div class="container">
+    		<div class="nino-testimonialSlider">
+				<ul>
+					<li>
+						<div layout="row" class="verticalCenter">
+							<div class="nino-avatar fsr">
+								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt="">
+							</div>
+							<div>
+								<p class="quote">"서울 디뮤지엄 전시 같이 보러 가실 분!"</p>
+								<span class="name">원가연</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div layout="row" class="verticalCenter">
+							<div class="nino-avatar fsr">
+								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-2.jpg" alt="">
+							</div>
+							<div>
+								<p class="quote">"지금 혼자 여수 여행중인데 동해하실 분 구합니다"</p>
+								<span class="name">박수철</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div layout="row" class="verticalCenter">
+							<div class="nino-avatar fsr">
+								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-3.jpg" alt="">
+							</div>
+							<div>
+								<p class="quote">"충무로 근처 자취방 룸메 구해요"</p>
+								<span class="name">김경석</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			</div>
+  	<div align="center" >
+		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">More</a>
+			
+    	</div>  
+    </section><!--/#nino-testimonial-->
+    
+	<!-- Brand
+    ================================================== -->
+    <section id="nino-brand">
+    	<div class="container">
+    		<div class="verticalCenter fw" layout="row">
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-1.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-2.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-3.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-4.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-5.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-6.png" alt=""></a></div>
+    		</div>
+    	</div>
+    </section><!--/#nino-brand-->
 	<!-- Story About Us
     ================================================== -->
 	<section id="nino-story">
 		<div class="container">
 			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">What we do</span>
-				Story about us
+				<span class="nino-subHeading">Review</span>
+				혼자 가기 좋은 코스 후기
 			</h2>
-			<p class="nino-sectionDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 			<div class="sectionContent">
 				<div class="row nino-hoverEffect">
 					<div class="col-md-4 col-sm-4">
@@ -180,7 +339,12 @@ function goLogin() {
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>	
+		<div align="center" >
+		<br><br>
+		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">More</a>
+			
+    	</div>	
 	</section><!--/#nino-story-->
 
 	<!-- Counting
@@ -475,177 +639,14 @@ function goLogin() {
 			</div>
 		</div>
 	</section><!--/#nino-ourTeam-->
-
-	<!-- Brand
-    ================================================== -->
-    <section id="nino-brand">
-    	<div class="container">
-    		<div class="verticalCenter fw" layout="row">
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-1.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-2.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-3.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-4.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-5.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-6.png" alt=""></a></div>
-    		</div>
-    	</div>
-    </section><!--/#nino-brand-->
-
-	<!-- Portfolio
-    ================================================== -->
-	<section id="nino-portfolio">
-		<div class="container">
-			<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">Do you need a friend?</span>
-				동행 구하기 
-			</h2>
-		</div>
-		<%-- <div class="sectionContent">
-			<ul class="nino-portfolioItems">
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-1.jpg">
-						<img src="images/our-work/img-1.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-crown nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-2.jpg">
-						<img src="images/our-work/img-2.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-cube-outline nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-3.jpg">
-						<img src="images/our-work/img-3.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-desktop-mac nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-4.jpg">
-						<img src="images/our-work/img-4.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-flower nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-5.jpg">
-						<img src="images/our-work/img-5.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-gamepad-variant nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-6.jpg">
-						<img src="images/our-work/img-6.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-gnome nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li class="item">
-					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="${pageContext.request.contextPath}/resources/images/our-work/img-7.jpg">
-						<img src="images/our-work/img-7.jpg" />
-						<div class="overlay">
-							<div class="content">
-								<i class="mdi mdi-guitar-electric nino-icon"></i>
-								<h4 class="title">creatively designed</h4>
-								<span class="desc">Lorem ipsum dolor sit</span>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div> --%>
-	</section><!--/#nino-portfolio-->
-
-	<!-- Testimonial
-    ================================================== -->
-    <section class="nino-testimonial bg-white">
-    	<div class="container">
-    		<div class="nino-testimonialSlider">
-				<ul>
-					<li>
-						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt="">
-							</div>
-							<div>
-								<p class="quote">"서울 디뮤지엄 전시 같이 보러 가실 분!"</p>
-								<span class="name">원가연</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-2.jpg" alt="">
-							</div>
-							<div>
-								<p class="quote">"지금 혼자 여수 여행중인데 동해하실 분 구합니다"</p>
-								<span class="name">박수철</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-3.jpg" alt="">
-							</div>
-							<div>
-								<p class="quote">"충무로 근처 자취방 룸메 구해요"</p>
-								<span class="name">김경석</span>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			</div>
-  	<div align="center" >
-		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">More</a>
-			
-    	</div>  
-    </section><!--/#nino-testimonial-->
-			
-			
+		
     <!-- Happy Client
     ================================================== -->
     <section id="nino-happyClient">
     	<div class="container">
     		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">Happy Clients</span>
-				What people say
+				<span class="nino-subHeading">Tip</span>
+				나만의 자취 팁
 			</h2>
 			<div class="sectionContent">
 				<div class="row">
@@ -709,6 +710,10 @@ function goLogin() {
 					</div>
 				</div>
 			</div>
+			<div align="center" >
+		<a href="${pageContext.request.contextPath}/tip" class="custom-border-btn">More</a>
+			
+    	</div>
     	</div>
     </section><!--/#nino-happyClient-->
 
@@ -794,9 +799,102 @@ function goLogin() {
     			<span class="text" style="display: none;">Close map</span>
     		</h2>
     		<div class="mapWrap">
-	    		<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d79466.26604960626!2d-0.19779784176715043!3d51.50733004537892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!3m2!1d51.5073509!2d-0.1277583!5e0!3m2!1sen!2s!4v1469206441744" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+<!-- 	    		<iframe src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+ -->	    	
+ <div id="map" style="width:100%;height:300px;"></div>
+        	<script type="text/javascript"	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e"></script>
+	
+			<script type="text/javascript">
+			
+			var lat,lon;
+			
+			var overlay;
+			
+            //지도 생성 및 현재 위치 인식
+			var container = document.getElementById('map');
+			var options = {
+				center : new daum.maps.LatLng(37.5673, 127.0057),
+				level : 4
+			};
+
+			//지도 생성
+			var map = new daum.maps.Map(container, options);
+			//현재 위치 인식
+			
+			if(navigator.geolocation){ 
+				navigator.geolocation.getCurrentPosition(function(position){
+					lat=position.coords.latitude;
+					lon=position.coords.longitude;
+					console.log(lat);
+					console.log(lon);
+					var locPosition=new daum.maps.LatLng(lat,lon);
+					nowMarker(locPosition); 
+
+				});
+			}
+			else{
+				var locPosition=new daum.maps.LatLng(33.450701, 126.570667),
+				message='일시적으로 내 위치를 확인할 수 없습니다.'
+				
+				displayMarker(locPosition, message);
+			}
+			
+			
+			//마커와 인포윈도우 표시하는 함수
+			function displayMarker(locPosition, message){
+				var marker=new daum.maps.Marker({
+					map:map,
+					position:locPosition
+					
+				});
+				
+				var iwContent=message, //인포윈도우에 표시할 내용
+				iwRemoveable=true;
+				
+				//인포윈도우 생성
+				var infowindow=new daum.maps.InfoWindow({
+					content:iwContent,
+					removeable:iwRemoveable
+				});
+				
+				//인포윈도우를 마커 위에 표시
+				infowindow.open(map,marker);
+				
+				//지도 중심좌표를 해당위치로 변경
+				map.setCenter(locPosition);
+			}
+			
+			function nowMarker(locPosition){
+
+				var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+				   // 마커 이미지의 이미지 크기 입니다
+			    var imageSize = new daum.maps.Size(24, 35); 
+			    
+			    // 마커 이미지를 생성합니다    
+			    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
+				var markerPosition=locPosition;
+				var marker=new daum.maps.Marker({
+					map:map,
+					position:markerPosition,
+					image:markerImage
+				});
+				
+				// 마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+				map.setCenter(locPosition);
+			}
+			
+			
+			</script>
+	    		<div align="center" >
+	    		<br>
+		<a href="${pageContext.request.contextPath}/map" class="custom-border-btn">More</a>
+			
+    	</div>  
 	    	</div>
+	    	
     	</div>
+   
     </section><!--/#nino-map-->
 	
     <!-- Footer
