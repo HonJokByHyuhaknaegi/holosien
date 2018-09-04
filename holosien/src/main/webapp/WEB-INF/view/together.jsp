@@ -9,22 +9,24 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$('#togetherAll').click(function(){
-		/*   $('#together-board').text("this is all"); */
+	$("#menubar li:nth-child(2)").addClass('active');
+	
+/* 	$('#togetherAll').click(function(){
+		   $('#together-board').text("this is all"); 
 		});
 	
 $('#friend').click(function(){
-  /* $('#together-board').text("this is friend"); */
+   $('#together-board').text("this is friend"); 
 });
 $('#roomMate').click(function(){
-	  /* $('#together-board').text("this is roomMate"); */
+	   $('#together-board').text("this is roomMate"); 
 	});
 $('#animal').click(function(){
-	  /* $('#together-board').text("this is animal"); */
+	   $('#together-board').text("this is animal"); 
 	});
 $('#food').click(function(){
-	  /* $('#together-board').text("this is food"); */
-	});
+	   $('#together-board').text("this is food"); 
+	}); */
 });
 </script>
 
@@ -33,12 +35,24 @@ $('#food').click(function(){
 <div id="header">
 <jsp:include page="header.jsp"/>
 </div>
+<<<<<<< HEAD
   <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">Together.</span>
             동행 구하기.
          </h2>
          </div>
+=======
+
+
+<div class="container">
+         <h2 class="nino-sectionHeading">
+            <span class="nino-subHeading">Together.</span>
+            동행 구하기.
+         </h2>
+         </div>
+
+>>>>>>> refs/remotes/origin/master
 <div id="together-menu" align="center">
   <button autofocus class="together together-bnt" id="togetherAll">
     <span>전체보기</span>
@@ -58,9 +72,10 @@ $('#food').click(function(){
   </div>
   
   <!-- BOARD ALL -->
-<div id="together-board">
+<div id="together-board" style="width:80%; margin:auto"> 
 <jsp:include page="list.jsp" />
 </div>  <!-- /BOARD ALL -->
 
+         
 </body>
 </html>
