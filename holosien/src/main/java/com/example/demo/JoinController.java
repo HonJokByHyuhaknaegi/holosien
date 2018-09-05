@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class JoinController {
 	   
 	   @RequestMapping(value="/SuccessJoin")
 	   public String SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
+		   
 	        System.out.println("---------------------> login!!!!!!!!!!!");
 	        System.out.println("---------------------> " + request.getParameter("InputEmail"));
 	        System.out.println("---------------------> " + request.getParameter("InputPassword"));

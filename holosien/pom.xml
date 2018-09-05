@@ -22,9 +22,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		
+		<bean id="naverLoginBO" class="com.example.demo.NaverLoginBO" autowire="byType"></bean>
 	</properties>
 
 	<dependencies>
+	
+		<!-- naver -->
+	<dependency>
+	<groupId>com.github.scribejava</groupId>
+	<artifactId>scribejava-core</artifactId>
+	<version>2.8.1</version>
+	</dependency>
 	
 	<dependency>
     <groupId>org.springframework.boot</groupId>
