@@ -18,8 +18,16 @@
 				$("#confirmEmail").removeAttr("disabled");
 				//var email = $('#InputEmail').val();
 				var email = document.getElementById('InputEmail').value;
-				location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
-					 var tw = window.open( "", "test", "width=400,height=400" );
+				//location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
+				
+			
+				var pop_title = "popupOpener";
+				window.open("",pop_title,"width = 310, height = 180");
+				var frmData = document.joinForm;
+				frmData.target = pop_title;
+				frmData.action = "emailAuth";
+				frmData.submit();
+		 
 
 			});
 		 
@@ -91,15 +99,15 @@
 			<form name="joinForm" id="joinForm" method="post" onsubmit="return formCheck(this);" action="${pageContext.request.contextPath}/SuccessJoin">
 			<div class="form-group">
 			 <label for="InputEmail">이메일 주소</label>
-			  <input type="email" class="form-control" id = "InputEmail" name="InputEmail" placeholder="이메일을 입력하세요" value ="<%= request.getParameter("email")%>" required>
+			  <input type="email" class="form-control" id = "InputEmail" name="InputEmail" placeholder="이메일을 입력하세요" required>
 			</div>
-			<div class="form-group" style="clear:right">
+			<!-- <div class="form-group" style="clear:right">
 			 <label for="confirmEmail">이메일 인증번호</label>
 			  <input type="text" class="form-control" name="confirmEmail" id="confirmEmail" placeholder="인증번호을 입력하세요" required>
-			</div>
+			</div> -->
 			<div class="form-group" style="float:right">
 			 <button type="button" class="btn btn-default btn-sm" id="confirmEmail_Send">인증번호 받기</button>
-			  <button type="button" class="btn btn-default btn-sm" id="confirmEmail_Check">확인</button>
+			 <!--  <button type="button" class="btn btn-default btn-sm" id="confirmEmail_Check">확인</button> -->
 			  <h5 id="completeAuth" style="color:red; text-align:right"></h5>
 			</div>
   			<div class="form-group" style="clear:right">

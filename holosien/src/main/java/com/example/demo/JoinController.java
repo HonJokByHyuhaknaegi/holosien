@@ -39,7 +39,7 @@ public class JoinController {
 	    }
 		private Logger logger = LoggerFactory.getLogger(JoinController.class);
 		@Autowired
-		private NotificationService notificationService;
+		private EmailService emailService;
 
 		
 		 public String RandomNum(){
@@ -52,7 +52,7 @@ public class JoinController {
 		    }
 
 	   @RequestMapping(value="/emailAuth", method= {RequestMethod.GET, RequestMethod.POST})
-	   public ModelAndView emailAuth(@RequestParam(value = "email")String email) throws Exception {
+	   public ModelAndView emailAuth(@RequestParam(value = "InputEmail")String email) throws Exception {
 		   
 		   String authNum ="";
 		   authNum = RandomNum();
@@ -66,7 +66,7 @@ public class JoinController {
 		   
 			//send a email
 			try {
-				notificationService.sendNotification(authEmail);
+				emailService.sendNotification(authEmail);
 			}catch(MailException e)
 			{
 				//catch error
@@ -78,12 +78,18 @@ public class JoinController {
 		   
 		   //인증번호 비교위해 다시 회원가입 페이지로 돌아감 
 		   ModelAndView mv = new ModelAndView();
-		   mv.setViewName("/emailJoin");
+		   mv.setViewName("/emailPop");
 		   mv.addObject("email",email);
 		   mv.addObject("authNum",authNum);
 		   
 		   return mv;
 	   }
+	   
+	   @RequestMapping(value="/emailPop")
+	   public String emailPop() {
+	      System.out.println("이메일 인증 팝업");
+	         return "emailPop";
+	      }
 	   
 	  /* @Autowired
 	    public JavaMailSender emailSender;

@@ -7,12 +7,12 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NotificationService {
+public class EmailService {
 
 	private JavaMailSender javaMailSender;
 
 	@Autowired
-	public NotificationService(JavaMailSender javaMailSender) {
+	public EmailService(JavaMailSender javaMailSender) {
 		this.javaMailSender = javaMailSender;
 	
 	}
