@@ -24,7 +24,11 @@
 		<java.version>1.8</java.version>
 		
 		<bean id="naverLoginBO" class="com.example.demo.NaverLoginBO" autowire="byType"></bean>
+		   <spring-framework.version>4.2.5.RELEASE</spring-framework.version>
+		
 	</properties>
+
+
 
 	<dependencies>
 	
@@ -38,7 +42,7 @@
 	<dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-mail</artifactId>
-    <version>1.4.3.RELEASE</version>
+
 </dependency>
 
 		<dependency>
@@ -56,7 +60,26 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        
+        <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+    <version>1.4.3.RELEASE</version>
+</dependency>
 	</dependencies>
+
+
 
 	<build>
 		<plugins>

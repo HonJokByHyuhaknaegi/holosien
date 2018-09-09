@@ -16,10 +16,15 @@
 	 $(document).ready(function() {
 		 $('#confirmEmail_Send').click(function(){
 				$("#confirmEmail").removeAttr("disabled");
-					location.href="${pageContext.request.contextPath}/emailAuth?email="+$("#InputEmail").val();
+				//var email = $('#InputEmail').val();
+				var email = document.getElementById('InputEmail').value;
+				location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
+					 var tw = window.open( "", "test", "width=400,height=400" );
+
 			});
+		 
 		  });
-	 
+
 	 function formCheck(form) {
 		 if($('#completeAuth').text()==""){
 			 alert("이메일 인증이 필요합니다.");
@@ -27,7 +32,43 @@
 		 }
 		 else return true;
 	 }
-		
+	
+	 $(function(){
+		  $('#InputPassword').keyup(function(){
+		   $('#completePass').text("");
+		  }); //#user_pass.keyup
+
+		  $('#InputPasswordCheck').keyup(function(){
+		   if($('#InputPassword').val()!=$('#InputPasswordCheck').val()){
+		    $('#completePass').text("");
+		    $('#completePass').text("비밀번호가 일치하지 않습니다");
+		   }else{
+		    $('#completePass').text("");
+		    $('#completePass').text("비밀번호가 일치합니다");
+		   }
+		  }); //#chpass.keyup
+		  
+		  $('#confirmEmail_Check').click(function()
+			{
+				var check = "${authNum}";
+				var confirm = document.getElementById('confirmEmail').value;
+				if(!confirm){
+					alert("인증번호를 입력하세요");
+					return false;
+				}
+				
+				if(confirm == check){
+					$('#completeAuth').text("인증완료");
+				}
+				
+				if(confirm != check){
+					alert("잘못된 인증번호입니다. 다시 입력하세요");
+					return false;
+				}
+			});
+		  
+		 });
+
 	</script>
 
 </head>
@@ -50,11 +91,11 @@
 			<form name="joinForm" id="joinForm" method="post" onsubmit="return formCheck(this);" action="${pageContext.request.contextPath}/SuccessJoin">
 			<div class="form-group">
 			 <label for="InputEmail">이메일 주소</label>
-			  <input type="email" class="form-control" name="InputEmail" placeholder="이메일을 입력하세요" required>
+			  <input type="email" class="form-control" id = "InputEmail" name="InputEmail" placeholder="이메일을 입력하세요" value ="<%= request.getParameter("email")%>" required>
 			</div>
 			<div class="form-group" style="clear:right">
 			 <label for="confirmEmail">이메일 인증번호</label>
-			  <input type="text" class="form-control" name="confirmEmail" id="confirmEmail" placeholder="인증번호을 입력하세요" disabled>
+			  <input type="text" class="form-control" name="confirmEmail" id="confirmEmail" placeholder="인증번호을 입력하세요" required>
 			</div>
 			<div class="form-group" style="float:right">
 			 <button type="button" class="btn btn-default btn-sm" id="confirmEmail_Send">인증번호 받기</button>
@@ -62,8 +103,14 @@
 			  <h5 id="completeAuth" style="color:red; text-align:right"></h5>
 			</div>
   			<div class="form-group" style="clear:right">
-   			 <label for="InputPassword">암호</label>
-  			  <input type="password" class="form-control" name="InputPassword" placeholder="암호를 입력하세요" required>
+   			 <label for="InputPassword">비밓번호</label>
+  			  <input type="password" class="form-control" id="InputPassword" name="InputPassword" placeholder="비밀번호를 입력하세요" required>
+  			</div>
+  			<div class="form-group" style="clear:right">
+   			 <label for="InputPasswordCheck">비밀번호 확인</label>
+  			  <input type="password" class="form-control" id = "InputPasswordCheck" name="InputPasswordCheck" required>
+			  <h5 id="completePass" style="color:gray; text-align:right"></h5>
+
   			</div>
 			<div class="form-group">
 			 <label for="InputName">이름</label>

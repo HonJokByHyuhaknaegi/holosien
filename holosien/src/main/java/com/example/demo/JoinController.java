@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -22,7 +25,7 @@ import com.github.scribejava.core.model.OAuth2AccessToken;
 @Controller
 public class JoinController {
 	   
-	   @RequestMapping(value="/SuccessJoin")
+	  @RequestMapping(value="/SuccessJoin")
 	   public String SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
 		   
@@ -34,19 +37,46 @@ public class JoinController {
 	        
 	        return "SuccessJoin";
 	    }
-	   
-	   @RequestMapping("/emailAuth")
-	   public ModelAndView emailAuth(@RequestParam String email,HttpServletResponse response, HttpServletRequest request) throws Exception {
-		   /*String email = request.getParameter("InputEmail");*/
-		   String authNum ="";
+		private Logger logger = LoggerFactory.getLogger(JoinController.class);
+		@Autowired
+		private NotificationService notificationService;
+
+		
+		 public String RandomNum(){
+		    	StringBuffer buffer = new StringBuffer();
+		    	for(int i=0; i<=6; i++){
+		    		int n = (int) (Math.random()*10);
+		    		buffer.append(n);
+		    	}
+		    	return buffer.toString();
+		    }
+
+	   @RequestMapping(value="/emailAuth", method= {RequestMethod.GET, RequestMethod.POST})
+	   public ModelAndView emailAuth(@RequestParam(value = "email")String email) throws Exception {
 		   
+		   String authNum ="";
 		   authNum = RandomNum();
 		   
 		   System.out.println(email);
 		   System.out.println(authNum);
 		   
-		   sendSimpleMessage(email.toString(),"holosien id Auth...", authNum);
+		   EmailForm authEmail = new EmailForm();
+		   authEmail.setEmailAddress(email);
+		   authEmail.setAuthNum(authNum);
 		   
+			//send a email
+			try {
+				notificationService.sendNotification(authEmail);
+			}catch(MailException e)
+			{
+				//catch error
+				logger.info("Error Sending Email : "+e.getMessage());
+			}
+
+		   //인증번호 메일 발송 
+		   //sendSimpleMessage(email.toString(),"holosien id Auth...", authNum);
+		   
+		   //인증번호 비교위해 다시 회원가입 페이지로 돌아감 
 		   ModelAndView mv = new ModelAndView();
 		   mv.setViewName("/emailJoin");
 		   mv.addObject("email",email);
@@ -55,7 +85,7 @@ public class JoinController {
 		   return mv;
 	   }
 	   
-	   @Autowired
+	  /* @Autowired
 	    public JavaMailSender emailSender;
 	 
 	    public void sendSimpleMessage(
@@ -69,16 +99,8 @@ public class JoinController {
 	        System.out.println(message);
 	        emailSender.send(message);
 	    }
-	    
-	    public String RandomNum(){
-	    	StringBuffer buffer = new StringBuffer();
-	    	for(int i=0; i<=6; i++){
-	    		int n = (int) (Math.random()*10);
-	    		buffer.append(n);
-	    	}
-	    	return buffer.toString();
-	    }
-	    
+	
+	
 	    /* NaverLoginBO */
 	    private NaverLoginBO naverLoginBO;
 	    
