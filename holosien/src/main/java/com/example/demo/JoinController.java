@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.io.IOException;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,12 +20,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.member.domain.MemberVO;
+import com.example.demo.member.service.MemberService;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
 
 @Controller
 public class JoinController {
-	   
+	 @Resource(name="com.example.demo.member.service.MemberService")
+	 MemberService mMemberService;
+
 	  @RequestMapping(value="/SuccessJoin")
 	   public String SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
@@ -35,7 +40,16 @@ public class JoinController {
 	        System.out.println("---------------------> " + request.getParameter("InputName"));
 	        System.out.println("---------------------> " + request.getParameter("InputAge"));
 	        
-	        return "SuccessJoin";
+	        MemberVO member = new MemberVO();
+	        
+	        member.setEmail(request.getParameter("InputEmail"));
+	        member.setPassword(request.getParameter("InputPassword"));
+	        member.setName(request.getParameter("InputName"));
+	        member.setGender(request.getParameter("InputGender"));
+	        member.setAge(Integer.parseInt(request.getParameter("InputAge")));
+	        member.setManner(0);
+
+	        return mMemberService.memberInsertService(member);
 	    }
 		private Logger logger = LoggerFactory.getLogger(JoinController.class);
 		@Autowired

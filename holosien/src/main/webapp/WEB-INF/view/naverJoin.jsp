@@ -18,6 +18,8 @@ $(document).ready(function() {
 		    
 		    console.log(${result});
 		    $("#completeAuth").html("인증완료");
+		    $("#confirmEmail_Send").hide();
+		    
 		    $("input[name=InputEmail]").val(email);
 		    $("input[name=InputName]").val(name);
 		    

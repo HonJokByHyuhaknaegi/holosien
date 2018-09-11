@@ -56,5 +56,11 @@ public class HomeController {
          return "list";
       }
    
+   @RequestMapping(value="/writeBoard")
+   public String writeBoard() {
+      System.out.println("*******");
+         return "writeBoard";
+      }
+   
    
 }
