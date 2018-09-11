@@ -31,7 +31,7 @@ public class JoinController {
 	 MemberService mMemberService;
 
 	  @RequestMapping(value="/SuccessJoin")
-	   public String SuccessJoin(HttpServletRequest request,
+	   public int SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
 		   
 	        System.out.println("---------------------> login!!!!!!!!!!!");
