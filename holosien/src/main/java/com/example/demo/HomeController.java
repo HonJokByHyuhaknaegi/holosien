@@ -1,7 +1,11 @@
 package com.example.demo;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.board.mapper.BoardMapper;
 
 @Controller
 public class HomeController {
@@ -55,6 +59,15 @@ public class HomeController {
       System.out.println("*******");
          return "list";
       }
+   @Resource(name="com.example.demo.board.mapper.BoardMapper")
+   BoardMapper mBoardMapper;
+   @RequestMapping(value="/test")
+  public String jspTest() throws Exception {
+	   System.out.println("db연동테스트"+mBoardMapper.boardCount());
+	   
+	   
+	   return "test";
+   }
    
    @RequestMapping(value="/writeBoard")
    public String writeBoard() {
