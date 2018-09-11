@@ -28,6 +28,12 @@ public class HomeController {
          return "emailJoin";
       }
    
+   @RequestMapping(value="/kakaoJoin")
+   public String kakaoJoin() {
+      System.out.println("*******");
+         return "kakaoJoin";
+      }
+   
    @RequestMapping(value="/login")
    public String login() {
       System.out.println("*******");
@@ -59,7 +65,7 @@ public class HomeController {
       System.out.println("*******");
          return "list";
       }
-   @Resource(name="com.example.demo.board.mapper.BoardMapper")
+ /*  @Resource(name="com.example.demo.board.mapper.BoardMapper")
    BoardMapper mBoardMapper;
    @RequestMapping(value="/test")
   public String jspTest() throws Exception {
@@ -67,7 +73,7 @@ public class HomeController {
 	   
 	   
 	   return "test";
-   }
+   }*/
    
    @RequestMapping(value="/writeBoard")
    public String writeBoard() {

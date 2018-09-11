@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Holosien</title>
  <link rel="shortcut icon" href="images/ico/favicon.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-144-precomposed.png">
@@ -21,9 +22,11 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
 
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
 <body>
+
 <div id="header">
             <jsp:include page="header.jsp" />
         </div>
@@ -36,7 +39,7 @@
  <div style="text-align:center;">
 							 <a href="${naverUrl}"><img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;"></a>
 							<br>
-							<img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;">
+							<a href="${pageContext.request.contextPath}/kakaoJoin"><img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;"></a>
 							<br>
 							<a href="${pageContext.request.contextPath}/emailJoin"><img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
 							</a>
@@ -45,6 +48,6 @@
 						</div>
       </div>      
    </section>
-						
+
 </body>
 </html>
