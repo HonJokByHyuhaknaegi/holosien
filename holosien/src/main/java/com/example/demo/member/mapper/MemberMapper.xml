@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="com.example.demo.member.mapper.MemberMapper">
  
-<insert id="insertMembers" useGeneratedKeys="true"
+<insert id="insertMembers" parameterType="com.example.demo.member.domain.MemberVO" useGeneratedKeys="true"
     keyProperty="idmember">
   insert into member (email,password,name,gender,age,manner)
   values (#{email},#{password},#{name},#{gender},#{age},#{manner})
