@@ -20,15 +20,15 @@
 				var email = document.getElementById('InputEmail').value;
 				//location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
 				
-			
+				if(!email) alert("이메일을 입력하세요");
+				else{
 				var pop_title = "popupOpener";
 				window.open("",pop_title,"width = 310, height = 180");
 				var frmData = document.joinForm;
 				frmData.target = pop_title;
 				frmData.action = "emailAuth";
 				frmData.submit();
-		 
-
+				}
 			});
 		 
 		  });
@@ -58,6 +58,7 @@
 		  
 		  $('#confirmEmail_Check').click(function()
 			{
+			 
 				var check = "${authNum}";
 				var confirm = document.getElementById('confirmEmail').value;
 				if(!confirm){
