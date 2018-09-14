@@ -24,7 +24,6 @@ import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
-
 @Controller
 public class JoinController {
 	 @Resource(name="com.example.demo.member.service.MemberService")
