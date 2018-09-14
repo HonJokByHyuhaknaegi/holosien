@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.member.domain.MemberVO;
@@ -19,7 +18,7 @@ public class MemberService {
         mMemberMapper.insertMembers(member);
     }
     
-    public List<MemberVO> memberCheck(@Param("email") String email,@Param("password") String password) throws Exception{
+    public List<MemberVO> memberCheck(String email,String password) throws Exception{
         return mMemberMapper.checkMembers(email,password);
     }
 }

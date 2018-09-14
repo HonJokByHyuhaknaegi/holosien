@@ -80,16 +80,16 @@ public class HomeController {
 	   return "test";
    }*/
    
-   @RequestMapping(value="/board/send")
+   @RequestMapping(value="send")
    public String send() {
       System.out.println("*******");
-         return "board/send";
+         return "send";
       }
    
-   @RequestMapping(value="/board/writeBoard")
+   @RequestMapping(value="writeBoard")
    public String writeBoard() {
       System.out.println("*******");
-         return "board/writeBoard";
+         return "writeBoard";
       }
    
 	 @Resource(name="com.example.demo.member.service.MemberService")
@@ -101,8 +101,8 @@ public class HomeController {
 	   String password = request.getParameter("InputPassword");
 	   
 	   List<MemberVO> member = mMemberService.memberCheck(email,password);
-	   System.out.println(member);
-         return "login";
+
+       return "login";
       }
    
    
