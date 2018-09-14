@@ -80,10 +80,10 @@ public class HomeController {
 	   return "test";
    }*/
    
-   @RequestMapping(value="/send")
+   @RequestMapping(value="/board/send")
    public String send() {
       System.out.println("*******");
-         return "send";
+         return "board/send";
       }
    
    @RequestMapping(value="/board/writeBoard")
