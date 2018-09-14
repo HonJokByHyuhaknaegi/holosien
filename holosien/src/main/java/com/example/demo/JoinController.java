@@ -31,7 +31,7 @@ public class JoinController {
 	 MemberService mMemberService;
 
 	  @RequestMapping(value="/SuccessJoin")
-	   public int SuccessJoin(HttpServletRequest request,
+	   public String SuccessJoin(HttpServletRequest request,
 	            HttpServletResponse response) throws Exception {
 		   
 	        System.out.println("---------------------> login!!!!!!!!!!!");
@@ -49,7 +49,8 @@ public class JoinController {
 	        member.setAge(Integer.parseInt(request.getParameter("InputAge")));
 	        member.setManner(0);
 
-	        return mMemberService.memberInsertService(member);
+	        mMemberService.memberInsertService(member);
+	        return "login";
 	    }
 		private Logger logger = LoggerFactory.getLogger(JoinController.class);
 		@Autowired

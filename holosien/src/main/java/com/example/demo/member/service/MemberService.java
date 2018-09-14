@@ -12,7 +12,7 @@ public class MemberService {
 	@Resource(name="com.example.demo.member.mapper.MemberMapper")
 	MemberMapper mMemberMapper;
 	
-    public int memberInsertService(MemberVO member) throws Exception{
-        return mMemberMapper.insertMembers(member);
+    public void memberInsertService(MemberVO member) throws Exception{
+        mMemberMapper.insertMembers(member);
     }
 }

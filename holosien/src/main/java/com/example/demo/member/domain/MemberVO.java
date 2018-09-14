@@ -1,19 +1,13 @@
 package com.example.demo.member.domain;
 
 public class MemberVO {
-private int idMember;
 private String email;
 private String password;
 private String name;
 private String gender;
 private int age;
 private int manner;
-public int getIdMember() {
-	return idMember;
-}
-public void setIdMember(int idMember) {
-	this.idMember = idMember;
-}
+
 public String getEmail() {
 	return email;
 }
