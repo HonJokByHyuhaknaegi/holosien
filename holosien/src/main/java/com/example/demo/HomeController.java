@@ -1,11 +1,16 @@
 package com.example.demo;
 
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.board.mapper.BoardMapper;
+import com.example.demo.member.domain.MemberVO;
+import com.example.demo.member.service.MemberService;
 
 @Controller
 public class HomeController {
@@ -75,10 +80,29 @@ public class HomeController {
 	   return "test";
    }*/
    
+   @RequestMapping(value="/send")
+   public String send() {
+      System.out.println("*******");
+         return "send";
+      }
+   
    @RequestMapping(value="/board/writeBoard")
    public String writeBoard() {
       System.out.println("*******");
          return "board/writeBoard";
+      }
+   
+	 @Resource(name="com.example.demo.member.service.MemberService")
+	 MemberService mMemberService;
+	 
+   @RequestMapping(value="/checkLogin")
+   public String checkLogin(HttpServletRequest request) throws Exception {
+	   String email = request.getParameter("InputEmail");
+	   String password = request.getParameter("InputPassword");
+	   
+	   List<MemberVO> member = mMemberService.memberCheck(email,password);
+	   System.out.println(member);
+         return "login";
       }
    
    
