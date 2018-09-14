@@ -9,7 +9,7 @@
 <body>
 
 	<div id="header">
-		<jsp:include page="header.jsp" />
+		<jsp:include page="../header.jsp" />
 	</div>
 
 	<div class="container">
@@ -19,7 +19,7 @@
 	</div>
 
 	<div id="writeBoard" align="center" style="width:60%; margin: auto;">
-		<form class="form-horizontal" method="post">
+		<form name="nse" class="form-horizontal" action="add_db_nse.php" method="post">
 			<div class="form-group">
 				<label for="subject">제목</label> <input type="text"
 					class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
@@ -27,7 +27,7 @@
 			
 			<div class="form-group">
 				<label for="content">내용</label>
-				<textarea class="form-control" id="content" name="content" rows="3"></textarea>
+				<textarea class="nse_content" id="nse_content" name="nse_content" rows="3"></textarea>
 			</div>
 			<button type="submit" class="btn btn-primary">작성</button>
 		</form>

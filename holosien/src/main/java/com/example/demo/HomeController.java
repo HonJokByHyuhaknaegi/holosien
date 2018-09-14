@@ -75,10 +75,10 @@ public class HomeController {
 	   return "test";
    }*/
    
-   @RequestMapping(value="/writeBoard")
+   @RequestMapping(value="/board/writeBoard")
    public String writeBoard() {
       System.out.println("*******");
-         return "writeBoard";
+         return "board/writeBoard";
       }
    
    
