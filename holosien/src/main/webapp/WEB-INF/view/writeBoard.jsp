@@ -42,7 +42,7 @@ $(function(){
 <body>
 
 	<div id="header">
-		<jsp:include page="../header.jsp" />
+		<jsp:include page="header.jsp" />
 	</div>
 
 	<div class="container">

@@ -80,13 +80,13 @@ public class HomeController {
 	   return "test";
    }*/
    
-   @RequestMapping(value="send")
+   @RequestMapping(value="/send")
    public String send() {
       System.out.println("*******");
          return "send";
       }
    
-   @RequestMapping(value="writeBoard")
+   @RequestMapping(value="/writeBoard")
    public String writeBoard() {
       System.out.println("*******");
          return "writeBoard";

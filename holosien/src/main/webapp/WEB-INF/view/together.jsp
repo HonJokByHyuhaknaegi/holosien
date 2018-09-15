@@ -11,7 +11,7 @@
 $(document).ready(function() {
 	$("#menubar li:nth-child(2)").addClass('active');
 	$("#writeTogether").click(function(){
-		location.href="${pageContext.request.contextPath}/board/writeBoard"
+		location.href="${pageContext.request.contextPath}/writeBoard"
 	});
 /* 	$('#togetherAll').click(function(){
 		   $('#together-board').text("this is all"); 
