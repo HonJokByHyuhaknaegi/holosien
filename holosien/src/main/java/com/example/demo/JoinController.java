@@ -1,6 +1,9 @@
 package com.example.demo;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -15,9 +18,11 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.member.domain.MemberVO;
@@ -105,22 +110,7 @@ public class JoinController {
 	      System.out.println("이메일 인증 팝업");
 	         return "emailPop";
 	      }
-	   
-	  /* @Autowired
-	    public JavaMailSender emailSender;
-	 
-	    public void sendSimpleMessage(
-	      String to, String subject, String text) {
-	        
-	        SimpleMailMessage message = new SimpleMailMessage();
-	        message.setFrom("kryeeong@gmail.com");
-	        message.setTo(to); 
-	        message.setSubject(subject); 
-	        message.setText(text);
-	        System.out.println(message);
-	        emailSender.send(message);
-	    }
-	
+
 	
 	    /* NaverLoginBO */
 	    private NaverLoginBO naverLoginBO;
@@ -164,5 +154,25 @@ public class JoinController {
 	        System.out.println("result"+apiResult);
 	        
 	        return "/naverJoin";
+	    }
+	    
+	    /*kakao 사용자정보 */
+	    @SuppressWarnings("unchecked")
+		@RequestMapping(value="/kakaoJoin",method=RequestMethod.POST)
+	    @ResponseBody
+	    public ModelAndView kakaotest( @RequestBody Map<String,Object>params) {
+	    	Map<String,Object> properties = new HashMap<>();
+	    	Map<String,Object> kakao_account = new HashMap<>();
+
+	    	properties = (Map<String, Object>) params.get("properties");
+	    	kakao_account = (Map<String, Object>) params.get("kakao_account");
+	    	ModelAndView model = new ModelAndView();
+	    	model.setViewName("/kakaoJoin");
+	    	model.addObject("name", properties.get("nickname"));
+	    	model.addObject("email",kakao_account.get("email"));
+	    	model.addObject("age",kakao_account.get("age_range"));
+	    	model.addObject("gender",kakao_account.get("gender"));
+	    	System.out.println(model);	
+	        return model;
 	    }
 }
