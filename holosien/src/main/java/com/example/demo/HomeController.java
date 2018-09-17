@@ -1,11 +1,19 @@
 package com.example.demo;
 
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.board.mapper.BoardMapper;
+import com.example.demo.member.domain.MemberVO;
+import com.example.demo.member.service.MemberService;
 
 @Controller
 public class HomeController {
@@ -75,10 +83,42 @@ public class HomeController {
 	   return "test";
    }*/
    
+   @RequestMapping(value="/send")
+   public String send() {
+      System.out.println("*******");
+         return "send";
+      }
+   
    @RequestMapping(value="/writeBoard")
    public String writeBoard() {
       System.out.println("*******");
          return "writeBoard";
+      }
+   
+	 @Resource(name="com.example.demo.member.service.MemberService")
+	 MemberService mMemberService;
+	 
+   @RequestMapping(value="/checkLogin")
+   public ModelAndView checkLogin(@ModelAttribute MemberVO vo, HttpSession session, HttpServletRequest request) throws Exception {
+	   
+	   vo.setEmail(request.getParameter("InputEmail"));
+	   vo.setPassword(request.getParameter("InputPassword"));
+			   
+	   boolean result = mMemberService.loginCheck(vo, session);
+	   ModelAndView mav = new ModelAndView();
+	   if(result==true){
+		   mav.setViewName("home");
+		   mav.addObject("msg","success");
+	   }else{
+		   mav.setViewName("login");
+		   mav.addObject("msg", "fail");
+	   }
+	  /* String email = request.getParameter("InputEmail");
+	   String password = request.getParameter("InputPassword");
+	   
+	   mMemberService.memberCheck(email,password);*/
+
+       return mav;
       }
    
    

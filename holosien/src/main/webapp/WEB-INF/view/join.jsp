@@ -25,44 +25,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script>
-	 Kakao.init('902d6a7c353fa5d9d5588cb5f944ce94');
-
-	 $(function() {
-		 $('#kakao').click(function(){
-		      // 로그인 창을 띄웁니다.
-		      Kakao.Auth.login({
-		        success: function(authObj) {
-		         Kakao.API.request({
-		        	  url: '/v2/user/me', //호출할 APIurl 
-		        	  success:function(res){
-		        		  $.ajax({
-		        			  url:"kakaoJoin",
-		        			  method:"post",
-		        			  type:"json",
-		        			  contentType:"application/json",
-		        			  data:JSON.stringify(res),
-		        			  success:function(data){
-		        				  console.log(data);
-									
-		        			  },
-		        			  fail: function(err) {
-				                  alert(JSON.stringify(err));
-				              }
-		        		  });
-		        		  
-		        	  },
-		              fail: function(err) {
-		                  alert(JSON.stringify(err));
-		              }
-		          }); 
-		        },
-		        fail: function(err) {
-		          alert(JSON.stringify(err));
-		        }
-		      });
-		 
-		  });
-	 });
+	
  </script>
 </head>
 <body>
@@ -79,7 +42,7 @@
  <div style="text-align:center;">
 							 <a href="${naverUrl}"><img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;"></a>
 							<br>
-							<img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;" id = "kakao">
+							<a href="${pageContext.request.contextPath}/kakaoJoin"><img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;" id = "kakao"></a>
 							<br>
 							<a href="${pageContext.request.contextPath}/emailJoin"><img src="${pageContext.request.contextPath}/resources/images/emailSignupbtn.jpg" style="margin:20px 0px;;width:340px; height:50px;">
 							</a>

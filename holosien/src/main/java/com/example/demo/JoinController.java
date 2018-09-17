@@ -29,7 +29,6 @@ import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
-
 @Controller
 public class JoinController {
 	 @Resource(name="com.example.demo.member.service.MemberService")
@@ -160,19 +159,24 @@ public class JoinController {
 	    @SuppressWarnings("unchecked")
 		@RequestMapping(value="/kakaoJoin",method=RequestMethod.POST)
 	    @ResponseBody
-	    public ModelAndView kakaotest( @RequestBody Map<String,Object>params) {
+	    public Map<String,Object> kakaotest( Model model, @RequestBody Map<String,Object>params) {
 	    	Map<String,Object> properties = new HashMap<>();
 	    	Map<String,Object> kakao_account = new HashMap<>();
 
 	    	properties = (Map<String, Object>) params.get("properties");
 	    	kakao_account = (Map<String, Object>) params.get("kakao_account");
-	    	ModelAndView model = new ModelAndView();
-	    	model.setViewName("/kakaoJoin");
-	    	model.addObject("name", properties.get("nickname"));
-	    	model.addObject("email",kakao_account.get("email"));
-	    	model.addObject("age",kakao_account.get("age_range"));
-	    	model.addObject("gender",kakao_account.get("gender"));
-	    	System.out.println(model);	
-	        return model;
+	    	ModelAndView mv = new ModelAndView();
+	    	mv.setViewName("/kakaoJoin");
+	    	mv.addObject("name", properties.get("nickname"));
+	    	mv.addObject("email",kakao_account.get("email"));
+	    	mv.addObject("age",kakao_account.get("age_range"));
+	    	mv.addObject("gender",kakao_account.get("gender"));
+	    	
+	    	model.addAttribute("name", properties.get("nickname"));
+	    	model.addAttribute("email",kakao_account.get("email"));
+	    	model.addAttribute("age",kakao_account.get("age_range"));
+	    	model.addAttribute("gender",kakao_account.get("gender"));
+	    	System.out.println(properties);	
+	        return properties;
 	    }
 }

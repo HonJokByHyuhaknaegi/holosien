@@ -5,9 +5,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="com.example.demo.member.mapper.MemberMapper">
  
-<insert id="insertMembers">
+<insert id="insertMembers" parameterType="com.example.demo.member.domain.MemberVO">
   insert into member (email,password,name,gender,age,manner)
   values (#{email},#{password},#{name},#{gender},#{age},#{manner})
 </insert>
+
+<select id="checkMembers" resultType="com.example.demo.member.domain.MemberVO">
+select * from member where email=#{email} and password=#{password}
+</select>
+
+<select id="loginCheck" resultType="String">
+select email from member where email=#{email} and password=#{password}
+</select>
+
+<select id = "viewMember" resultType="com.example.demo.member.domain.MemberVO">
+select * from member where email = #{email} and password=#{password}
+</select>
 
 </mapper>
