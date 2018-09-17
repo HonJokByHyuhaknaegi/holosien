@@ -24,6 +24,7 @@
 		<java.version>1.8</java.version>
 		
 		<bean id="naverLoginBO" class="com.example.demo.NaverLoginBO" autowire="byType"></bean>
+		<bean id="MemberDAO" class="com.example.demo.member.dao.MemberDAO" autowire="byType"></bean>
 		   <spring-framework.version>4.2.5.RELEASE</spring-framework.version>
 		
 	</properties>
