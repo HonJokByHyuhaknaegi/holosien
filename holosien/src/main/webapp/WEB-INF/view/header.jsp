@@ -50,7 +50,7 @@
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
-							<li><a href="${pageContext.request.contextPath}/join"><i class="glyphicon glyphicon-user"></i></a></li>
+							<li><a href="${pageContext.request.contextPath}/myPage"><i class="glyphicon glyphicon-user"></i></a></li>
 							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>

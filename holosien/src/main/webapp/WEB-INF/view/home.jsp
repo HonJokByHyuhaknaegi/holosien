@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
 function goLogin() {
-	location.href="${pageContext.request.contextPath}/join";
+	location.href="${pageContext.request.contextPath}/myPage";
 }
 </script>
 </head>

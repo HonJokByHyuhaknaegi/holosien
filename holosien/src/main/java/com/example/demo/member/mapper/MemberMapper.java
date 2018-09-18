@@ -12,6 +12,6 @@ import com.example.demo.member.domain.MemberVO;
 public interface MemberMapper {
 public void insertMembers(MemberVO member) throws Exception;
 public List<MemberVO> checkMembers(@Param("email") String email, @Param("password") String password) throws Exception;
-public boolean loginCheck(MemberVO member) throws Exception;
+public String loginCheck(MemberVO member) throws Exception;
 public MemberVO viewMember(MemberVO member) throws Exception;
 }
