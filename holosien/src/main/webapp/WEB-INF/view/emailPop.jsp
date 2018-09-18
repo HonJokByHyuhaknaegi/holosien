@@ -52,7 +52,6 @@
 	
 </head>
 <body>
-인증화면! 
 		<div class="container">
 			<div class="sectionContent col-md-6 col-md-offset-3">
 

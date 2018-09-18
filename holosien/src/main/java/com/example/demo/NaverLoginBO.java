@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -97,6 +101,39 @@ public class NaverLoginBO {
         System.out.println(response.getBody());     
         return response.getBody();
     }
+    
+    public void naverLogout(OAuth2AccessToken oauthToken){
+    	URL url = null;
+        URLConnection urlConnection = null;
+        
+        // URL 주소
+        String sUrl = "https://nid.naver.com/oauth2.0/token?grant_type=delete";
+        System.out.println(oauthToken.getAccessToken());
+        try {
+        	String token = URLEncoder.encode(oauthToken.getAccessToken(), "UTF-8");
+            // Get방식으로 전송 하기
+            url = new URL(sUrl + "&client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&access_token=" + token + "&service_provider=NAVER");
+            urlConnection = url.openConnection();
+            printByInputStream(urlConnection.getInputStream());
 
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+ // 웹 서버로 부터 받은 웹 페이지 결과를 콘솔에 출력하는 메소드
+
+    public static void printByInputStream(InputStream is) {
+        byte[] buf = new byte[1024];
+        int len = -1;     
+        try {
+            while((len = is.read(buf, 0, buf.length)) != -1) {
+                System.out.write(buf, 0, len);
+            }
+        } catch(IOException e) {
+           e.printStackTrace();
+
+        }
+    }
 
 }

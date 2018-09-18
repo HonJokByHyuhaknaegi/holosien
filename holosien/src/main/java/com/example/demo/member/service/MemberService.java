@@ -16,10 +16,18 @@ public class MemberService {
 	@Resource(name="com.example.demo.member.mapper.MemberMapper")
 	MemberMapper mMemberMapper;
 	
-	MemberDAO mMemberDao;
-	
     public void memberInsertService(MemberVO member) throws Exception{
         mMemberMapper.insertMembers(member);
+    }
+    
+    public boolean memberCheck(MemberVO vo) throws Exception{
+        /*return mMemberMapper.checkMembers(email,password);*/
+
+    String email = mMemberMapper.checkMembers(vo);
+    boolean result = (email==null)?false:true;
+    
+    System.out.println("eeeeeeeeeeee"+result);
+    return result;
     }
     
     public boolean loginCheck(MemberVO vo, HttpSession session) throws Exception{

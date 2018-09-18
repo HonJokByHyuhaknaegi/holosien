@@ -1,8 +1,7 @@
 package com.example.demo;
 
-import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -140,7 +139,8 @@ public class JoinController {
 
 	    //네이버 로그인 성공시 callback호출 메소드
 	    @RequestMapping(value = "/callback", method = { RequestMethod.GET, RequestMethod.POST })
-	    public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+	    public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session,
+	    		HttpServletResponse response)
 	            throws Exception {
 	        System.out.println("여기는 callback");
 	        OAuth2AccessToken oauthToken;
@@ -149,21 +149,47 @@ public class JoinController {
 	        apiResult = naverLoginBO.getUserProfile(oauthToken);
 	        System.out.println(naverLoginBO.getUserProfile(oauthToken).toString());
 	        
-	        
 	        JSONObject jsonobj = jsonparse.stringToJson(apiResult, "response");
 			String email = jsonparse.JsonToString(jsonobj, "email");
 			
+			System.out.println("email : "+email);
 	        MemberVO vo = new MemberVO();
 	        vo.setEmail(email);
 	        
-	       boolean result = mMemberService.loginCheck(vo, session);
+	       boolean result = mMemberService.memberCheck(vo);
 	 	   
 	 	   if(result==true){
+	 		   	response.setContentType("text/html; charset=UTF-8"); 
+	             PrintWriter out = response.getWriter();  
+	             out.println("<script>alert('이미 가입된 계정입니다.'); </script>");
+	            out.flush();
+	            naverLoginBO.naverLogout(oauthToken);
 	 		   return "join";
 	 	   }else{
 	 		  model.addAttribute("result", apiResult);
-	 		 return "/naverJoin";
+	 		 return "naverJoin";
 	 	   }
+	    }
+	    
+	    @RequestMapping(value = "/checkDuplication", method = { RequestMethod.GET, RequestMethod.POST })
+	    public ModelAndView checkDuplication(@RequestParam(value = "InputEmail")String email)
+	            throws Exception {
+	        
+	        MemberVO vo = new MemberVO();
+	        vo.setEmail(email);
+	        
+	       boolean result = mMemberService.memberCheck(vo);
+	       
+	       ModelAndView mv = new ModelAndView();
+	 	   
+	       if(result==true){ // 중복
+			   mv.setViewName("/checkDupl");
+			   mv.addObject("result",true);	        
+	 	   }else{ // 중복 없을 때
+	 		  mv.setViewName("/checkDupl");
+	 		 mv.addObject("result",false);	 
+	 	   }
+	 	   return mv;
 	    }
 	    
 	    /*kakao 사용자정보 */

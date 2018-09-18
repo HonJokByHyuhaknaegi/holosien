@@ -17,7 +17,9 @@ $(document).ready(function() {
 		    var gender = ${result}.response.gender;
 		    
 		    console.log(${result});
+		    $("#checkDuplication").html("중복 확인 완료");
 		    $("#completeAuth").html("인증완료");
+		    $("#Duplication").hide();
 		    $("#confirmEmail_Send").hide();
 		    
 		    $("input[name=InputEmail]").val(email);
