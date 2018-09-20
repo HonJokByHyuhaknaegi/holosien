@@ -335,7 +335,7 @@
     		sUploadURL;
     	
     	// sUploadURL= 'http://test.naver.com/popup/quick_photo/FileUploader_html5.php'; 	//upload URL
-    	sUploadURL= '/nse/nse_files/quick_photo_uploader/popup/FileUploader_html5.php'; 	//upload URL
+    	sUploadURL= 'FileUploader_html5.jsp'; 	//upload URL
 
     	//파일을 하나씩 보내고, 결과를 받음.
     	for(var j=0, k=0; j < nImageInfoCnt; j++) {
@@ -360,19 +360,32 @@
 			type: 'xhr',
 			method : "post",
 			onload : function(res){ // 요청이 완료되면 실행될 콜백 함수
+				var sResString=res._response.responseText;
 				if (res.readyState() == 4) {
+					if(sResString.indexOf("NOTALLOW_")>-1){
+						var sFileName=sResString.replace("NOTALLOW_","");
+						swal("경고","이미지 파일 (jpg,gif,png,bmp)만 업로드 하실 수 있습니다. ("+sFileName+")","warning");
+						
+					}
+					else{
 					//성공 시에  responseText를 가지고 array로 만드는 부분.
 					makeArrayFromString(res._response.responseText);
+					}
 				}
+					
 			},
 			timeout : 3,
 			onerror :  jindo.$Fn(onAjaxError, this).bind()
 		});
-		oAjax.header("contentType","multipart/form-data");
+    	var formData=new FormData();
+    	document.getElementById("file").files[0]=tempFile;
+    	formData.append("file",document.getElementById("file").files[0]);
+    	oAjax.request(formData);
+/*		oAjax.header("contentType","multipart/form-data");
 		oAjax.header("file-name",encodeURIComponent(tempFile.name));
 		oAjax.header("file-size",tempFile.size);
 		oAjax.header("file-Type",tempFile.type);
-		oAjax.request(tempFile);
+		oAjax.request(tempFile);*/
     }
     
     function makeArrayFromString(sResString){
@@ -452,10 +465,11 @@
 	    elDropArea.removeEventListener("drop", drop, false);	
 	}
  	
+/*	
 	/**
 	 * Ajax 통신 시 error가 발생할 때 처리하는 함수입니다.
 	 * @return
-	 */
+	 
 	function onAjaxError (){
 		alert("[가이드]사진 업로더할 서버URL셋팅이 필요합니다.-onAjaxError"); //설치 가이드 안내 문구임. 실 서비스에서는 삭제. 
 	}
@@ -463,7 +477,7 @@
  	/**
       * 이미지 업로드 시작
       * 확인 버튼 클릭하면 호출되는 msg
-      */
+      
      function uploadImage (e){
     	 if(!bSupportDragAndDropAPI){
     		 generalUpload();
@@ -471,13 +485,14 @@
     		 html5Upload();
     	 }
      }
-     
+     */
+	
  	/**
  	 * jindo에 파일 업로드 사용.(iframe에 Form을 Submit하여 리프레시없이 파일을 업로드하는 컴포넌트)
  	 */
  	function callFileUploader (){
  		oFileUploader = new jindo.FileUploader(jindo.$("uploadInputBox"),{
- 			sUrl  : 'http://test.naver.com/Official-trunk/workspace/popup/quick_photo/FileUploader.php',	//샘플 URL입니다.
+ 			sUrl  : 'FileUploader_html5.jsp',	//샘플 URL입니다.
  	        sCallback : location.href.replace(/\/[^\/]*$/, '') + '/callback.html',	//업로드 이후에 iframe이 redirect될 콜백페이지의 주소
  	    	sFiletype : "*.jpg;*.png;*.bmp;*.gif",						//허용할 파일의 형식. ex) "*", "*.*", "*.jpg", 구분자(;)	
  	    	sMsgNotAllowedExt : 'JPG, GIF, PNG, BMP 확장자만 가능합니다',	//허용할 파일의 형식이 아닌경우에 띄워주는 경고창의 문구

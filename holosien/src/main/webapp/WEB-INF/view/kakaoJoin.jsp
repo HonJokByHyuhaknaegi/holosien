@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -11,18 +11,18 @@
   $(document).ready(function() {
 	  
 	  Kakao.init('902d6a7c353fa5d9d5588cb5f944ce94');
-			      // ·Î±×ÀÎ Ã¢À» ¶ç¿ó´Ï´Ù.
+			      // ë¡œê·¸ì¸ ì°½ì„ ë„ì›ë‹ˆë‹¤.
 			      Kakao.Auth.login({
 			        success: function(authObj) {
 			         Kakao.API.request({
-			        	  url: '/v2/user/me', //È£ÃâÇÒ APIurl 
+			        	  url: '/v2/user/me', //í˜¸ì¶œí•  APIurl 
 			        	  success:function(res){
 			        		var name = res.properties.nickname;
 			      		    var email = res.kakao_account.email;
 			      		    var age = res.kakao_account.age_range;
 			      		    var gender = res.kakao_account.gender;
 
-			      		    $("#completeAuth").html("ÀÎÁõ¿Ï·á");
+			      		    $("#completeAuth").html("ì¸ì¦ì™„ë£Œ");
 			      		    $("#confirmEmail_Send").hide();
 			      		    
 			      		    $("input[name=InputEmail]").val(email);

@@ -40,7 +40,7 @@
             회원가입 방법을 선택하세요!
          </h2>
  <div style="text-align:center;">
-							 <a href="${naverUrl}"><img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;"></a>
+							 <a href="${pageContext.request.contextPath}/naver"><img src="${pageContext.request.contextPath}/resources/images/naverSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;"></a>
 							<br>
 							<a href="${pageContext.request.contextPath}/kakaoJoin"><img src="${pageContext.request.contextPath}/resources/images/kakaoSignupbtn.jpg" style="margin:20px 0px;width:340px; height:50px;" id = "kakao"></a>
 							<br>

@@ -28,6 +28,12 @@ public class HomeController {
          return "join";
       }
    
+   @RequestMapping(value="/myPage")
+   public String myPage() {
+      System.out.println("*myPage 가자*****");
+         return "myPage";
+      }
+   
    @RequestMapping(value="/emailJoin")
    public String emailJoin() {
       System.out.println("*******");
