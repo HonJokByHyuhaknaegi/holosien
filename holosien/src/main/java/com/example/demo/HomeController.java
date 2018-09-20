@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -46,6 +44,13 @@ public class HomeController {
    public String login() {
       System.out.println("*******");
          return "login";
+      }
+   
+   @RequestMapping(value="/logout")
+   public String logout(HttpSession session) {
+      session.invalidate();
+	   System.out.println("logout");
+         return "home";
       }
    
    @RequestMapping(value="/together")
@@ -94,6 +99,12 @@ public class HomeController {
       System.out.println("*******");
          return "writeBoard";
       }
+ 
+   @RequestMapping(value="/searchLocation")
+   public String searchLocation() {
+      System.out.println("*******");
+         return "searchLocation";
+      }
    
 	 @Resource(name="com.example.demo.member.service.MemberService")
 	 MemberService mMemberService;
@@ -107,7 +118,7 @@ public class HomeController {
 	   boolean result = mMemberService.loginCheck(vo, session);
 	   ModelAndView mav = new ModelAndView();
 	   if(result==true){
-		   mav.setViewName("home");
+		   mav.setViewName("myPage");
 		   mav.addObject("msg","success");
 	   }else{
 		   mav.setViewName("login");
