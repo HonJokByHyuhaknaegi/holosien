@@ -8,8 +8,8 @@
 <%
 
 ServletContext context = getServletContext();
-System.out.println("RealPath : "+context.getRealPath("/editor/upload"));
-String path = context.getRealPath("/editor/upload");
+System.out.println("RealPath : "+context.getRealPath("/resources/editor/upload"));
+String path = context.getRealPath("/resources/editor/upload");
 String filename = "";
 
 

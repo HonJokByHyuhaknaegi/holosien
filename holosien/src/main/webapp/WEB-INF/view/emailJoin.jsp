@@ -21,10 +21,8 @@
    $(document).ready(function() {
       $('#confirmEmail_Send').click(
          function() {
-            $("#confirmEmail").removeAttr("disabled");
-               //var email = $('#InputEmail').val();
+          //  $("#confirmEmail").removeAttr("disabled");
                var email = document.getElementById('InputEmail').value;
-               //location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
                if (!email) alert("이메일을 입력하세요");
                else if ($('#checkDuplication').text() == "") {
                   alert("이메일 중복확인이 필요합니다.");
@@ -63,7 +61,10 @@
          alert("이메일 인증이 필요합니다.");
          return false;
       } else
+    	  {
+    	  location.href="${pageContext.request.contextPath}/SuccessJoin";
          return true;
+    	  }
    }
 
    $(function() {
