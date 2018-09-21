@@ -1,5 +1,7 @@
 package com.example.demo.member.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.board.domain.BoardVO;
@@ -12,5 +14,8 @@ public void insertMembers(MemberVO member) throws Exception;
 public String checkMembers(MemberVO member) throws Exception;
 public String loginCheck(MemberVO member) throws Exception;
 public MemberVO viewMember(MemberVO member) throws Exception;
+
 public void insertBoards(BoardVO board);
+public int boardCount() throws Exception;
+public List<BoardVO> boardList() throws Exception;
 }

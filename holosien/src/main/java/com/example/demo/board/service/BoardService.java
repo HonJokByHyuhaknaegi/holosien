@@ -1,5 +1,7 @@
 package com.example.demo.board.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -14,5 +16,9 @@ public class BoardService {
 	
     public void boardInsertService(BoardVO board) throws Exception{
         mMemberMapper.insertBoards(board);
+    }
+    
+ public List<BoardVO> boardListService() throws Exception{
+        return mMemberMapper.boardList();
     }
 }

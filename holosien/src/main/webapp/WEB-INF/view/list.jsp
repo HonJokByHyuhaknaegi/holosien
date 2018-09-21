@@ -1,24 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
- <title>°Ô½ÃÆÇ</title>
+ <title>ê²Œì‹œíŒ</title>
  <style>
  .custom-border-btn{padding:5px 20px; background:none; margin-bottom:20px}
  </style>
  </head>
  <body>
-
+ hi
+${boardlist}
+ <c:forEach var="l" items="${boardlist}">
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
-<div id="category"><p>[Ä£±¸Ã£±â]</p></div>
-<div id="title"><h4>10¿ù 10-15 ·±´ø!!</h4></div>
-<div id="location"><p>¼­¿ï Æ¯º°½Ã °ü¾Ç±¸ ½Å¸²µ¿</p></div>
+<div id="category"><p>${l.category}</p></div>
+<div id="title"><h4>${l.subject}</h4></div>
+<div id="location"><p>ì„œìš¸ íŠ¹ë³„ì‹œ ê´€ì•…êµ¬ ì‹ ë¦¼ë™</p></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<p>2¸í</p>
-<p>½ÅÀ¯¸²</p>
+<p>2ëª…</p>
+<p>${l.writer}</p>
+<p>${l.reg_date}</p>
+<button class="custom-border-btn">more</button>
+</div>
+<hr width=100% align="center">
+</div>
+          </c:forEach>
+
+<!-- <div style="width:100%; margin:auto;" >
+<div id="left" style="float:left; padding-left:30px">
+<div id="category"><p>[ì¹œêµ¬ì°¾ê¸°]</p></div>
+<div id="title"><h4>10ì›” 10-15 ëŸ°ë˜!!</h4></div>
+<div id="location"><p>ì„œìš¸ íŠ¹ë³„ì‹œ ê´€ì•…êµ¬ ì‹ ë¦¼ë™</p></div>
+</div>
+<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<p>2ëª…</p>
+<p>ì‹ ìœ ë¦¼</p>
 <p>2018-08-29</p>
 <button class="custom-border-btn">more</button>
 </div>
@@ -27,13 +46,13 @@
 
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
-<div id="category"><p>[Ä£±¸Ã£±â]</p></div>
-<div id="title"><h4>1½Ã¿¡ ¹ä °°ÀÌ ¸ÔÀ¸½Ç ºÐ~</h4></div>
-<div id="location"><p>¼­¿ï Æ¯º°½Ã °­³²±¸ ½Å»çµ¿</p></div>
+<div id="category"><p>[ì¹œêµ¬ì°¾ê¸°]</p></div>
+<div id="title"><h4>1ì‹œì— ë°¥ ê°™ì´ ë¨¹ìœ¼ì‹¤ ë¶„~</h4></div>
+<div id="location"><p>ì„œìš¸ íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬ ì‹ ì‚¬ë™</p></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<p>3¸í</p>
-<p>¹Ú¼ÒÇö</p>
+<p>3ëª…</p>
+<p>ë°•ì†Œí˜„</p>
 <p>2018-08-29</p>
 <button class="custom-border-btn">more</button>
 </div>
@@ -42,18 +61,18 @@
 
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
-<div id="category"><p>[·ë¸ÞÀÌÆ®]</p></div>
-<div id="title"><h4>Ãæ¹«·Î ·ë¸ÞÀÌÆ® ¿©ÀÚ</h4></div>
-<div id="location"><p>¼­¿ï Æ¯º°½Ã Áß±¸ ÇÊµ¿</p></div>
+<div id="category"><p>[ë£¸ë©”ì´íŠ¸]</p></div>
+<div id="title"><h4>ì¶©ë¬´ë¡œ ë£¸ë©”ì´íŠ¸ ì—¬ìž</h4></div>
+<div id="location"><p>ì„œìš¸ íŠ¹ë³„ì‹œ ì¤‘êµ¬ í•„ë™</p></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<p>1¸í</p>
-<p>±è°æ¹Î</p>
+<p>1ëª…</p>
+<p>ê¹€ê²½ë¯¼</p>
 <p>2018-08-29</p>
 <button class="custom-border-btn">more</button>
 </div>
 <hr width=100% align="center">
-</div>
+</div> -->
 
 
 
