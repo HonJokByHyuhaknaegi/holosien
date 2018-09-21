@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Holosien-MyPage</title>
+<title>Holosien - MyPage</title>
 </head>
 <body>
 <div id="header">
