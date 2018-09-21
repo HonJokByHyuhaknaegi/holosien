@@ -118,9 +118,7 @@
 				<span class="nino-subHeading">Sign Up</span> 회원가입
 			</h2>
 			<div class="sectionContent col-md-6 col-md-offset-3">
-				<form name="joinForm" id="joinForm" method="post"
-					onsubmit="return formCheck(this);"
-					action="${pageContext.request.contextPath}/SuccessJoin">
+				<form name="joinForm" id="joinForm" method="post" onsubmit="return formCheck();" action="${pageContext.request.contextPath}/SuccessJoin">
 					<div class="form-group">
 						<label for="InputEmail">이메일 주소</label> <input type="email"
 							class="form-control" id="InputEmail" name="InputEmail"
