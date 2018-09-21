@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/map.css" />
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/board/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e&libraries=services"></script>
@@ -19,7 +19,7 @@ $(function(){
 	nhn.husky.EZCreator.createInIFrame({
 		oAppRef: editor_object,
 		elPlaceHolder: "smarteditor",
-		sSkinURI: "${pageContext.request.contextPath}/board/SmartEditor2Skin.html",	
+		sSkinURI: "${pageContext.request.contextPath}/resources/editor/SmartEditor2Skin.html",	
 		htParams : {
 			// 툴바 사용 여부 (true:사용/ false:사용하지 않음) 
 			bUseToolbar : true,	
