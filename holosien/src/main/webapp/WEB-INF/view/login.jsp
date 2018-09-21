@@ -34,10 +34,14 @@
 <style>
 input {width:300px; height:50px;}
 </style>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	if("${msg}"=="fail") alert("로그인 실패");
+});
+</script>
 </head>
 <body>
-
 
 	<div id="header">
 		<jsp:include page="header.jsp" />

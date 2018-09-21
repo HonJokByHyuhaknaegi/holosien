@@ -23,6 +23,6 @@ select * from member where email = #{email} and password=#{password}
 </select>
 
 <insert id="insertBoards" parameterType="com.example.demo.board.domain.BoardVO">
-insert into board values (default, #{subject},#{content},${writer},default,#{boardcol},#{location_X},#{location_Y})
+insert into board values (default, '#{subject}','#{content}','${writer}',default,#{boardcol},#{location_X, jdbcType=DOUBLE},#{location_Y, jdbcType=DOUBLE})
 </insert>
 </mapper>

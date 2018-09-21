@@ -9,8 +9,8 @@ public class BoardVO {
 	private String writer;
 	private Date reg_date;
 	private String boardcol;
-	private String location_X;
-	private String location_Y;
+	private double location_X;
+	private double location_Y;
 	
 	public int getBno() {
 		return bno;
@@ -25,16 +25,16 @@ public class BoardVO {
 		this.boardcol = boardcol;
 	}
 	
-	public String getLocation_X() {
+	public double getLocation_X() {
 		return location_X;
 	}
-	public void setLocation_X(String location_X) {
+	public void setLocation_X(double location_X) {
 		this.location_X = location_X;
 	}
-	public String getLocation_Y() {
+	public double getLocation_Y() {
 		return location_Y;
 	}
-	public void setLocation_Y(String location_Y) {
+	public void setLocation_Y(double location_Y) {
 		this.location_Y = location_Y;
 	}
 	public String getSubject() {
