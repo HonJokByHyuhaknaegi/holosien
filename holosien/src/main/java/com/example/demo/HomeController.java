@@ -105,6 +105,12 @@ public class HomeController {
       System.out.println("*******");
          return "writeBoard";
       }
+ 
+   @RequestMapping(value="/searchLocation")
+   public String searchLocation() {
+      System.out.println("*******");
+         return "searchLocation";
+      }
    
 	 @Resource(name="com.example.demo.member.service.MemberService")
 	 MemberService mMemberService;
