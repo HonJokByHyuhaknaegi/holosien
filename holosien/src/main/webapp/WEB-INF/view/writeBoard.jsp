@@ -19,7 +19,7 @@ $(function(){
 	nhn.husky.EZCreator.createInIFrame({
 		oAppRef: editor_object,
 		elPlaceHolder: "smarteditor",
-		sSkinURI: "${pageContext.request.contextPath}/board/SmartEditor2Skin.html",	
+		sSkinURI: "${pageContext.request.contextPath}/resources/editor/SmartEditor2Skin.html",	
 		htParams : {
 			// 툴바 사용 여부 (true:사용/ false:사용하지 않음) 
 			bUseToolbar : true,	
@@ -85,7 +85,7 @@ $(function(){
 				<button type="button" class ="btn btn-default btn-sm" id="searchLocation" name="searchLocation">검색하기</button>
 				<input type="text"
 					class="form-control" id="location_result" name="location_result" placeholder="주소를 입력하세요."> <br>
-					
+					</div>
 			<div class="form-group">
 				<label for="content">내용</label>
 				<textarea class="smarteditor" id="smarteditor" name="smarteditor" rows="10" cols="100" style="width:100%; height:412px;"></textarea>
