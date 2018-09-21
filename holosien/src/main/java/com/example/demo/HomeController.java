@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.mapper.BoardMapper;
+import com.example.demo.board.service.BoardService;
 import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
 
@@ -103,8 +105,22 @@ public class HomeController {
 	   return "test";
    }*/
    
+	 @Resource(name="com.example.demo.board.service.BoardService")
+	 BoardService bBoardService;
+	 
    @RequestMapping(value="/send")
-   public String send(HttpServletRequest request) {
+   public String send(HttpServletRequest request, HttpSession session) throws Exception {
+	   BoardVO vo = new BoardVO();
+	   
+	   vo.setBoardcol(request.getParameter("category"));
+	   vo.setLocation_X(request.getParameter("location_position_x"));
+	   vo.setLocation_Y(request.getParameter("location_position_y"));
+	   vo.setSubject(request.getParameter("subject"));
+	   vo.setContent(request.getParameter("smarteditor"));
+	   vo.setWriter((String) session.getAttribute("userID"));
+			   
+	   bBoardService.boardInsertService(vo);
+
       System.out.println("*******");
       System.out.println("스마트에디터" + request.getParameter("smarteditor"));
          return "send";
@@ -198,7 +214,7 @@ public class HomeController {
             //파일 기본경로
             String dftFilePath = request.getSession().getServletContext().getRealPath("/");
             //파일 기본경로 _ 상세경로
-            String filePath = dftFilePath + "baord" + File.separator + "photo_upload" + File.separator;
+            String filePath = dftFilePath + "board" + File.separator + "photo_upload" + File.separator;
             File file = new File(filePath);
             if(!file.exists()) {
                file.mkdirs();
