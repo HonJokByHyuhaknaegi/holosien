@@ -11,7 +11,7 @@ $(function(){
 				var duplication = "${result}";
 				if(duplication=="false"){
 					console.log("중복 없음");
-					$(opener.document).find("#checkDuplication").text("중복 확인 완료");
+					$(opener.document).find("#checkDuplication").text("중복확인");
 					$(opener.document).find("#Duplication").hide();
 					self.close();
 				}

@@ -16,8 +16,17 @@
  <c:redirect url="join"/>
 </c:when>
 <c:otherwise>
-${sessionScope.userID} 님이 로그인 중입니다.
-<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+<section id="login">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				<span class="nino-subHeading">MyPage.</span> 마이페이지
+			</h2>
+			<div align=center>
+				${sessionScope.userID} 님이 로그인 중입니다.
+				<br><a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+				</div>
+		</div>
+	</section>	
 </c:otherwise>
 </c:choose>
 

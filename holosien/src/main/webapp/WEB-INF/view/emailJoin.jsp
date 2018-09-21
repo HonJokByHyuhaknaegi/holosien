@@ -26,6 +26,9 @@
 					var email = document.getElementById('InputEmail').value;
 					//location.href="${pageContext.request.contextPath}/emailAuth?email="+email;
 					if (!email) alert("이메일을 입력하세요");
+					else if ($('#checkDuplication').text() == "") {
+						alert("이메일 중복확인이 필요합니다.");
+					}
 					else {
 						var pop_title = "popupOpener";
 						window.open("", pop_title,"width = 310, height = 180");
