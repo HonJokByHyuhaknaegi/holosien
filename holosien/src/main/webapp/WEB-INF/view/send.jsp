@@ -13,7 +13,7 @@
     request.setCharacterEncoding("utf-8");
     
     String title = request.getParameter("subject");
-    String content = request.getParameter("smarteditor");
+    String content = request.getParameter("textAreaContent");
     
     //콘솔 출력
     System.out.println("제목:"+title);
