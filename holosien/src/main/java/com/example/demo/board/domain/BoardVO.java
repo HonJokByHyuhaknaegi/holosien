@@ -8,7 +8,7 @@ public class BoardVO {
 	private String content;
 	private String writer;
 	private Date reg_date;
-	private String boardcol;
+	private String category;
 	private double location_X;
 	private double location_Y;
 	
@@ -18,13 +18,13 @@ public class BoardVO {
 	public void setBno(int bno) {
 		this.bno = bno;
 	}
-	public String getBoardcol() {
-		return boardcol;
-	}
-	public void setBoardcol(String boardcol) {
-		this.boardcol = boardcol;
-	}
 	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public double getLocation_X() {
 		return location_X;
 	}

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.board.domain.BoardVO;
@@ -68,7 +69,9 @@ public class HomeController {
       }
    
    @RequestMapping(value="/together")
-   public String together() {
+   public String together(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+	   model.addAttribute("category", category);
+	   model.addAttribute("boardlist", bBoardService.boardListService(category));
          return "together";
       }
    @RequestMapping(value="/review")
@@ -83,17 +86,31 @@ public class HomeController {
    public String map() {
          return "map";
       }
-   @RequestMapping(value="/list")
-   public String list(Model model) throws Exception {
-	   model.addAttribute("boardlist", bBoardService.boardListService());
+/*   @RequestMapping(value="/list")
+   public String list() throws Exception {
          return "list";
+      }*/
+
+   @RequestMapping(value="/detailBoard")
+   public String detailBoard(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
+	   System.out.println("gpgpgpgg");
+	   BoardVO vo = new BoardVO();
+	   vo.setBno(boardNo);
+	   model.addAttribute("board", bBoardService.viewBoard(vo));
+         return "detailBoard";
       }
+   
+   @RequestMapping(value="/writeBoard")
+   public String writeBoard() {
+         return "writeBoard";
+      }
+   
 	 
    @RequestMapping(value="/send")
    public String send(HttpServletRequest request, HttpSession session) throws Exception {
 	   BoardVO vo = new BoardVO();
 	   
-	   vo.setBoardcol((String) request.getParameter("category"));
+	   vo.setCategory((String) request.getParameter("category"));
 	   vo.setLocation_X(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setLocation_Y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
@@ -103,11 +120,6 @@ public class HomeController {
 	   bBoardService.boardInsertService(vo);
 	   
        return "send";
-      }
-   
-   @RequestMapping(value="/writeBoard")
-   public String writeBoard() {
-         return "writeBoard";
       }
  
    @RequestMapping(value="/searchLocation")

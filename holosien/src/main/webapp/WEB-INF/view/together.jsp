@@ -1,37 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>HOLOSIEN - TOGETHER</title>
-
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e&libraries=services"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	
 	$("#menubar li:nth-child(2)").addClass('active');
 	$("#writeTogether").click(function(){
 		location.href="${pageContext.request.contextPath}/writeBoard"
 	});
-/* 	$('#togetherAll').click(function(){
-		   $('#together-board').text("this is all"); 
+$('#togetherAll').click(function(){
+	location.href="${pageContext.request.contextPath}/together"
 		});
 	
 $('#friend').click(function(){
-  /* $('#together-board').text("this is friend"); 
+	location.href="${pageContext.request.contextPath}/together?category=together"
 });
 $('#roomMate').click(function(){
-	  /* $('#together-board').text("this is roomMate"); 
+	location.href="${pageContext.request.contextPath}/together?category=roommate"
 	});
-$('#animal').click(function(){
-	  /* $('#together-board').text("this is animal"); 
+$('#pet').click(function(){
+	location.href="${pageContext.request.contextPath}/together?category=pet"
 	});
-$('#food').click(function(){
-	  /* $('#together-board').text("this is food"); 
-	}); */
-});
-</script>
+$('#delivery').click(function(){
+	location.href="${pageContext.request.contextPath}/together?category=delivery"
+	});
 
+</script>
+<style>
+ .custom-border-btn{padding:5px 20px; background:none; margin-bottom:20px}
+ </style>
 </head>
 <body>
 <div id="header">
@@ -42,32 +46,53 @@ $('#food').click(function(){
 <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">Together.</span>
-            µ¿Çà ±¸ÇÏ±â.
+            ë™í–‰ êµ¬í•˜ê¸°.
          </h2>
          </div>
 
 <div id="together-menu" align="center" style="margin-bottom:50px">
   <button autofocus class="together together-bnt" id="togetherAll">
-    <span>ÀüÃ¼º¸±â</span>
+    <span>ì „ì²´ë³´ê¸°</span>
   </button>
   <button class="together together-bnt" id="friend">
-    <span>Ä£±¸Ã£±â</span>
+    <span>ì¹œêµ¬ì°¾ê¸°</span>
   </button>
     <button class="together together-bnt" id="roomMate">
-    <span>·ë¸ŞÀÌÆ®</span>
+    <span>ë£¸ë©”ì´íŠ¸</span>
   </button>
-    <button class="together together-bnt" id="animal">
-    <span>¹İ·Áµ¿¹°</span>
+    <button class="together together-bnt" id="pet">
+    <span>ë°˜ë ¤ë™ë¬¼</span>
   </button>
-    <button class="together together-bnt" id="food">
-    <span>¹è´ŞÀ½½Ä</span>
+    <button class="together together-bnt" id="delivery">
+    <span>ë°°ë‹¬ìŒì‹</span>
   </button>
   </div>
   
-  <!-- BOARD ALL -->
+<%--   <!-- BOARD ALL -->
 <div id="together-board" style="width:80%; margin:auto"> 
-<jsp:include page="list.jsp" />
-</div>  <!-- /BOARD ALL -->
+<jsp:include page="${pageContext.request.contextPath}/list" />
+</div>  <!-- /BOARD ALL --> --%>
+
+<div id="together-board" style="width:80%; margin:auto"> 
+
+<c:forEach var="l" items="${boardlist}">
+<div style="width:100%; margin:auto;" >
+<div id="left" style="float:left; padding-left:30px">
+<div id="category"><p>${l.category}</p></div>
+<div id="title"><h4>${l.subject}</h4></div>
+<div id="location"><p>ì„œìš¸ íŠ¹ë³„ì‹œ ê´€ì•…êµ¬ ì‹ ë¦¼ë™</p></div>
+</div>
+<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<p>2ëª…</p>
+<p>${l.writer}</p>
+<p>${l.reg_date}</p>
+<button class="custom-border-btn" onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'">more</button>
+</div>
+<hr width=100% align="center">
+</div>
+</c:forEach>
+          
+</div>
 
 <div align="center">
 <button id="writeTogether" class="custom-border-btn" style="background:none; margin-bottom:20px" ><span>write</span></button>

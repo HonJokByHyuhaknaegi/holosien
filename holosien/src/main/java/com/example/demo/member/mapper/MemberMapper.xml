@@ -24,14 +24,22 @@ select * from member where email = #{email} and password=#{password}
 
 <insert id="insertBoards" parameterType="com.example.demo.board.domain.BoardVO">
 insert into board (bno,subject,content,writer,reg_date,category,point_x,point_y)
-values (default, #{subject},#{content},#{writer},default,#{boardcol, jdbcType=VARCHAR},#{location_X, jdbcType=DOUBLE},#{location_Y, jdbcType=DOUBLE})
+values (default, #{subject},#{content},#{writer},default,#{category, jdbcType=VARCHAR},#{location_X, jdbcType=DOUBLE},#{location_Y, jdbcType=DOUBLE})
 </insert>
 
 <select id="boardCount" resultType="int">
 select count(*) from board;
 </select>
 
-<select id="boardList" resultType="com.example.demo.board.domain.BoardVO">
-select * from board;
+<select id="boardList" resultType="com.example.demo.board.domain.BoardVO" parameterType="String">
+select * from board
+<if test='_parameter!="all"'>
+where category=#{_parameter}
+</if>
 </select>
+
+<select id = "viewBoard" resultType="com.example.demo.board.domain.BoardVO">
+select * from board where bno=#{bno}
+</select>
+
 </mapper>

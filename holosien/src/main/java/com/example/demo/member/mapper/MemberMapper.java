@@ -17,5 +17,6 @@ public MemberVO viewMember(MemberVO member) throws Exception;
 
 public void insertBoards(BoardVO board);
 public int boardCount() throws Exception;
-public List<BoardVO> boardList() throws Exception;
+public List<BoardVO> boardList(String category) throws Exception;
+public BoardVO viewBoard(BoardVO board) throws Exception;
 }
