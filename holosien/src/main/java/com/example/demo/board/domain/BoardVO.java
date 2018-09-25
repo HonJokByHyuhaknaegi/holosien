@@ -9,8 +9,20 @@ public class BoardVO {
 	private String writer;
 	private Date reg_date;
 	private String category;
-	private double location_X;
-	private double location_Y;
+	private double point_x;
+	public double getPoint_x() {
+		return point_x;
+	}
+	public void setPoint_x(double point_x) {
+		this.point_x = point_x;
+	}
+	public double getPoint_y() {
+		return point_y;
+	}
+	public void setPoint_y(double point_y) {
+		this.point_y = point_y;
+	}
+	private double point_y;
 	
 	public int getBno() {
 		return bno;
@@ -24,18 +36,6 @@ public class BoardVO {
 	}
 	public void setCategory(String category) {
 		this.category = category;
-	}
-	public double getLocation_X() {
-		return location_X;
-	}
-	public void setLocation_X(double location_X) {
-		this.location_X = location_X;
-	}
-	public double getLocation_Y() {
-		return location_Y;
-	}
-	public void setLocation_Y(double location_Y) {
-		this.location_Y = location_Y;
 	}
 	public String getSubject() {
 		return subject;
@@ -58,7 +58,7 @@ public class BoardVO {
 	public Date getReg_date() {
 		return reg_date;
 	}
-	public void setReg_date(Date reg_date) {
+	public void setReg_date(Date reg_date){
 		this.reg_date = reg_date;
 	}
 }

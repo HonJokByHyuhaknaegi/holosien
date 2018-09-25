@@ -6,11 +6,65 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Holosien - Detail</title>
 
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e&libraries=services"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#menubar li:nth-child(2)").addClass('active');
 	
+	var point_x = ${board.point_x};
+	var point_y = ${board.point_y};
+
+	var container = document.getElementById('boardMap');
+	var options = {
+		center: new daum.maps.LatLng(point_y, point_x),
+		level: 3
+	};
+	var map = new daum.maps.Map(container, options);
+	
+	// 마커가 표시될 위치입니다 
+	var markerPosition  = new daum.maps.LatLng(point_y, point_x); 
+
+	// 마커를 생성합니다
+	var marker = new daum.maps.Marker({
+	    position: markerPosition
+	});
+
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new daum.maps.services.Geocoder();
+	
+	geocoder.coord2Address(point_x, point_y, function(result, status) {
+		console.log(result);
+		console.log(status);
+        if (status === daum.maps.services.Status.OK) {
+            var detailAddr = !!result[0].road_address ? '도로명주소 : ' + result[0].road_address.address_name +'<br>': '';
+            detailAddr += '지번 주소 : ' + result[0].address.address_name;
+                        
+            var infoDiv = document.getElementById('centerAddr');
+            
+            infoDiv.innerHTML = detailAddr;
+      
+        }   
+    });
+	
+	geocoder.coord2RegionCode(point_x, point_y, displayCenterInfo);
+
+	function displayCenterInfo(result, status) {
+	    if (status === daum.maps.services.Status.OK) {
+	        var infoDiv = document.getElementById('centerAddr2');
+
+	        for(var i = 0; i < result.length; i++) {
+	            // 행정동의 region_type 값은 'H' 이므로
+	            if (result[i].region_type === 'H') {
+	                infoDiv.innerHTML = result[i].address_name;
+	                break;
+	            }
+	        }
+	    }    
+	}
 });
 </script>
 
@@ -27,11 +81,18 @@ $(document).ready(function() {
             자세히보기.
          </h2>
          </div>
-  
-${board.bno}
+ 
+<div id="detailBoard" style="width:80%; margin:auto; margin-bottom:50px">
+<h2>${board.subject}</h2>
+<h6>no. ${board.bno}</h6>
+<h6>${board.category}</h6>
+<h6>작성자 : ${board.writer} </h6>
+<h6>작성일 : ${board.reg_date}</h6>
+<h6>${board.content} </h6>
+<h6 id="centerAddr"></h6>
+<h6 id="centerAddr2"></h6>
+<div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"> 여기 지도</div>
 
-${board.writer}
-
-${board.subject}
+</div>
 </body>
 </html>

@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.board.domain.BoardVO;
-import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.mapper.MemberMapper;
 
 @Service("com.example.demo.board.service.BoardService")

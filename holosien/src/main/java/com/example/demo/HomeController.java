@@ -93,7 +93,6 @@ public class HomeController {
 
    @RequestMapping(value="/detailBoard")
    public String detailBoard(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
-	   System.out.println("gpgpgpgg");
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
@@ -111,8 +110,8 @@ public class HomeController {
 	   BoardVO vo = new BoardVO();
 	   
 	   vo.setCategory((String) request.getParameter("category"));
-	   vo.setLocation_X(Double.parseDouble(request.getParameter("location_position_x")));
-	   vo.setLocation_Y(Double.parseDouble(request.getParameter("location_position_y")));
+	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
+	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("smarteditor"));
 	   vo.setWriter((String) session.getAttribute("userID"));

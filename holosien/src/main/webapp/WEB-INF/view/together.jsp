@@ -20,7 +20,7 @@ $('#togetherAll').click(function(){
 		});
 	
 $('#friend').click(function(){
-	location.href="${pageContext.request.contextPath}/together?category=together"
+	location.href="${pageContext.request.contextPath}/together?category=friend"
 });
 $('#roomMate').click(function(){
 	location.href="${pageContext.request.contextPath}/together?category=roommate"
@@ -31,6 +31,7 @@ $('#pet').click(function(){
 $('#delivery').click(function(){
 	location.href="${pageContext.request.contextPath}/together?category=delivery"
 	});
+});
 
 </script>
 <style>
@@ -78,15 +79,16 @@ $('#delivery').click(function(){
 <c:forEach var="l" items="${boardlist}">
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
-<div id="category"><p>${l.category}</p></div>
+<div id="category"><h6>${l.category}</h6></div>
 <div id="title"><h4>${l.subject}</h4></div>
-<div id="location"><p>서울 특별시 관악구 신림동</p></div>
+<div id="location"><h6>${l.point_y},${l.point_x}</h6></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<p>2명</p>
-<p>${l.writer}</p>
-<p>${l.reg_date}</p>
-<button class="custom-border-btn" onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'">more</button>
+<h6>2명</h6>
+<h6>${l.writer}</h6>
+<h6>${l.reg_date}</h6>
+<button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"
+onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'">more</button>
 </div>
 <hr width=100% align="center">
 </div>
