@@ -26,7 +26,7 @@
                if (!email) alert("이메일을 입력하세요");
                else if ($('#checkDuplication').text() == "") {
                   alert("이메일 중복확인이 필요합니다.");
-               }
+               } 
                else {
                   var pop_title = "popupOpener";
                   window.open("", pop_title,"width = 310, height = 180");
@@ -54,15 +54,17 @@
    });
 
    function formCheck(form) {
-      if ($('#checkDuplication').text() == "") {
+       if ($('#checkDuplication').text() == "") {
          alert("이메일 중복확인이 필요합니다.");
          return false;
-      } else if ($('#completeAuth').text() == "") {
+      } else  if ($('#completeAuth').text() == "") {
          alert("이메일 인증이 필요합니다.");
          return false;
       } else
     	  {
-    	  location.href="${pageContext.request.contextPath}/SuccessJoin";
+          var frmData = document.joinForm;
+		  frmData.action = "SuccessJoin";
+		  frmData.submit();
          return true;
     	  }
    }
@@ -119,7 +121,8 @@
             <span class="nino-subHeading">Sign Up</span> 회원가입
          </h2>
          <div class="sectionContent col-md-6 col-md-offset-3">
-            <form name="joinForm" id="joinForm" method="post" onsubmit="return formCheck();" action="${pageContext.request.contextPath}/SuccessJoin">
+            <form name="joinForm" id="joinForm" method="post" onsubmit="return formCheck();" 
+            action="SuccessJoin">
                <div class="form-group">
                   <label for="InputEmail">이메일 주소</label> <input type="email"
                      class="form-control" id="InputEmail" name="InputEmail"
