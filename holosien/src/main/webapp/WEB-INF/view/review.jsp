@@ -29,5 +29,15 @@
   </button>
 
   </div>
+  
+  <div class="review">
+  <div class="review_box">One</div>
+  <div class="review_box">Two</div>
+  <div class="review_box">Three</div>
+  <div class="review_box">Four</div>
+  <div class="review_box">Five</div>
+  <div class="review_box">Six</div>
+</div>
+
 </body>
 </html>
