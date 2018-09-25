@@ -31,6 +31,25 @@ $('#pet').click(function(){
 $('#delivery').click(function(){
 	location.href="${pageContext.request.contextPath}/together?category=delivery"
 	});
+	
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+
+$("#location").each(function(){	
+	var point = $(this).text().split(',');
+	console.log("x = " + point[1]);
+	console.log("y = " + point[0]);
+	geocoder.coord2Address(point[1], point[0], function(result, status) {
+		console.log(result);
+		console.log(status);
+        if (status === daum.maps.services.Status.OK) {
+            var detailAddr = !!result[0].road_address ? '<h6>도로명주소 : ' + result[0].road_address.address_name +'</h6><br>': '';
+            detailAddr += '<h6>지번 주소 : ' + result[0].address.address_name+'<h6>';
+            console.log("address : " + detailAddr);
+        }   
+    });
+});
+
 });
 
 </script>
@@ -81,7 +100,7 @@ $('#delivery').click(function(){
 <div id="left" style="float:left; padding-left:30px">
 <div id="category"><h6>${l.category}</h6></div>
 <div id="title"><h4>${l.subject}</h4></div>
-<div id="location"><h6>${l.point_y},${l.point_x}</h6></div>
+<div id="location">${l.point_y},${l.point_x}</div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
 <h6>2명</h6>
