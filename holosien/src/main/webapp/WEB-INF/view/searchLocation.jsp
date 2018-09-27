@@ -169,8 +169,8 @@
 			                infowindow.close();
 			            };
 			            itemEl.onclick = function() {
-			            	$(opener.document).find("#location_position_y").val(place.y);
-			            	$(opener.document).find("#location_position_x").val(place.x);
+			            	$(opener.document).find("input[name=location_position_y]").val(place.y);
+			            	$(opener.document).find("input[name=location_position_x]").val(place.x);
 			            	$(opener.document).find("input[name=location_result]").val(inputPlace);
 			            	self.close();
 			            };
