@@ -115,16 +115,6 @@ public class HomeController {
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userID"));
-<<<<<<< HEAD
-=======
-	   
-	   System.out.println(vo.getBoardcol());
-	   System.out.println(vo.getLocation_X());
-	   System.out.println(vo.getLocation_Y());
-	   System.out.println(request.getParameter("subject"));
-	   System.out.println(request.getParameter("textAreaContent"));
-	   System.out.println((String) session.getAttribute("userID"));
->>>>>>> branch 'master' of https://github.com/HonJokByHyuhaknaegi/holosien.git
 			   
 	   bBoardService.boardInsertService(vo);
 	   
