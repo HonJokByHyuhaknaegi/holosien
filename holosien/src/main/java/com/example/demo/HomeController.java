@@ -113,8 +113,18 @@ public class HomeController {
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
-	   vo.setContent(request.getParameter("smarteditor"));
+	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userID"));
+<<<<<<< HEAD
+=======
+	   
+	   System.out.println(vo.getBoardcol());
+	   System.out.println(vo.getLocation_X());
+	   System.out.println(vo.getLocation_Y());
+	   System.out.println(request.getParameter("subject"));
+	   System.out.println(request.getParameter("textAreaContent"));
+	   System.out.println((String) session.getAttribute("userID"));
+>>>>>>> branch 'master' of https://github.com/HonJokByHyuhaknaegi/holosien.git
 			   
 	   bBoardService.boardInsertService(vo);
 	   
