@@ -23,8 +23,8 @@ select * from member where email = #{email} and password=#{password}
 </select>
 
 <insert id="insertBoards" parameterType="com.example.demo.board.domain.BoardVO">
-insert into board (bno,subject,content,writer,reg_date,category,point_x,point_y,number)
-values (default, #{subject},#{content},#{writer},default,#{category, jdbcType=VARCHAR},#{point_x, jdbcType=DOUBLE},#{point_y, jdbcType=DOUBLE},#{number})
+insert into board (bno,subject,content,writer,reg_date,category,point_x,point_y,number,location)
+values (default, #{subject},#{content},#{writer},default,#{category, jdbcType=VARCHAR},#{point_x, jdbcType=DOUBLE},#{point_y, jdbcType=DOUBLE},#{number},#{location})
 </insert>
 
 <select id="boardCount" resultType="int">
