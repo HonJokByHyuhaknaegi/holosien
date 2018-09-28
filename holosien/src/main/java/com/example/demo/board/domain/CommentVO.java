@@ -1,5 +1,7 @@
 package com.example.demo.board.domain;
 
+import java.util.Date;
+
 public class CommentVO {
 private String writer;
 private String writerID;
@@ -7,6 +9,7 @@ private String gender;
 private int age;
 private String comment;
 private int boardNo;
+private Date date;
 public String getWriter() {
 	return writer;
 }
@@ -42,6 +45,12 @@ public String getWriterID() {
 }
 public void setWriterID(String writerID) {
 	this.writerID = writerID;
+}
+public Date getDate() {
+	return date;
+}
+public void setDate(Date date) {
+	this.date = date;
 }
 
 }

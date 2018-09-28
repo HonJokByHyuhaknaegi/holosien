@@ -98,16 +98,12 @@ function sendComment(){
 <c:forEach var="l" items="${Commentlist}">
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
+<div id="writer"><h6 style="font-weight: bold">${l.writer}</h6></div>
 <div id="comment"><h6>${l.comment}</h6></div>
-<div id="writer"><h4>${l.writer}</h4></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<h6>${l.age}</h6>
-<h6>${l.gender}</h6>
-<h6>${l.boardNo}</h6>
+<h6>${l.age}</h6><h6> ${l.gender}</h6>
 <h6>${l.date}</h6>
-<button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"
-onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'">more</button>
 </div>
 <hr width=100% align="center">
 </div>
