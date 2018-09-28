@@ -100,6 +100,8 @@ public class HomeController {
    public String detailBoard(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
+	   
+	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "detailBoard";
       }
@@ -118,8 +120,14 @@ public class HomeController {
    public String writeComment(Model model, @RequestParam(value="boardNo") int boardNo,
 		   HttpServletRequest request, HttpSession session) throws Exception {
 	   CommentVO Cvo = new CommentVO();
-	   System.out.println(request.getParameter("Comment_content"));
+	   Cvo.setBoardNo(boardNo);
 	   Cvo.setComment((String)request.getParameter("Comment_content"));
+	   Cvo.setAge((int) session.getAttribute("userAge"));
+	   Cvo.setGender((String) session.getAttribute("userGender"));
+	   Cvo.setWriter((String) session.getAttribute("userName"));
+	   Cvo.setWriterID((String) session.getAttribute("userID"));
+	   bBoardService.CommentInsertService(Cvo);
+	   
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));

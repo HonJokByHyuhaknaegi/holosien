@@ -61,9 +61,6 @@ function sendComment(){
 		return true;
 	}
 }
-
-
-
 </script>
 
 </head>

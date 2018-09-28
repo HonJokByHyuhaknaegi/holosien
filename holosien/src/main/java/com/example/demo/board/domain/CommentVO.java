@@ -2,6 +2,7 @@ package com.example.demo.board.domain;
 
 public class CommentVO {
 private String writer;
+private String writerID;
 private String gender;
 private int age;
 private String comment;
@@ -35,6 +36,12 @@ public int getBoardNo() {
 }
 public void setBoardNo(int boardNo) {
 	this.boardNo = boardNo;
+}
+public String getWriterID() {
+	return writerID;
+}
+public void setWriterID(String writerID) {
+	this.writerID = writerID;
 }
 
 }

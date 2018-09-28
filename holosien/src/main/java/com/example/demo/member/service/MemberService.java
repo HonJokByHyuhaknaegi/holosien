@@ -26,7 +26,6 @@ public class MemberService {
     String email = mMemberMapper.checkMembers(vo);
     boolean result = (email==null)?false:true;
     
-    System.out.println("eeeeeeeeeeee"+result);
     return result;
     }
     
@@ -41,10 +40,8 @@ public class MemberService {
     	session.setAttribute("userName", vo2.getName());
     	session.setAttribute("userGender", vo2.getGender());
     	session.setAttribute("userPW", vo2.getPassword());
-    	session.setAttribute("user", vo2);
+    	session.setAttribute("userAge", vo2.getAge());
     }
-    
-    System.out.println("ggggggggggggg"+result);
     return result;
     }
     
