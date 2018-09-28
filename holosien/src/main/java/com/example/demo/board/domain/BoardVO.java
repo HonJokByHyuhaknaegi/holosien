@@ -10,6 +10,8 @@ public class BoardVO {
 	private Date reg_date;
 	private String category;
 	private double point_x;
+	private double point_y;
+	
 	public double getPoint_x() {
 		return point_x;
 	}
@@ -22,7 +24,6 @@ public class BoardVO {
 	public void setPoint_y(double point_y) {
 		this.point_y = point_y;
 	}
-	private double point_y;
 	
 	public int getBno() {
 		return bno;
