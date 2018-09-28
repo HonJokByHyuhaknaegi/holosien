@@ -93,18 +93,29 @@ function sendComment(){
 
 <div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
-<div>
-
+<c:import url="/comment">
+<c:param name="boardNo" value="${board.bno}"/>
+</c:import>
+<%-- <div>
 <c:forEach var="l" items="${Commentlist}">
-<div style="width:100%; margin:auto;" >
-<div id="left" style="float:left;">
-<div id="writer"><h6 style="font-weight: bold">${l.writer}</h6></div>
-<div id="comment"><h6>${l.comment}</h6></div>
-</div>
-<div id="right"  style="float:right; text-align:right;">
-<h6>${l.age}</h6><h6> ${l.gender}</h6>
-<h6>${l.date}</h6>
-</div>
+<div style="width:100%; margin:auto;">
+<h6 style="font-weight: bold; display:inline">${l.writer} &nbsp;</h6>
+<h6 style="display:inline">${l.age}대 
+<c:choose>
+    <c:when test="${l.gender eq 'F'}"> 여 </c:when>
+    <c:otherwise> 남 </c:otherwise>
+</c:choose>
+</h6>
+<div style="float:right; text-align:right;">
+<c:if test="${l.writerID == sessionScope.userID}">
+<img src="${pageContext.request.contextPath}/resources/images/close.png" width="10px">
+</c:if>
+</div> <br><br>
+
+<h6>${l.comment}</h6>
+
+<h6 style="float:right">${l.date}</h6>
+
 <hr width=100% align="center">
 </div>
 </c:forEach>
@@ -114,7 +125,7 @@ function sendComment(){
 <input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write"><!-- 
 <button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">Write</button> -->
 </form>
-</div>
+</div> --%>
 </div>
 
 </div>

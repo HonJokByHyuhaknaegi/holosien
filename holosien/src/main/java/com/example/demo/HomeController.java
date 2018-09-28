@@ -98,12 +98,18 @@ public class HomeController {
          return "list";
       }*/
 
+   @RequestMapping(value="/comment")
+   public String comment(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
+	   System.out.println("comment controller");
+	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
+         return "comment";
+      }
+   
    @RequestMapping(value="/detailBoard")
    public String detailBoard(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   
-	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "detailBoard";
       }
@@ -177,7 +183,12 @@ public class HomeController {
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
 	   vo.setPhoto(request.getParameter("photo"));
-			   
+	   
+	   bBoardService.reviewInsertService(vo);
+	   
+	   model.addAttribute("category", category);
+	   model.addAttribute("reviewlist", bBoardService.reviewListService(category));
+	   
        return "review";
       }
  
