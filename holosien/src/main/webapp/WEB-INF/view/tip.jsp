@@ -1,10 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#menubar li:nth-child(4)").addClass('active');
+	});
+</script>
 </head>
 <body>
 <div id="header">
@@ -14,15 +20,15 @@
        <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">Tip.</span>
-            ³ª¸¸ÀÇ ÀÚÃë ÆÁ.
+            ë‚˜ë§Œì˜ ìì·¨ íŒ.
          </h2>
          </div>
  <div id="together-menu" align="center">
   <button autofocus class="together together-bnt" id="togetherAll">
-    <span>ÃÖ½Å¼ø</span>
+    <span>ìµœì‹ ìˆœ</span>
   </button>
   <button class="together together-bnt" id="friend">
-    <span>ÀÎ±â¼ø</span>
+    <span>ì¸ê¸°ìˆœ</span>
   </button>
     
   </div>

@@ -342,7 +342,7 @@ function goLogin() {
 		</div>	
 		<div align="center" >
 		<br><br>
-		<a href="${pageContext.request.contextPath}/together" class="custom-border-btn">More</a>
+		<a href="${pageContext.request.contextPath}/review" class="custom-border-btn">More</a>
 			
     	</div>	
 	</section><!--/#nino-story-->
