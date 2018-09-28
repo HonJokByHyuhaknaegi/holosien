@@ -38,6 +38,8 @@ public class MemberService {
     if(result){
     	MemberVO vo2 = viewMember(vo);
     	session.setAttribute("userID", vo2.getEmail());
+    	session.setAttribute("userName", vo2.getName());
+    	session.setAttribute("userPW", vo2.getPassword());
     }
     
     System.out.println("ggggggggggggg"+result);

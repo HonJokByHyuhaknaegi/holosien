@@ -114,7 +114,7 @@ public class HomeController {
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
-	   vo.setWriter((String) session.getAttribute("userID"));
+	   vo.setWriter((String) session.getAttribute("userName"));
 			   
 	   bBoardService.boardInsertService(vo);
 	   
