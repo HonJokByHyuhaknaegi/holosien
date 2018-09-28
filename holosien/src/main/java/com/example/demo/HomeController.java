@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
+import com.example.demo.board.domain.ReviewVO;
 import com.example.demo.board.service.BoardService;
 import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
@@ -117,9 +118,8 @@ public class HomeController {
    public String writeComment(Model model, @RequestParam(value="boardNo") int boardNo,
 		   HttpServletRequest request, HttpSession session) throws Exception {
 	   CommentVO Cvo = new CommentVO();
-	   System.out.println(request.getAttribute("Comment_content"));
-	   Cvo.setComment((String)request.getAttribute("Comment_content"));
-	   
+	   System.out.println(request.getParameter("Comment_content"));
+	   Cvo.setComment((String)request.getParameter("Comment_content"));
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
@@ -148,21 +148,16 @@ public class HomeController {
    
    @RequestMapping(value="/sendReview")
    public String sendReview(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
-	   BoardVO vo = new BoardVO();
+	   ReviewVO vo = new ReviewVO();
 	   
 	   vo.setCategory((String) request.getParameter("category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
-	   vo.setNumber(request.getParameter("number"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
-	   vo.setWriter((String) session.getAttribute("userName"));
+	   vo.setPhoto(request.getParameter("photo"));
 			   
-	   bBoardService.boardInsertService(vo);
-	   
-	   model.addAttribute("category", category);
-	   model.addAttribute("boardlist", bBoardService.boardListService(category));
        return "review";
       }
  

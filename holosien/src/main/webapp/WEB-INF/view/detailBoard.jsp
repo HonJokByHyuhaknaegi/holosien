@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Holosien - Detail</title>
 
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e&libraries=services"></script>
@@ -23,26 +23,26 @@ $(document).ready(function() {
 	};
 	var map = new daum.maps.Map(container, options);
 	
-	// ¸¶Ä¿°¡ Ç¥½ÃµÉ À§Ä¡ÀÔ´Ï´Ù 
+	// ë§ˆì»¤ê°€ í‘œì‹œë  ìœ„ì¹˜ì…ë‹ˆë‹¤ 
 	var markerPosition  = new daum.maps.LatLng(point_y, point_x); 
 
-	// ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù
+	// ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 	var marker = new daum.maps.Marker({
 	    position: markerPosition
 	});
 
-	// ¸¶Ä¿°¡ Áöµµ À§¿¡ Ç¥½ÃµÇµµ·Ï ¼³Á¤ÇÕ´Ï´Ù
+	// ë§ˆì»¤ê°€ ì§€ë„ ìœ„ì— í‘œì‹œë˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤
 	marker.setMap(map);
 	
-	// ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+	// ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 	var geocoder = new daum.maps.services.Geocoder();
 	
 	geocoder.coord2Address(point_x, point_y, function(result, status) {
 		console.log(result);
 		console.log(status);
         if (status === daum.maps.services.Status.OK) {
-            var detailAddr = !!result[0].road_address ? 'µµ·Î¸íÁÖ¼Ò : ' + result[0].road_address.address_name +'<br>': '';
-            detailAddr += 'Áö¹ø ÁÖ¼Ò : ' + result[0].address.address_name;
+            var detailAddr = !!result[0].road_address ? 'ë„ë¡œëª…ì£¼ì†Œ : ' + result[0].road_address.address_name +'<br>': '';
+            detailAddr += 'ì§€ë²ˆ ì£¼ì†Œ : ' + result[0].address.address_name;
                         
             var infoDiv = document.getElementById('centerAddr');
             
@@ -50,21 +50,18 @@ $(document).ready(function() {
       
         }   
     });
-	
-	function sendComment(){
-		var id = ${session.Scope("userID")};
-		if(id==null){
-			alert("·Î±×ÀÎ ÈÄ ÀÌ¿ë°¡´ÉÇÕ´Ï´Ù.");
-			return false;
-		}
-		else{
-			var frmData = document.Comment;
-			  frmData.submit();
-			return true;
-		}
-	}
-	
 });
+
+function sendComment(){
+	if(${sessionScope.userID==null}){
+		alert("ë¡œê·¸ì¸ í›„ ì´ìš©ê°€ëŠ¥í•©ë‹ˆë‹¤.");
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
 
 
 </script>
@@ -79,7 +76,7 @@ $(document).ready(function() {
 <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">More.</span>
-            ÀÚ¼¼È÷º¸±â.
+            ìì„¸íˆë³´ê¸°.
          </h2>
          </div>
  <div style="width:80%; margin:auto; margin-bottom:50px">
@@ -88,9 +85,9 @@ $(document).ready(function() {
 <h2>${board.subject}</h2>
 <h6>no. ${board.bno}</h6>
 <h6>${board.category}</h6>
-<h6>ÀÛ¼ºÀÚ : ${board.writer} </h6>
-<h6>ÀÛ¼ºÀÏ : ${board.reg_date}</h6>
-<h6>ÀÎ¿ø : ${board.number}¸í</h6>
+<h6>ì‘ì„±ì : ${board.writer} </h6>
+<h6>ì‘ì„±ì¼ : ${board.reg_date}</h6>
+<h6>ì¸ì› : ${board.number}ëª…</h6>
 <h6>${board.content} </h6>
 <h6 id="centerAddr"></h6>
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
