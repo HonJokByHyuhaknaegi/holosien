@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -93,6 +94,25 @@ function sendComment(){
 <div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br>
 <div>
+
+<c:forEach var="l" items="${Commentlist}">
+<div style="width:100%; margin:auto;" >
+<div id="left" style="float:left; padding-left:30px">
+<div id="comment"><h6>${l.comment}</h6></div>
+<div id="writer"><h4>${l.writer}</h4></div>
+</div>
+<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<h6>${l.age}</h6>
+<h6>${l.gender}</h6>
+<h6>${l.boardNo}</h6>
+<h6>${l.date}</h6>
+<button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"
+onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'">more</button>
+</div>
+<hr width=100% align="center">
+</div>
+</c:forEach>
+
 <form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${board.bno}">
 <textarea id="Comment_content" name="Comment_content" class="form-control" rows="3" style="resize: none;"></textarea>
 <input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write"><!-- 
