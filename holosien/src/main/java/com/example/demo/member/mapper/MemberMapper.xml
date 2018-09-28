@@ -24,7 +24,7 @@ select * from member where email = #{email} and password=#{password}
 
 <insert id="insertBoards" parameterType="com.example.demo.board.domain.BoardVO">
 insert into board (bno,subject,content,writer,reg_date,category,point_x,point_y)
-values (default, #{subject},#{content},#{writer},default,#{category, jdbcType=VARCHAR},#{location_X, jdbcType=DOUBLE},#{location_Y, jdbcType=DOUBLE})
+values (default, #{subject},#{content},#{writer},default,#{category, jdbcType=VARCHAR},#{point_x, jdbcType=DOUBLE},#{point_y, jdbcType=DOUBLE})
 </insert>
 
 <select id="boardCount" resultType="int">

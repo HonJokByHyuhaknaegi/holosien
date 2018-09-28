@@ -81,8 +81,9 @@ $(document).ready(function() {
             자세히보기.
          </h2>
          </div>
+ <div style="width:80%; margin:auto; margin-bottom:50px">
  
-<div id="detailBoard" style="width:80%; margin:auto; margin-bottom:50px">
+<div id="detailBoard" style="margin-bottom:50px">
 <h2>${board.subject}</h2>
 <h6>no. ${board.bno}</h6>
 <h6>${board.category}</h6>
@@ -93,6 +94,12 @@ $(document).ready(function() {
 <h6 id="centerAddr2"></h6>
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"> 여기 지도</div>
 
+</div>
+
+<div id="comment">
+<span class="nino-subHeading">Comment</span>
+
+</div>
 </div>
 </body>
 </html>
