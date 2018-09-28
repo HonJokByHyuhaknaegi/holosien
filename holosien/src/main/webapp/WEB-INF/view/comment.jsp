@@ -18,7 +18,7 @@ function sendComment(){
 }
 
 function deleteComment(cno){
-	location.href="${pageContext.request.contextPath}/deleteComment?CommentNo="+cno;
+	location.href="${pageContext.request.contextPath}/deleteComment?boardNo=${param.boardNo}&CommentNo="+cno;
 }
 </script>
 </head>
@@ -35,7 +35,7 @@ function deleteComment(cno){
 </h6>
 <div style="float:right; text-align:right;">
 <c:if test="${l.writerID == sessionScope.userID}">
-<img src="${pageContext.request.contextPath}/resources/images/close.png" width="10px">
+<img src="${pageContext.request.contextPath}/resources/images/close.png" onclick="deleteComment(${l.cno})" width="10px" style="cursor:pointer">
 </c:if>
 </div> <br><br>
 
