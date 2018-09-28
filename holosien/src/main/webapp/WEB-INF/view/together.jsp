@@ -90,11 +90,6 @@ function address(div){
     <span>배달음식</span>
   </button>
   </div>
-  
-<%--   <!-- BOARD ALL -->
-<div id="together-board" style="width:80%; margin:auto"> 
-<jsp:include page="${pageContext.request.contextPath}/list" />
-</div>  <!-- /BOARD ALL --> --%>
 
 <div id="together-board" style="width:80%; margin:auto"> 
 
