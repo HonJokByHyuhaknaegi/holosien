@@ -117,7 +117,6 @@ public class HomeController {
 	   vo.setWriter((String) session.getAttribute("userName"));
 			   
 	   bBoardService.boardInsertService(vo);
-	   
        return "send";
       }
  
