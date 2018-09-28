@@ -77,8 +77,10 @@ public class HomeController {
          return "together";
       }
    @RequestMapping(value="/review")
-   public String review() {
-         return "review";
+   public String review(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception{
+	   model.addAttribute("category", category);
+	   model.addAttribute("reviewlist", bBoardService.reviewListService(category));
+	   return "review";
       }
    @RequestMapping(value="/tip")
    public String tip(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
@@ -104,6 +106,16 @@ public class HomeController {
 	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "detailBoard";
+      }
+   
+   @RequestMapping(value="/detailReview")
+   public String detailReview(Model model, @RequestParam(value="reviewNo") int reviewNo) throws Exception {
+	   ReviewVO vo = new ReviewVO();
+	   vo.setBno(reviewNo);
+	   
+	   model.addAttribute("Commentlist", bBoardService.CommentListService(reviewNo));
+	   model.addAttribute("review", bBoardService.viewReview(vo));
+         return "detailReview";
       }
    
    @RequestMapping(value="/writeBoard")

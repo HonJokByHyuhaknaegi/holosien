@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
+import com.example.demo.board.domain.ReviewVO;
 import com.example.demo.member.domain.MemberVO;
 
 
@@ -23,4 +24,8 @@ public BoardVO viewBoard(BoardVO board) throws Exception;
 
 public void insertComments(CommentVO board) throws Exception;
 public List<CommentVO> commentList(int boardNo) throws Exception;
+
+public void insertReviews(ReviewVO board) throws Exception;
+public List<ReviewVO> reviewList(String category) throws Exception;
+public ReviewVO viewReview(ReviewVO board) throws Exception;
 }

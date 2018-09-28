@@ -51,4 +51,20 @@ values (default,#{writer},#{writerID}, #{gender},#{age},#{comment},#{boardNo},de
 select * from comment where boardNo=#{_parameter}
 </select>
 
+<insert id="insertReviews" parameterType="com.example.demo.board.domain.ReviewVO">
+insert into review (bno,subject,content,writer,category,reg_date,point_x,point_y,photo)
+values (default, #{subject},#{content},#{writer},#{category, jdbcType=VARCHAR},default,#{point_x, jdbcType=DOUBLE},#{point_y, jdbcType=DOUBLE},#{photo})
+</insert>
+
+<select id = "viewReview" resultType="com.example.demo.board.domain.ReviewVO">
+select * from review where bno=#{bno}
+</select>
+
+<select id="reviewList" resultType="com.example.demo.board.domain.ReviewVO" parameterType="String">
+select * from review
+<if test='_parameter!="all"'>
+where category=#{_parameter}
+</if>
+</select>
+
 </mapper>

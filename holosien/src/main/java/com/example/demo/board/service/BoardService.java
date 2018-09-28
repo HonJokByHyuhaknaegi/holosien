@@ -8,32 +8,44 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
+import com.example.demo.board.domain.ReviewVO;
 import com.example.demo.member.mapper.MemberMapper;
 
 @Service("com.example.demo.board.service.BoardService")
 public class BoardService {
-	@Resource(name="com.example.demo.member.mapper.MemberMapper")
+	@Resource(name = "com.example.demo.member.mapper.MemberMapper")
 	MemberMapper mMemberMapper;
-	
-    public void boardInsertService(BoardVO board) throws Exception{
-        mMemberMapper.insertBoards(board);
-    }
- 
- public List<BoardVO> boardListService(String category) throws Exception{
-     return mMemberMapper.boardList(category);
- }
- 
- public BoardVO viewBoard(BoardVO vo) throws Exception{
- 	return mMemberMapper.viewBoard(vo);
- }
- 
- public void CommentInsertService(CommentVO board) throws Exception{
-     mMemberMapper.insertComments(board);
- }
 
-public List<CommentVO> CommentListService(int boardNo) throws Exception{
-  return mMemberMapper.commentList(boardNo);
-}
- 
- 
+	public void boardInsertService(BoardVO board) throws Exception {
+		mMemberMapper.insertBoards(board);
+	}
+
+	public List<BoardVO> boardListService(String category) throws Exception {
+		return mMemberMapper.boardList(category);
+	}
+
+	public BoardVO viewBoard(BoardVO vo) throws Exception {
+		return mMemberMapper.viewBoard(vo);
+	}
+
+	public void CommentInsertService(CommentVO board) throws Exception {
+		mMemberMapper.insertComments(board);
+	}
+
+	public List<CommentVO> CommentListService(int boardNo) throws Exception {
+		return mMemberMapper.commentList(boardNo);
+	}
+
+	public void reviewInsertService(ReviewVO board) throws Exception {
+		mMemberMapper.insertReviews(board);
+	}
+
+	public List<ReviewVO> reviewListService(String category) throws Exception {
+		return mMemberMapper.reviewList(category);
+	}
+
+	public ReviewVO viewReview(ReviewVO vo) throws Exception {
+		return mMemberMapper.viewReview(vo);
+	}
+
 }
