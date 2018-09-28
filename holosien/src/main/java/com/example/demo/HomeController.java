@@ -151,6 +151,24 @@ public class HomeController {
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "redirect:detailBoard?boardNo="+boardNo;
    }
+   
+   @RequestMapping(value="/deleteComment")
+   public String deleteComment(Model model, @RequestParam(value="boardNo") int boardNo,
+		   HttpServletRequest request, HttpSession session) throws Exception {
+	   CommentVO Cvo = new CommentVO();
+	   Cvo.setBoardNo(boardNo);
+	   Cvo.setComment((String)request.getParameter("Comment_content"));
+	   Cvo.setAge((int) session.getAttribute("userAge"));
+	   Cvo.setGender((String) session.getAttribute("userGender"));
+	   Cvo.setWriter((String) session.getAttribute("userName"));
+	   Cvo.setWriterID((String) session.getAttribute("userID"));
+	   bBoardService.CommentInsertService(Cvo);
+	   
+	   BoardVO vo = new BoardVO();
+	   vo.setBno(boardNo);
+	   model.addAttribute("board", bBoardService.viewBoard(vo));
+         return "redirect:detailBoard?boardNo="+boardNo;
+   }
 
    @RequestMapping(value="/send")
    public String send(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
