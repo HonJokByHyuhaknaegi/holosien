@@ -79,7 +79,8 @@ public class HomeController {
          return "review";
       }
    @RequestMapping(value="/tip")
-   public String tip() {
+   public String tip(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+	   model.addAttribute("boardlist", bBoardService.boardListService(category));
          return "tip";
       }
    @RequestMapping(value="/map")
