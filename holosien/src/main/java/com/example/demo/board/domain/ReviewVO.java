@@ -1,31 +1,16 @@
 package com.example.demo.board.domain;
-
 import java.util.Date;
-
-public class BoardVO {
-	private int bno;
-	private String subject;
-	private String content;
-	private String writer;
-	private Date reg_date;
-	private String category;
-	private double point_x;
-	private double point_y;
-	private String number;
-	private String location;
+public class ReviewVO {
+	private int bno; //게시물 번호
+	private String subject; //제목
+	private String content; //내용
+	private String writer; //작성자
+	private Date reg_date; //작성일
+	private String category; //카테고리
+	private double point_x; //주소 위도
+	private double point_y; //주소 경도
 	
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
+
 	public double getPoint_x() {
 		return point_x;
 	}

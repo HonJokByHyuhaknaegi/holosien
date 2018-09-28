@@ -123,7 +123,7 @@ public class HomeController {
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "detailBoard";
    }
-   
+
    @RequestMapping(value="/send")
    public String send(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   BoardVO vo = new BoardVO();
