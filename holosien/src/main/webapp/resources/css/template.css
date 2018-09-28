@@ -222,6 +222,7 @@ img.img-full-width {
 }
 .custom-border-btn {
   color:#8C8C8C;
+  background:none;
   border: solid 2px #8C8C8C;
   padding: 10px 20px;
   text-transform: uppercase;

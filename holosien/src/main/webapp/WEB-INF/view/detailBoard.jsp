@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +12,16 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#menubar li:nth-child(2)").addClass('active');
+	
+	$('#Sendcomment').click(function(){
+		if(${sessionScope.userID==null}){
+		alert("로그인 후 이용가능합니다.");
+		location.href="${pageContext.request.contextPath}/login";
+		}
+		else{
+		location.href="${pageContext.request.contextPath}/writeComment";
+		}
+	});
 	
 	var point_x = ${board.point_x};
 	var point_y = ${board.point_y};
@@ -49,22 +60,6 @@ $(document).ready(function() {
       
         }   
     });
-	
-	geocoder.coord2RegionCode(point_x, point_y, displayCenterInfo);
-
-	function displayCenterInfo(result, status) {
-	    if (status === daum.maps.services.Status.OK) {
-	        var infoDiv = document.getElementById('centerAddr2');
-
-	        for(var i = 0; i < result.length; i++) {
-	            // 행정동의 region_type 값은 'H' 이므로
-	            if (result[i].region_type === 'H') {
-	                infoDiv.innerHTML = result[i].address_name;
-	                break;
-	            }
-	        }
-	    }    
-	}
 });
 </script>
 
@@ -89,18 +84,20 @@ $(document).ready(function() {
 <h6>${board.category}</h6>
 <h6>작성자 : ${board.writer} </h6>
 <h6>작성일 : ${board.reg_date}</h6>
-<h6>인원 : ${board.number}</h6>
+<h6>인원 : ${board.number}명</h6>
 <h6>${board.content} </h6>
 <h6 id="centerAddr"></h6>
-<h6 id="centerAddr2"></h6>
-<div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"> 여기 지도</div>
-
+<div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
 <div id="comment">
-<span style="font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span>
-<button id="writeComment">write</button>
+<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br>
+<div>
+<textarea id="writeComment" class="form-control" rows="3" style="resize: none;"></textarea>
+<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">write</button>
 </div>
+</div>
+
 </div>
 </body>
 </html>

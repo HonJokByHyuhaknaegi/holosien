@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.board.domain.BoardVO;
+import com.example.demo.board.domain.CommentVO;
 import com.example.demo.member.mapper.MemberMapper;
 
 @Service("com.example.demo.board.service.BoardService")
@@ -25,4 +26,14 @@ public class BoardService {
  public BoardVO viewBoard(BoardVO vo) throws Exception{
  	return mMemberMapper.viewBoard(vo);
  }
+ 
+ public void CommentInsertService(CommentVO board) throws Exception{
+     mMemberMapper.insertComments(board);
+ }
+
+public List<CommentVO> CommentListService(int boardNo) throws Exception{
+  return mMemberMapper.commentList(boardNo);
+}
+ 
+ 
 }

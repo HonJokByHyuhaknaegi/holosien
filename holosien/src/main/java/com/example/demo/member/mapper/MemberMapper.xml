@@ -42,4 +42,13 @@ where category=#{_parameter}
 select * from board where bno=#{bno}
 </select>
 
+<insert id="insertComments" parameterType="com.example.demo.board.domain.CommentVO">
+insert into comment (writer,gender,age,comment,reg_date,boardNo)
+values (#{writer}, #{gender},#{age},#{comment},default,#{boardNo})
+</insert>
+
+<select id="CommentList" resultType="com.example.demo.board.domain.CommentVO" parameterType="int">
+select * from comment where boardNo=#{_parameter}
+</select>
+
 </mapper>
