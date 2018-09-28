@@ -141,6 +141,7 @@ public class HomeController {
 	   vo.setNumber(request.getParameter("number"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
+	   vo.setWriter((String) session.getAttribute("userName"));
 			   
 	   bBoardService.boardInsertService(vo);
 	   
