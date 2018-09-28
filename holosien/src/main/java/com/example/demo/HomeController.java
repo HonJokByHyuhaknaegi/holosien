@@ -131,7 +131,7 @@ public class HomeController {
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
-         return "detailBoard";
+         return "redirect:detailBoard?boardNo="+boardNo;
    }
 
    @RequestMapping(value="/send")

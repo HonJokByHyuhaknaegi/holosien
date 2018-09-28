@@ -3,6 +3,7 @@ package com.example.demo.board.domain;
 import java.util.Date;
 
 public class CommentVO {
+	private int cno;
 private String writer;
 private String writerID;
 private String gender;
@@ -51,6 +52,12 @@ public Date getDate() {
 }
 public void setDate(Date date) {
 	this.date = date;
+}
+public int getCno() {
+	return cno;
+}
+public void setCno(int cno) {
+	this.cno = cno;
 }
 
 }

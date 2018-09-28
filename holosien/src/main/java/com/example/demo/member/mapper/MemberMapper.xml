@@ -43,8 +43,8 @@ select * from board where bno=#{bno}
 </select>
 
 <insert id="insertComments" parameterType="com.example.demo.board.domain.CommentVO">
-insert into comment (writer,writerID,gender,age,comment,boardNo,date)
-values (#{writer},#{writerID}, #{gender},#{age},#{comment},#{boardNo},default)
+insert into comment (cno,writer,writerID,gender,age,comment,boardNo,date)
+values (default,#{writer},#{writerID}, #{gender},#{age},#{comment},#{boardNo},default)
 </insert>
 
 <select id="commentList" resultType="com.example.demo.board.domain.CommentVO" parameterType="int">

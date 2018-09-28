@@ -92,16 +92,16 @@ function sendComment(){
 </div>
 
 <div>
-<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br>
+<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <div>
 
 <c:forEach var="l" items="${Commentlist}">
 <div style="width:100%; margin:auto;" >
-<div id="left" style="float:left; padding-left:30px">
+<div id="left" style="float:left;">
 <div id="writer"><h6 style="font-weight: bold">${l.writer}</h6></div>
 <div id="comment"><h6>${l.comment}</h6></div>
 </div>
-<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<div id="right"  style="float:right; text-align:right;">
 <h6>${l.age}</h6><h6> ${l.gender}</h6>
 <h6>${l.date}</h6>
 </div>
