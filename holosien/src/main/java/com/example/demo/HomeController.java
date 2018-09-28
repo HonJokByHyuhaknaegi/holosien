@@ -26,6 +26,8 @@ import com.example.demo.board.domain.ReviewVO;
 import com.example.demo.board.service.BoardService;
 import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 @Controller
 public class HomeController {
@@ -193,14 +195,19 @@ public class HomeController {
    @RequestMapping(value="/sendReview")
    public String sendReview(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
-	   
+
+	   String savePath = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+request.getParameter("photo")+'">';
+       int sizeLimit = 5*1024*1024;
+       String encType ="euc-kr";
+       MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, encType, new DefaultFileRenamePolicy());
+
 	   vo.setCategory((String) request.getParameter("category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
-	   vo.setPhoto(request.getParameter("photo"));
+	   vo.setPhoto(savePath);
 	   
 	   bBoardService.reviewInsertService(vo);
 	   
