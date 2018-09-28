@@ -94,7 +94,7 @@ $(document).ready(function() {
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br>
 <div>
 <textarea id="writeComment" class="form-control" rows="3" style="resize: none;"></textarea>
-<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">write</button>
+<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">Write</button>
 </div>
 </div>
 
