@@ -47,7 +47,7 @@ insert into comment (writer,writerID,gender,age,comment,boardNo,date)
 values (#{writer},#{writerID}, #{gender},#{age},#{comment},#{boardNo},default)
 </insert>
 
-<select id="CommentList" resultType="com.example.demo.board.domain.CommentVO" parameterType="int">
+<select id="commentList" resultType="com.example.demo.board.domain.CommentVO" parameterType="int">
 select * from comment where boardNo=#{_parameter}
 </select>
 
