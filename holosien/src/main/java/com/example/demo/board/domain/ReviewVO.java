@@ -8,9 +8,16 @@ public class ReviewVO {
 	private Date reg_date; //작성일
 	private String category; //카테고리
 	private double point_x; //주소 위도
-	private double point_y; //주소 경도
+	private double point_y; //주소 경도String filename1 = multi.getFilesystemName("filename1");
+	private String photo; //대표사진
 	
 
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 	public double getPoint_x() {
 		return point_x;
 	}

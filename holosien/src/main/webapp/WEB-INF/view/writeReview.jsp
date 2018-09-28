@@ -60,7 +60,7 @@
    </div>
 
    <div id="writeBoard" align="center" style="width:60%; margin: auto;">
-      <form id="frm" class="form-horizontal" action="${pageContext.request.contextPath}/sendReview" method="post">
+      <form id="frm" class="form-horizontal" action="${pageContext.request.contextPath}/sendReview" method="post" enctype="multipart/form-data">
       <input type="hidden" name="filepath" value="/editor/upload/" />
       
       <div class="form-group">
