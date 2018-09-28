@@ -16,6 +16,10 @@ function sendComment(){
 		return true;
 	}
 }
+
+function deleteComment(cno){
+	location.href="${pageContext.request.contextPath}/deleteComment?CommentNo="+cno;
+}
 </script>
 </head>
 <body>
@@ -43,7 +47,7 @@ function sendComment(){
 </div>
 </c:forEach>
 
-<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${boardNo}">
+<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${param.boardNo}">
 <textarea id="Comment_content" name="Comment_content" class="form-control" rows="3" style="resize: none;"></textarea>
 <input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write">
 </form>

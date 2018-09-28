@@ -100,7 +100,7 @@ public class HomeController {
 
    @RequestMapping(value="/comment")
    public String comment(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
-	   System.out.println("comment controller");
+	   model.addAttribute("boardNo", (int)boardNo);
 	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
          return "comment";
       }
