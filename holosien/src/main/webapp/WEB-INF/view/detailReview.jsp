@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#menubar li:nth-child(2)").addClass('active');
+	$("#menubar li:nth-child(3)").addClass('active');
 	
 	var point_x = ${review.point_x};
 	var point_y = ${review.point_y};
