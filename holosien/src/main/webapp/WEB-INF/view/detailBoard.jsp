@@ -13,16 +13,6 @@
 $(document).ready(function() {
 	$("#menubar li:nth-child(2)").addClass('active');
 	
-	$('#Sendcomment').click(function(){
-		if(${sessionScope.userID==null}){
-		alert("로그인 후 이용가능합니다.");
-		location.href="${pageContext.request.contextPath}/login";
-		}
-		else{
-		location.href="${pageContext.request.contextPath}/writeComment";
-		}
-	});
-	
 	var point_x = ${board.point_x};
 	var point_y = ${board.point_y};
 
@@ -60,7 +50,23 @@ $(document).ready(function() {
       
         }   
     });
+	
+	function sendComment(){
+		var id = ${session.Scope("userID")};
+		if(id==null){
+			alert("로그인 후 이용가능합니다.");
+			return false;
+		}
+		else{
+			var frmData = document.Comment;
+			  frmData.submit();
+			return true;
+		}
+	}
+	
 });
+
+
 </script>
 
 </head>
@@ -90,11 +96,14 @@ $(document).ready(function() {
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
-<div id="comment">
+<div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br>
 <div>
-<textarea id="writeComment" class="form-control" rows="3" style="resize: none;"></textarea>
-<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">Write</button>
+<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${board.bno}">
+<textarea id="Comment_content" name="Comment_content" class="form-control" rows="3" style="resize: none;"></textarea>
+<input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write"><!-- 
+<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">Write</button> -->
+</form>
 </div>
 </div>
 

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.board.domain.BoardVO;
+import com.example.demo.board.domain.CommentVO;
 import com.example.demo.board.service.BoardService;
 import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
@@ -94,6 +95,7 @@ public class HomeController {
 
    @RequestMapping(value="/detailBoard")
    public String detailBoard(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
+	   
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
@@ -105,7 +107,19 @@ public class HomeController {
          return "writeBoard";
       }
    
-	 
+   @RequestMapping(value="/writeComment")
+   public String writeComment(Model model, @RequestParam(value="boardNo") int boardNo,
+		   HttpServletRequest request, HttpSession session) throws Exception {
+	   CommentVO Cvo = new CommentVO();
+	   System.out.println(request.getAttribute("Comment_content"));
+	   Cvo.setComment((String)request.getAttribute("Comment_content"));
+	   
+	   BoardVO vo = new BoardVO();
+	   vo.setBno(boardNo);
+	   model.addAttribute("board", bBoardService.viewBoard(vo));
+         return "detailBoard";
+   }
+   
    @RequestMapping(value="/send")
    public String send(HttpServletRequest request, HttpSession session) throws Exception {
 	   BoardVO vo = new BoardVO();
@@ -116,6 +130,7 @@ public class HomeController {
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setNumber(request.getParameter("number"));
 	   vo.setContent(request.getParameter("textAreaContent"));
+	   vo.setLocation(request.getParameter("location_result"));
 	   vo.setWriter((String) session.getAttribute("userName"));
 			   
 	   bBoardService.boardInsertService(vo);
