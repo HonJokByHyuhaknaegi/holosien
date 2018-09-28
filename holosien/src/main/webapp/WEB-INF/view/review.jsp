@@ -58,7 +58,7 @@ $(document).ready(function() {
   
   <div class="review">
   <c:forEach var="l" items="${reviewlist}">
-  <div class="review_box" onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'">${l.photo}</div>
+  <div class="review_box" onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'"><img src="${l.photo}"></div>
 <!--   <div class="review_box">Two</div>
   <div class="review_box">Three</div>
   <div class="review_box">Four</div>
