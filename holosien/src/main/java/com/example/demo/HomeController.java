@@ -105,9 +105,14 @@ public class HomeController {
          return "writeBoard";
       }
    
+   @RequestMapping(value="/writeReview")
+   public String writeReview() {
+         return "writeReview";
+      }
+
 	 
    @RequestMapping(value="/send")
-   public String send(HttpServletRequest request, HttpSession session) throws Exception {
+   public String send(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   BoardVO vo = new BoardVO();
 	   
 	   vo.setCategory((String) request.getParameter("category"));
@@ -119,7 +124,29 @@ public class HomeController {
 	   vo.setWriter((String) session.getAttribute("userName"));
 			   
 	   bBoardService.boardInsertService(vo);
-       return "send";
+	   
+	   model.addAttribute("category", category);
+	   model.addAttribute("boardlist", bBoardService.boardListService(category));
+       return "together";
+      }
+   
+   @RequestMapping(value="/sendReview")
+   public String sendReview(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+	   BoardVO vo = new BoardVO();
+	   
+	   vo.setCategory((String) request.getParameter("category"));
+	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
+	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
+	   vo.setSubject(request.getParameter("subject"));
+	   vo.setNumber(request.getParameter("number"));
+	   vo.setContent(request.getParameter("textAreaContent"));
+	   vo.setWriter((String) session.getAttribute("userName"));
+			   
+	   bBoardService.boardInsertService(vo);
+	   
+	   model.addAttribute("category", category);
+	   model.addAttribute("boardlist", bBoardService.boardListService(category));
+       return "review";
       }
  
    @RequestMapping(value="/searchLocation")

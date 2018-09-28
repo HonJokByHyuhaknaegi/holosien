@@ -10,9 +10,15 @@
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(3)").addClass('active');
+	$("#writeReview").click(function(){
+		location.href="${pageContext.request.contextPath}/writeReview"
 	});
+	});
+
 </script>
-</head>
+
+	</head>
+
 <body>
 <div id="header">
             <jsp:include page="header.jsp" />
@@ -44,6 +50,10 @@ $(document).ready(function() {
   <div class="review_box">Four</div>
   <div class="review_box">Five</div>
   <div class="review_box">Six</div>
+</div>
+
+<div align="center">
+<button id="writeReview" class="custom-border-btn" style="background:none; margin-bottom:20px" ><span>write</span></button>
 </div>
 
 </body>
