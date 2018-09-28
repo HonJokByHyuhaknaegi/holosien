@@ -101,7 +101,7 @@ function address(div){
 <div id="location" class="location">${l.point_y},${l.point_x}</div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
-<h6>2명</h6>
+<h6>${l.number}명</h6>
 <h6>${l.writer}</h6>
 <h6>${l.reg_date}</h6>
 <button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"

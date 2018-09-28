@@ -89,6 +89,7 @@ $(document).ready(function() {
 <h6>${board.category}</h6>
 <h6>작성자 : ${board.writer} </h6>
 <h6>작성일 : ${board.reg_date}</h6>
+<h6>인원 : ${board.number}</h6>
 <h6>${board.content} </h6>
 <h6 id="centerAddr"></h6>
 <h6 id="centerAddr2"></h6>
@@ -97,8 +98,8 @@ $(document).ready(function() {
 </div>
 
 <div id="comment">
-<span class="nino-subHeading">Comment</span>
-
+<span style="font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span>
+<button id="writeComment">write</button>
 </div>
 </div>
 </body>

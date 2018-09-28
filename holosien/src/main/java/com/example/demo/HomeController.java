@@ -113,6 +113,7 @@ public class HomeController {
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
+	   vo.setNumber(request.getParameter("number"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
 			   

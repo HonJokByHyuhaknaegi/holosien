@@ -11,7 +11,14 @@ public class BoardVO {
 	private String category;
 	private double point_x;
 	private double point_y;
+	private String number;
 	
+	public String getNumber() {
+		return number;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
 	public double getPoint_x() {
 		return point_x;
 	}

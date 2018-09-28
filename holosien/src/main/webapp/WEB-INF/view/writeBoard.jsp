@@ -84,6 +84,10 @@
                <input  type="text" name="location_position_y">
                <input  type="text" name="location_position_x">
                </div>
+          <div class="form-group">
+            <label for="number">인원</label> 
+            <input type="text" class="form-control" id="number" name="number" placeholder="인원을 입력하세요."> <br>
+               </div>
          <div class="form-group">
             <label for="content">내용</label>
             <textarea class="textAreaContent" id="textAreaContent" name="textAreaContent" rows="10" cols="100" style="width:100%; height:412px;"></textarea>
