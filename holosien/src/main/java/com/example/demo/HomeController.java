@@ -196,18 +196,18 @@ public class HomeController {
    public String sendReview(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 
-	   String savePath = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+request.getParameter("photo")+'">';
+	 /*  String savePath = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+request.getParameter("photo")+'">';
        int sizeLimit = 5*1024*1024;
        String encType ="euc-kr";
        MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, encType, new DefaultFileRenamePolicy());
-
+*/
 	   vo.setCategory((String) request.getParameter("category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
-	   vo.setPhoto(savePath);
+	   //vo.setPhoto(savePath);
 	   
 	   bBoardService.reviewInsertService(vo);
 	   

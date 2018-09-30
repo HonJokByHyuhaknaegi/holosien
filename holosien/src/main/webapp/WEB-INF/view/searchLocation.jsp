@@ -145,7 +145,7 @@
 			        // 해당 장소에 인포윈도우에 장소명을 표시합니다
 			        // mouseout 했을 때는 인포윈도우를 닫습니다
 			        (function(marker, place) {
-						var inputPlace = place.place_name+" ("+place.address_name+")";
+						var inputPlace = place.place_name;
 			            daum.maps.event.addListener(marker, 'mouseover', function() {
 			                displayInfowindow(marker, place.place_name);
 			            });

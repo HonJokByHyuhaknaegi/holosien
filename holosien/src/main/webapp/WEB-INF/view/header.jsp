@@ -19,7 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
-
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/map.css" />
+	
 </head>
 <body>
 <header id="nav-header">
