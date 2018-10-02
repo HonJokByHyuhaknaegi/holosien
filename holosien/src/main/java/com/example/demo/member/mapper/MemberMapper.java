@@ -23,7 +23,8 @@ public List<BoardVO> boardList(String category) throws Exception;
 public BoardVO viewBoard(BoardVO board) throws Exception;
 
 public void insertComments(CommentVO board) throws Exception;
-public List<CommentVO> commentList(int boardNo) throws Exception;
+public void deleteComments(int commentNo) throws Exception;
+public List<CommentVO> commentList(CommentVO Cvo) throws Exception;
 
 public void insertReviews(ReviewVO board) throws Exception;
 public List<ReviewVO> reviewList(String category) throws Exception;

@@ -31,9 +31,13 @@ public class BoardService {
 	public void CommentInsertService(CommentVO board) throws Exception {
 		mMemberMapper.insertComments(board);
 	}
+	
+	public void CommentDeleteService(int CommentNo) throws Exception {
+		mMemberMapper.deleteComments(CommentNo);
+	}
 
-	public List<CommentVO> CommentListService(int boardNo) throws Exception {
-		return mMemberMapper.commentList(boardNo);
+	public List<CommentVO> CommentListService(CommentVO Cvo) throws Exception {
+		return mMemberMapper.commentList(Cvo);
 	}
 
 	public void reviewInsertService(ReviewVO board) throws Exception {

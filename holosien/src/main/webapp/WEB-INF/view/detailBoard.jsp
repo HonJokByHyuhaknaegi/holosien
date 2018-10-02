@@ -52,16 +52,6 @@ $(document).ready(function() {
         }   
     });
 });
-
-function sendComment(){
-	if(${sessionScope.userID==null}){
-		alert("로그인 후 이용가능합니다.");
-		return false;
-	}
-	else{
-		return true;
-	}
-}
 </script>
 
 </head>
@@ -91,12 +81,13 @@ function sendComment(){
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
-<%-- <div>
+<div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <c:import url="/comment">
+<c:param name="board" value="Together"/>
 <c:param name="boardNo" value="${board.bno}"/>
 </c:import>
-</div> --%>
+</div>
 
 </div>
 </body>

@@ -37,7 +37,8 @@ public class HomeController {
 	 BoardService bBoardService;
 	 
    @RequestMapping(value="/")
-   public String home() {
+   public String home(Model model) throws Exception {
+	   model.addAttribute("boardlist", bBoardService.boardListService("all"));
          return "home";
       }
    
@@ -95,15 +96,16 @@ public class HomeController {
 	   model.addAttribute("boardlist", bBoardService.boardListService(category));
          return "map";
       }
-/*   @RequestMapping(value="/list")
-   public String list() throws Exception {
-         return "list";
-      }*/
 
    @RequestMapping(value="/comment")
-   public String comment(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
+   public String comment(Model model, @RequestParam(value="boardNo") int boardNo, @RequestParam(value="board") String board) throws Exception {
+	   CommentVO Cvo = new CommentVO();
+	   Cvo.setBoard(board);
+	   Cvo.setBoardNo(boardNo);
+	   
+	   model.addAttribute("board", board);
 	   model.addAttribute("boardNo", (int)boardNo);
-	   model.addAttribute("Commentlist", bBoardService.CommentListService(boardNo));
+	   model.addAttribute("Commentlist", bBoardService.CommentListService(Cvo));
          return "comment";
       }
    
@@ -120,8 +122,7 @@ public class HomeController {
    public String detailReview(Model model, @RequestParam(value="reviewNo") int reviewNo) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 	   vo.setBno(reviewNo);
-	   
-	   model.addAttribute("Commentlist", bBoardService.CommentListService(reviewNo));
+
 	   model.addAttribute("review", bBoardService.viewReview(vo));
          return "detailReview";
       }
@@ -137,39 +138,51 @@ public class HomeController {
       }
 
    @RequestMapping(value="/writeComment")
-   public String writeComment(Model model, @RequestParam(value="boardNo") int boardNo,
+   public String writeComment(Model model, @RequestParam(value="boardNo") int boardNo, @RequestParam(value="board") String board,
 		   HttpServletRequest request, HttpSession session) throws Exception {
 	   CommentVO Cvo = new CommentVO();
+	   Cvo.setBoard(board);
 	   Cvo.setBoardNo(boardNo);
-	   Cvo.setComment((String)request.getParameter("Comment_content"));
+	   String content = (String)request.getParameter("Comment_content");
+	   content = content.replace("\r\n","<br>");
+	   Cvo.setComment(content);
 	   Cvo.setAge((int) session.getAttribute("userAge"));
 	   Cvo.setGender((String) session.getAttribute("userGender"));
 	   Cvo.setWriter((String) session.getAttribute("userName"));
 	   Cvo.setWriterID((String) session.getAttribute("userID"));
 	   bBoardService.CommentInsertService(Cvo);
 	   
+	   if(board=="Together"){
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "redirect:detailBoard?boardNo="+boardNo;
+	   }
+	   else {
+		   ReviewVO vo = new ReviewVO();
+		   vo.setBno(boardNo);
+		   model.addAttribute("review", bBoardService.viewReview(vo));
+		   return "redirect:detailReview?reviewNo="+boardNo;
+	   }
    }
    
    @RequestMapping(value="/deleteComment")
-   public String deleteComment(Model model, @RequestParam(value="boardNo") int boardNo,
-		   HttpServletRequest request, HttpSession session) throws Exception {
-	   CommentVO Cvo = new CommentVO();
-	   Cvo.setBoardNo(boardNo);
-	   Cvo.setComment((String)request.getParameter("Comment_content"));
-	   Cvo.setAge((int) session.getAttribute("userAge"));
-	   Cvo.setGender((String) session.getAttribute("userGender"));
-	   Cvo.setWriter((String) session.getAttribute("userName"));
-	   Cvo.setWriterID((String) session.getAttribute("userID"));
-	   bBoardService.CommentInsertService(Cvo);
+   public String deleteComment(Model model, @RequestParam(value="boardNo") int boardNo, @RequestParam(value="board") String board,
+		   @RequestParam(value="CommentNo") int CommentNo, HttpServletRequest request, HttpSession session) throws Exception {
 	   
+	   bBoardService.CommentDeleteService(CommentNo);
+	   
+	   if(board=="Together"){
 	   BoardVO vo = new BoardVO();
 	   vo.setBno(boardNo);
 	   model.addAttribute("board", bBoardService.viewBoard(vo));
          return "redirect:detailBoard?boardNo="+boardNo;
+         } else {
+			   ReviewVO vo = new ReviewVO();
+			   vo.setBno(boardNo);
+			   model.addAttribute("review", bBoardService.viewReview(vo));
+			   return "redirect:detailReview?reviewNo="+boardNo;
+			   }
    }
 
    @RequestMapping(value="/send")

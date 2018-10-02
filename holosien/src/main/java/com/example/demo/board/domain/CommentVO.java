@@ -9,6 +9,7 @@ private String writerID;
 private String gender;
 private int age;
 private String comment;
+private String board;
 private int boardNo;
 private Date date;
 public String getWriter() {
@@ -58,6 +59,12 @@ public int getCno() {
 }
 public void setCno(int cno) {
 	this.cno = cno;
+}
+public String getBoard() {
+	return board;
+}
+public void setBoard(String board) {
+	this.board = board;
 }
 
 }

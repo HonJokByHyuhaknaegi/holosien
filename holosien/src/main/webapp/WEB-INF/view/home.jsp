@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +24,31 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/unslider.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
-
+	
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
+	$("div[name=together_img]").each(function(){
+	var $div = $(this);
+	subImage($div);
+});
+});
+
+function subImage(div){
+	var content = $(div).html();
+	var index_s = content.indexOf("<img");
+	if(index_s!=-1){
+	content = content.substr(content.indexOf("<img"));
+	var index_e = content.indexOf('>');
+	content = content.substr(0,index_e+1);
+	$(div).html(content);
+	}
+	else{
+		$(div).html("<img src='/holosien/resources/images/no_images.png'>");
+	}
+	$(div).find('img').addClass("img-circle img-thumbnail");
+}
+
 function goLogin() {
 	location.href="${pageContext.request.contextPath}/myPage";
 }
@@ -238,39 +261,19 @@ function goLogin() {
     	<div class="container">
     		<div class="nino-testimonialSlider">
 				<ul>
+				<c:forEach var="l" items="${boardlist}" begin="0" end="2" varStatus="status">
 					<li>
 						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt="">
+							<div class="nino-avatar fsr" name="together_img"> ${l.content}
+								<%-- <img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt=""> --%>
 							</div>
 							<div>
-								<p class="quote">"서울 디뮤지엄 전시 같이 보러 가실 분!"</p>
-								<span class="name">원가연</span>
+								<p class="quote">${l.subject}</p>
+								<span class="name">${l.writer}</span>
 							</div>
 						</div>
 					</li>
-					<li>
-						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-2.jpg" alt="">
-							</div>
-							<div>
-								<p class="quote">"지금 혼자 여수 여행중인데 동해하실 분 구합니다"</p>
-								<span class="name">박수철</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div layout="row" class="verticalCenter">
-							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-3.jpg" alt="">
-							</div>
-							<div>
-								<p class="quote">"충무로 근처 자취방 룸메 구해요"</p>
-								<span class="name">김경석</span>
-							</div>
-						</div>
-					</li>
+				</c:forEach>
 				</ul>
 			</div>
 			</div>

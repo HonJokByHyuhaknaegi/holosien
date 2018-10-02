@@ -88,31 +88,13 @@ function sendComment(){
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
-<%-- <div>
-<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <div>
-
-<c:forEach var="l" items="${Commentlist}">
-<div style="width:100%; margin:auto;" >
-<div id="left" style="float:left;">
-<div id="writer"><h6 style="font-weight: bold">${l.writer}</h6></div>
-<div id="comment"><h6>${l.comment}</h6></div>
+<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
+<c:import url="/comment">
+<c:param name="board" value="Review"/>
+<c:param name="boardNo" value="${review.bno}"/>
+</c:import>
 </div>
-<div id="right"  style="float:right; text-align:right;">
-<h6>${l.age}</h6><h6> ${l.gender}</h6>
-<h6>${l.date}</h6>
-</div>
-<hr width=100% align="center">
-</div>
-</c:forEach>
-
-<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${board.bno}">
-<textarea id="Comment_content" name="Comment_content" class="form-control" rows="3" style="resize: none;"></textarea>
-<input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write"><!-- 
-<button id="Sendcomment" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;">Write</button> -->
-</form>
-</div>
-</div> --%>
 
 </div>
 </body>

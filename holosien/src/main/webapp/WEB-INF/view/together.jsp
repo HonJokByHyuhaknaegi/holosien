@@ -10,19 +10,20 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	
 	$("#menubar li:nth-child(2)").addClass('active');
+	$('#${category}').focus();
+	
 	$("#writeTogether").click(function(){
 		location.href="${pageContext.request.contextPath}/writeBoard"
 	});
-$('#togetherAll').click(function(){
+$('#all').click(function(){
 	location.href="${pageContext.request.contextPath}/together"
 		});
 	
 $('#friend').click(function(){
 	location.href="${pageContext.request.contextPath}/together?category=friend"
 });
-$('#roomMate').click(function(){
+$('#roommate').click(function(){
 	location.href="${pageContext.request.contextPath}/together?category=roommate"
 	});
 $('#pet').click(function(){
@@ -33,13 +34,13 @@ $('#delivery').click(function(){
 	});
 
 
-$(".location").each(function(){
+/* $(".location").each(function(){
 	var $div = $(this);
 	address($div);
-});
+}); */
 });
 
-//주소-좌표 변환 객체를 생성합니다
+/* //주소-좌표 변환 객체를 생성합니다
 var geocoder = new daum.maps.services.Geocoder();
 
 function address(div){
@@ -53,7 +54,7 @@ function address(div){
             $(div).html(detailAddr);
         }   
     });
-} 
+}  */
 
 </script>
 <style>
@@ -74,13 +75,13 @@ function address(div){
          </div>
 
 <div id="together-menu" align="center" style="margin-bottom:50px">
-  <button autofocus class="together together-bnt" id="togetherAll">
+  <button class="together together-bnt" id="all">
     <span>전체보기</span>
   </button>
   <button class="together together-bnt" id="friend">
     <span>친구찾기</span>
   </button>
-    <button class="together together-bnt" id="roomMate">
+    <button class="together together-bnt" id="roommate">
     <span>룸메이트</span>
   </button>
     <button class="together together-bnt" id="pet">
@@ -96,9 +97,10 @@ function address(div){
 <c:forEach var="l" items="${boardlist}">
 <div style="width:100%; margin:auto;" >
 <div id="left" style="float:left; padding-left:30px">
-<div id="category"><h6>${l.category}</h6></div>
+<div id="board_category"><h6>${l.category}</h6></div>
 <div id="title"><h4>${l.subject}</h4></div>
-<div id="location" class="location">${l.point_y},${l.point_x}</div>
+<%-- <div id="location" class="location">${l.point_y},${l.point_x}</div> --%>
+<div id="location"><h6>${l.location}</h6></div>
 </div>
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
 <h6>${l.number}명</h6>

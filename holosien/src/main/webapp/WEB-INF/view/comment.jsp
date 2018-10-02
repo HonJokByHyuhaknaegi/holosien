@@ -18,7 +18,8 @@ function sendComment(){
 }
 
 function deleteComment(cno){
-	location.href="${pageContext.request.contextPath}/deleteComment?boardNo=${param.boardNo}&CommentNo="+cno;
+	alert("해당 댓글이 삭제되었습니다.")
+	location.href="${pageContext.request.contextPath}/deleteComment?board=${param.board}&boardNo=${param.boardNo}&CommentNo="+cno;
 }
 </script>
 </head>
@@ -47,7 +48,7 @@ function deleteComment(cno){
 </div>
 </c:forEach>
 
-<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?boardNo=${param.boardNo}">
+<form name="Comment" id="Comment" method="post" onsubmit="return sendComment();" action="writeComment?board=${param.board}&boardNo=${param.boardNo}">
 <textarea id="Comment_content" name="Comment_content" class="form-control" rows="3" style="resize: none;"></textarea>
 <input type="submit" class="custom-border-btn" style="margin-top:10px; padding:5px 20px; float:right; border:none;" value="Write">
 </form>
