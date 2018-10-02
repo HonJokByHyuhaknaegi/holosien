@@ -55,18 +55,28 @@ $(document).ready(function() {
   </div>
   
   
-  
   <div class="review">
   <c:forEach var="l" items="${reviewlist}">
-  <div class="review_box" onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'"><img src="${l.photo}"></div>
-<!--   <div class="review_box">Two</div>
-  <div class="review_box">Three</div>
-  <div class="review_box">Four</div>
-  <div class="review_box">Five</div>
-  <div class="review_box">Six</div> -->
+   <div class="row nino-hoverEffect">
+   <div class="img-thumbnail">
+      <div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'">
+						<div class="item">
+							<a class="overlay" href="#">
+								<span class="content">
+									<i class="mdi mdi-account-multiple nino-icon"></i>
+									${l.subject}
+								</span>
+								<img src="${pageContext.request.contextPath}/resources/editor/upload/${l.photo}">
+							</a>
+						</div>
+						</div>
+
+</div>
 </div>
 </c:forEach>
+</div>
 
+<br>
 <div align="center">
 <button id="writeReview" class="custom-border-btn" style="background:none; margin-bottom:20px" ><span>write</span></button>
 </div>

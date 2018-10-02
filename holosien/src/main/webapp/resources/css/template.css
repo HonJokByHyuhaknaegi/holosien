@@ -151,7 +151,8 @@ img.img-full-width {
 	width:65%; margin:auto;
 	display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 50px;
+  
 }
 
 .review_box {
@@ -245,10 +246,15 @@ img.img-full-width {
 /* =============== HOVER EFFECT =============== */
 .nino-hoverEffect {
 	text-align: center;
+	vertical-align:center;
 }
 .nino-hoverEffect .item {
-	background: #95e1d3;
+	background: #fff;
 	display: inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	
+
 }
 .nino-hoverEffect .item .overlay {
 	display: block;

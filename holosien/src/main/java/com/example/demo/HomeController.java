@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -18,6 +19,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.board.domain.BoardVO;
@@ -206,21 +209,24 @@ public class HomeController {
       }
    
    @RequestMapping(value="/sendReview")
-   public String sendReview(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+   public String sendReview(MultipartHttpServletRequest multi, Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 
-	 /*  String savePath = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+request.getParameter("photo")+'">';
-       int sizeLimit = 5*1024*1024;
-       String encType ="euc-kr";
-       MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, encType, new DefaultFileRenamePolicy());
-*/
+	   MultipartFile mf = multi.getFile("photo"); //jsp file name mapping
+       String defaultPath = request.getSession().getServletContext().getRealPath("/resources/editor/upload/");
+       System.out.print(defaultPath);
+       String original = mf.getOriginalFilename();//업로드하는 파일 name 
+       
+       String path = defaultPath + original;
+      
+       mf.transferTo(new File(path));//파일을 위에 지정 경로로 업로드
 	   vo.setCategory((String) request.getParameter("category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));
-	   //vo.setPhoto(savePath);
+	   vo.setPhoto(original);
 	   
 	   bBoardService.reviewInsertService(vo);
 	   
@@ -229,7 +235,6 @@ public class HomeController {
 	   
        return "review";
       }
- 
    @RequestMapping(value="/searchLocation")
    public String searchLocation() {
          return "searchLocation";
