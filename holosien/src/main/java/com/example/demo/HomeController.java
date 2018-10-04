@@ -99,6 +99,12 @@ public class HomeController {
 	   model.addAttribute("boardlist", bBoardService.boardListService(category));
          return "map";
       }
+   
+   @RequestMapping(value="/search")
+   public String search(Model model, @RequestParam(value="searchInput") String searchInput) {
+	   model.addAttribute("searchInput", searchInput);
+         return "search";
+      }
 
    @RequestMapping(value="/comment")
    public String comment(Model model, @RequestParam(value="boardNo") int boardNo, @RequestParam(value="board") String board) throws Exception {
@@ -221,8 +227,6 @@ public class HomeController {
       
        mf.transferTo(new File(path));//파일을 위에 지정 경로로 업로드
 	   vo.setCategory((String) request.getParameter("board_category"));
-	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
-	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
 	   vo.setContent(request.getParameter("textAreaContent"));
 	   vo.setWriter((String) session.getAttribute("userName"));

@@ -21,6 +21,14 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/template.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/map.css" />
 	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("header .nino-search, #nino-searchForm .nino-close").click(function(){
+			$("#nino-searchForm").toggleClass("open");
+		});
+	});
+	</script>
+	
 </head>
 <body>
 <header id="nav-header">
@@ -50,9 +58,9 @@
 								<li><a href="${pageContext.request.contextPath}/map">map</a></li>	
 							</ul>
 						</div><!-- /.navbar-collapse -->
-						<ul class="nino-iconsGroup nav navbar-nav">
+						<ul class="nino-iconsGroup nav navbar-nav sidemenu">
 							<li><a href="${pageContext.request.contextPath}/myPage"><i class="glyphicon glyphicon-user"></i></a></li>
-							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
+							<li><a class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>
 				</div><!-- /.container-fluid -->
@@ -60,6 +68,12 @@
 			</div>
 			</header>
 			
-
+    <!-- Search Form - Display when click magnify icon in menu
+    ================================================== -->
+    <form action="${pageContext.request.contextPath}/search" id="nino-searchForm">
+    	<input type="text" placeholder="Search..." class="form-control nino-searchInput" name="searchInput">
+    	<i class="mdi mdi-close nino-close"></i>
+    </form><!--/#nino-searchForm-->
+    
 </body>
 </html>

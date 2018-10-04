@@ -53,7 +53,7 @@ jQuery(function($) {
 	$("a.nino-prettyPhoto").prettyPhoto();
 	
 	/* =============== SMOOTH SCROOL EFFECT =============== */
-	$('#nino-navbar ul li a').on('click',function (e) {
+	$('#nino-navbar ul li a').not('.sidemenu').on('click',function (e) {
 	    e.preventDefault();
 	    var target = this.hash,
 	    $target = $(target);
