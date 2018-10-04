@@ -34,14 +34,11 @@ public class NaverBlogSearch {
                 response.append(inputLine);
             }
             br.close();
-            System.out.println(response.toString());
-            
      	   JSONParser parser = new JSONParser();
     	   JSONObject jsonObject = new JSONObject();
     	   jsonObject = (JSONObject) parser.parse(response.toString());
             return jsonObject;
         } catch (Exception e) {
-            System.out.println(e);
         }
 		return null;
     }

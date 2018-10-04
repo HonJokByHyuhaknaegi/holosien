@@ -93,12 +93,7 @@ public class HomeController {
       }
    @RequestMapping(value="/tip")
    public String tip(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
-	   /*model.addAttribute("boardlist", bBoardService.boardListService(category));*/
 	   JSONObject result = NaverBlogSearch.naverBlogSearch();
-	   System.out.println("$$$$$$$$$$$$$$$result"+result);
-/*	   JSONParser parser = new JSONParser();
-	   JSONObject jsonObject = new JSONObject();
-	   jsonObject = (JSONObject) parser.parse(result);*/
 	   model.addAttribute("result",result);
          return "tip";
       }

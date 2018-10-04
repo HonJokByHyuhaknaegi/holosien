@@ -5,12 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Holosien - Tip</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(4)").addClass('active');
-	console.log(${hi});
 	});
 </script>
 </head>
@@ -36,13 +35,13 @@ $(document).ready(function() {
   
   <div id="search_result" style="width:80%; margin:auto">
       <c:forEach var="l" items="${result.items}">
-<div style="width:100%; margin:auto;" >
-<h4>${l.title}</h4>
-<h6>${l.link}</h6>
+<div style="width:100%; margin:auto; padding:7px 0px 7px" >
+<h4 onclick="location.href='${l.link}'" style="cursor:pointer">${l.title}</h4>
 <h6>${l.description}</h6>
 <h6>${l.bloggername}</h6>
 <h6>${l.postdate}</h6>
 </div>
+<hr width=100% align="center">
 </c:forEach>
 </div>
       
