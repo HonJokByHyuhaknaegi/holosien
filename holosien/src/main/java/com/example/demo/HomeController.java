@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,6 +44,7 @@ public class HomeController {
    @RequestMapping(value="/")
    public String home(Model model) throws Exception {
 	   model.addAttribute("boardlist", bBoardService.boardListService("all"));
+	   model.addAttribute("reviewlist", bBoardService.reviewListService("all"));
          return "home";
       }
    
@@ -90,7 +93,13 @@ public class HomeController {
       }
    @RequestMapping(value="/tip")
    public String tip(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
-	   model.addAttribute("boardlist", bBoardService.boardListService(category));
+	   /*model.addAttribute("boardlist", bBoardService.boardListService(category));*/
+	   JSONObject result = NaverBlogSearch.naverBlogSearch();
+	   System.out.println("$$$$$$$$$$$$$$$result"+result);
+/*	   JSONParser parser = new JSONParser();
+	   JSONObject jsonObject = new JSONObject();
+	   jsonObject = (JSONObject) parser.parse(result);*/
+	   model.addAttribute("result",result);
          return "tip";
       }
    @RequestMapping(value="/map")
@@ -101,8 +110,10 @@ public class HomeController {
       }
    
    @RequestMapping(value="/search")
-   public String search(Model model, @RequestParam(value="searchInput") String searchInput) {
+   public String search(Model model, @RequestParam(value="searchInput") String searchInput) throws Exception {
 	   model.addAttribute("searchInput", searchInput);
+	   model.addAttribute("boardlist", bBoardService.searchTogether(searchInput));
+	   model.addAttribute("reviewlist", bBoardService.searchReview(searchInput));
          return "search";
       }
 

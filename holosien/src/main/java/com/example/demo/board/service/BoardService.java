@@ -51,5 +51,12 @@ public class BoardService {
 	public ReviewVO viewReview(ReviewVO vo) throws Exception {
 		return mMemberMapper.viewReview(vo);
 	}
-
+	
+	public List<BoardVO> searchTogether(String searchInput) throws Exception {
+		return mMemberMapper.togetherSearchList(searchInput);
+	}
+	
+	public List<ReviewVO> searchReview(String searchInput) throws Exception {
+		return mMemberMapper.reviewSearchList(searchInput);
+	}
 }

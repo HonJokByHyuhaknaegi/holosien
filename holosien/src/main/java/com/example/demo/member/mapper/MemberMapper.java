@@ -29,4 +29,7 @@ public List<CommentVO> commentList(CommentVO Cvo) throws Exception;
 public void insertReviews(ReviewVO board) throws Exception;
 public List<ReviewVO> reviewList(String category) throws Exception;
 public ReviewVO viewReview(ReviewVO board) throws Exception;
+
+public List<BoardVO> togetherSearchList(String searchInput) throws Exception;
+public List<ReviewVO> reviewSearchList(String searchInput) throws Exception;
 }

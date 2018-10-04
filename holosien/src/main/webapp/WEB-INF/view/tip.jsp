@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(4)").addClass('active');
+	console.log(${hi});
 	});
 </script>
 </head>
@@ -30,7 +32,19 @@ $(document).ready(function() {
   <button class="together together-bnt" id="friend">
     <span>인기순</span>
   </button>
-    
   </div>
+  
+  <div id="search_result" style="width:80%; margin:auto">
+      <c:forEach var="l" items="${result.items}">
+<div style="width:100%; margin:auto;" >
+<h4>${l.title}</h4>
+<h6>${l.link}</h6>
+<h6>${l.description}</h6>
+<h6>${l.bloggername}</h6>
+<h6>${l.postdate}</h6>
+</div>
+</c:forEach>
+</div>
+      
 </body>
 </html>

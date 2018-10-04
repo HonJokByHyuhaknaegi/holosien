@@ -73,4 +73,12 @@ where category=#{_parameter}
 order by reg_date DESC
 </select>
 
+<select id = "togetherSearchList" resultType="com.example.demo.board.domain.BoardVO" parameterType="String">
+select * from board where subject like '%${_parameter}%'
+</select>
+
+<select id = "reviewSearchList" resultType="com.example.demo.board.domain.ReviewVO" parameterType="String">
+select * from review where subject like '%${_parameter}%'
+</select>
+
 </mapper>
