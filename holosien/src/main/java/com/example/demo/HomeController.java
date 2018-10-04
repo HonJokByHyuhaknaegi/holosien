@@ -28,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
 import com.example.demo.board.domain.ReviewVO;
+import com.example.demo.board.domain.TipVO;
 import com.example.demo.board.service.BoardService;
 import com.example.demo.member.domain.MemberVO;
 import com.example.demo.member.service.MemberService;
@@ -92,9 +93,11 @@ public class HomeController {
 	   return "review";
       }
    @RequestMapping(value="/tip")
-   public String tip(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+   public String tip(Model model) throws Exception {
 	   JSONObject result = NaverBlogSearch.naverBlogSearch();
 	   model.addAttribute("result",result);
+	   
+	   model.addAttribute("tiplist", bBoardService.tipListService());
          return "tip";
       }
    @RequestMapping(value="/map")
@@ -142,6 +145,15 @@ public class HomeController {
          return "detailReview";
       }
    
+   @RequestMapping(value="/detailTip")
+   public String detailTip(Model model, @RequestParam(value="boardNo") int boardNo) throws Exception {
+	   TipVO vo = new TipVO();
+	   vo.setBno(boardNo);
+	   
+	   model.addAttribute("tip", bBoardService.viewTip(vo));
+         return "detailBoard";
+      }
+   
    @RequestMapping(value="/writeBoard")
    public String writeBoard() {
          return "writeBoard";
@@ -150,6 +162,11 @@ public class HomeController {
    @RequestMapping(value="/writeReview")
    public String writeReview() {
          return "writeReview";
+      }
+   
+   @RequestMapping(value="/writeTip")
+   public String writeTip() {
+         return "writeTip";
       }
 
    @RequestMapping(value="/writeComment")
@@ -245,6 +262,22 @@ public class HomeController {
 	   
        return "review";
       }
+   
+   @RequestMapping(value="/sendTip")
+   public String sendTip(Model model,HttpServletRequest request, HttpSession session) throws Exception {
+	   TipVO vo = new TipVO();
+	   
+	   vo.setSubject(request.getParameter("subject"));
+	   vo.setContent(request.getParameter("textAreaContent"));
+	   vo.setWriter((String) session.getAttribute("userName"));
+	   
+	   bBoardService.tipInsertService(vo);
+	   
+	   model.addAttribute("tiplist", bBoardService.tipListService());
+	   
+       return "tip";
+      }
+   
    @RequestMapping(value="/searchLocation")
    public String searchLocation() {
          return "searchLocation";

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
 import com.example.demo.board.domain.ReviewVO;
+import com.example.demo.board.domain.TipVO;
 import com.example.demo.member.domain.MemberVO;
 
 
@@ -32,4 +33,8 @@ public ReviewVO viewReview(ReviewVO board) throws Exception;
 
 public List<BoardVO> togetherSearchList(String searchInput) throws Exception;
 public List<ReviewVO> reviewSearchList(String searchInput) throws Exception;
+
+public void insertTips(TipVO tip) throws Exception;
+public List<TipVO> tipList() throws Exception;
+public TipVO viewTip(TipVO tip) throws Exception;
 }

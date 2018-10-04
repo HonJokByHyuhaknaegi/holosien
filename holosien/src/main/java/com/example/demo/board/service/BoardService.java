@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.CommentVO;
 import com.example.demo.board.domain.ReviewVO;
+import com.example.demo.board.domain.TipVO;
 import com.example.demo.member.mapper.MemberMapper;
 
 @Service("com.example.demo.board.service.BoardService")
@@ -58,5 +59,17 @@ public class BoardService {
 	
 	public List<ReviewVO> searchReview(String searchInput) throws Exception {
 		return mMemberMapper.reviewSearchList(searchInput);
+	}
+	
+	public void tipInsertService(TipVO tip) throws Exception {
+		mMemberMapper.insertTips(tip);
+	}
+	
+	public List<TipVO> tipListService() throws Exception {
+		return mMemberMapper.tipList();
+	}
+	
+	public TipVO viewTip(TipVO vo) throws Exception {
+		return mMemberMapper.viewTip(vo);
 	}
 }

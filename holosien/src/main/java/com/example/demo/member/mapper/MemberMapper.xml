@@ -81,4 +81,17 @@ select * from board where subject like '%${_parameter}%'
 select * from review where subject like '%${_parameter}%'
 </select>
 
+<insert id="insertTips" parameterType="com.example.demo.board.domain.TipVO">
+insert into tip (bno,subject,content,writer,reg_date)
+values (default, #{subject},#{content},#{writer},default)
+</insert>
+
+<select id="tipList" resultType="com.example.demo.board.domain.TipVO">
+select * from tip order by reg_date DESC
+</select>
+
+<select id = "viewTip" resultType="com.example.demo.board.domain.TipVO">
+select * from tip where bno=#{bno}
+</select>
+
 </mapper>

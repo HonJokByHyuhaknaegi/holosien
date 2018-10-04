@@ -575,8 +575,8 @@ function goLogin() {
 
     <!-- Search Form - Display when click magnify icon in menu
     ================================================== -->
-    <form action="" id="nino-searchForm">
-    	<input type="text" placeholder="Search..." class="form-control nino-searchInput">
+    <form action="${pageContext.request.contextPath}/search" id="nino-searchForm">
+    	<input type="text" placeholder="Search..." class="form-control nino-searchInput" name="searchInput">
     	<i class="mdi mdi-close nino-close"></i>
     </form><!--/#nino-searchForm-->
 	

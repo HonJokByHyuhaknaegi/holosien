@@ -4,51 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/map.css" />
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/editor/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js" charset="utf-8"></script>
 
-<!-- <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e&libraries=services"></script> -->
-<title>Holosien - Write Review</title>
+<title>Holosien - Write Tip</title>
 
 </head>
 <body>
-<%-- <!-- Navigation -->
- 
-<div class="container">
-	<!-- Login Form -->
-	<div class="row">
-  <!-- Blog Entries Column -->
-	  <div class="col-md-12 my-order">
-		<div class="content-section">
-			<form name="w_form" action="<%=request.getContextPath()%>/board?cmd=board_write" method="post">
-				<!-- filepath : 이미지업로드 경로 -->
-				<input type="hidden" name="filepath" value="/editor/upload/" />
-        <input type="hidden" name="id" value="${sessionScope.id}" />
-				
-				<fieldset class="form-group">
-					<legend class="border-bottom mb-4">New Post</legend>
-					<div class="form-group">
-							<label class="form-control-label">Title</label>
-							<input class="form-control form-control-lg" type="text" name="title" autofocus>
-					</div>
-					<div class="form-group">
-							<label class="form-control-label">Content</label>
-							<!-- <textarea class="form-control" rows="10" cols="50" style="background-image:url('/Blog/img/background.png');"></textarea> -->
-					 		<textarea name="content" id="textAreaContent" style="width: 100%" rows="15"  cols="80"></textarea>
-					</div>
-					<div class="form-group">	
-							<button class="btn btn-outline-info" type="button" onclick="submitContents(this)" >Update</button>
-					</div>		
-				</fieldset>
-			</form>
-		</div>
-		</div>
-  </div>
-  <!-- ./row -->
-</div> --%>
+
 <div id="header">
       <jsp:include page="header.jsp" />
    </div>
@@ -60,25 +24,14 @@
    </div>
 
    <div id="writeBoard" align="center" style="width:60%; margin: auto;">
-      <form id="frm" class="form-horizontal" action="${pageContext.request.contextPath}/sendReview" method="post" enctype="multipart/form-data">
+      <form id="frm" class="form-horizontal" action="${pageContext.request.contextPath}/sendTip" method="post" enctype="multipart/form-data">
       <input type="hidden" name="filepath" value="/editor/upload/" />
-      
-      <div class="form-group">
-          <label for="InputAge">카테고리</label>
-           <select class="form-control" name="board_category" id="board_category" style="width:15%; margin:left;"required>
-              <option value=local>국내</option>
-             <option value=overseas>해외</option>
-         </select>
-         </div>
+  
          <div class="form-group">
             <label for="subject">제목</label> <input type="text"
                class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
          </div>
 
-         <div class="form-group">
-         <label for="img">대표사진</label>
-         <input type="file" name="photo" size=40>
-         </div> 
          <div class="form-group">
             <label for="content">내용</label>
             <textarea class="textAreaContent" id="textAreaContent" name="textAreaContent" rows="10" cols="100" style="width:100%; height:412px;"></textarea>
@@ -87,11 +40,6 @@
       </form>
    </div>
 
-
-<!-- ./container -->
-<script type="text/javascript">
-
-</script>
 <!-- Naver Smart Editor 2 -->
 <script>
   var form = document.w_form;
@@ -131,7 +79,6 @@
       var sHTML = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+filepath+'">';
       oEditors.getById["textAreaContent"].exec("PASTE_HTML", [sHTML]);
   }
-
 
 </script>
 

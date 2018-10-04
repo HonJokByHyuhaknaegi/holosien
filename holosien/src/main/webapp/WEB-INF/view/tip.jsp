@@ -10,6 +10,22 @@
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(4)").addClass('active');
+	$("#external").click(function(){
+		$(this).focus();
+		$("#tip").hide();
+		$("#search_result").show();
+	});
+	
+	$("#internal").click(function(){
+		$(this).focus();
+		$("#search_result").hide();
+		$("#tip").show();
+	});
+	
+	$("#writeTip").click(function(){
+		location.href="${pageContext.request.contextPath}/writeTip"
+	});
+	
 	});
 </script>
 </head>
@@ -25,11 +41,11 @@ $(document).ready(function() {
          </h2>
          </div>
  <div id="together-menu" align="center">
-  <button autofocus class="together together-bnt" id="togetherAll">
-    <span>최신순</span>
+  <button autofocus class="together together-bnt" id="external">
+    <span>블로그</span>
   </button>
-  <button class="together together-bnt" id="friend">
-    <span>인기순</span>
+  <button class="together together-bnt" id="internal">
+    <span>회원이 쓴 글</span>
   </button>
   </div>
   
@@ -43,6 +59,29 @@ $(document).ready(function() {
 </div>
 <hr width=100% align="center">
 </c:forEach>
+</div>
+
+<div id="tip" style="width:80%; margin:auto" style="display:none">
+
+<c:forEach var="l" items="${tiplist}">
+<div style="width:100%; margin:auto;" >
+<div id="left" style="float:left; padding-left:30px">
+<div id="title"><h4>${l.subject}</h4></div>
+</div>
+<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<h6>${l.writer}</h6>
+<h6>${l.reg_date}</h6>
+<button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"
+onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${l.bno}'">more</button>
+</div>
+<hr width=100% align="center">
+</div>
+</c:forEach>
+
+<div align="center">
+<button id="writeTip" class="custom-border-btn" style="background:none; margin-bottom:20px" ><span>write</span></button>
+</div>
+
 </div>
       
 </body>
