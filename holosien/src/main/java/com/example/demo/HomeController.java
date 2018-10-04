@@ -151,7 +151,7 @@ public class HomeController {
 	   vo.setBno(boardNo);
 	   
 	   model.addAttribute("tip", bBoardService.viewTip(vo));
-         return "detailBoard";
+         return "detailTip";
       }
    
    @RequestMapping(value="/writeBoard")
