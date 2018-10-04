@@ -32,6 +32,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+
 <div id="search_result" style="width:80%; margin:auto">
       <c:forEach var="l" items="${result.items}">
 <div style="width:100%; margin:auto; padding:7px 0px 7px" >
