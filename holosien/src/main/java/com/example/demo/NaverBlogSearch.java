@@ -9,12 +9,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class NaverBlogSearch {
-	public static JSONObject naverBlogSearch() {
+	public static JSONObject naverBlogSearch(String keyword) {
         String clientId = "hy3NJI_MK4cjSNrAvmdP";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "N67L_IKAMy";//애플리케이션 클라이언트 시크릿값";
         try {
-            String text = URLEncoder.encode("자취","utf-8");
-            String apiURL = "https://openapi.naver.com/v1/search/blog?query="+ text; // json 결과
+            String text = URLEncoder.encode(keyword,"utf-8");
+            String apiURL = "https://openapi.naver.com/v1/search/blog?query="+ text+"&display=20"; // json 결과
             //String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text; // xml 결과
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();

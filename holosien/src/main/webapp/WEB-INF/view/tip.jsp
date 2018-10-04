@@ -25,7 +25,13 @@ $(document).ready(function() {
 	});
 	
 	$("#writeTip").click(function(){
-		location.href="${pageContext.request.contextPath}/writeTip"
+		if(${sessionScope.userID==null}){
+	         alert("로그인 후 이용가능합니다.");
+	         return false;
+	      }
+	      else{
+	         location.href="${pageContext.request.contextPath}/writeTip"
+	      }
 	});
 	
 	});
