@@ -7,8 +7,6 @@ public class ReviewVO {
 	private String writer; //작성자
 	private Date reg_date; //작성일
 	private String category; //카테고리
-	private double point_x; //주소 위도
-	private double point_y; //주소 경도String filename1 = multi.getFilesystemName("filename1");
 	private String photo; //대표사진
 	
 
@@ -18,19 +16,7 @@ public class ReviewVO {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public double getPoint_x() {
-		return point_x;
-	}
-	public void setPoint_x(double point_x) {
-		this.point_x = point_x;
-	}
-	public double getPoint_y() {
-		return point_y;
-	}
-	public void setPoint_y(double point_y) {
-		this.point_y = point_y;
-	}
-	
+
 	public int getBno() {
 		return bno;
 	}

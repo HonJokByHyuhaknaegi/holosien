@@ -58,7 +58,7 @@ select * from comment where board=#{board} and boardNo=#{boardNo}
 
 <insert id="insertReviews" parameterType="com.example.demo.board.domain.ReviewVO">
 insert into review (bno,subject,content,writer,category,reg_date,point_x,point_y,photo)
-values (default, #{subject},#{content},#{writer},#{category, jdbcType=VARCHAR},default,#{point_x, jdbcType=DOUBLE},#{point_y, jdbcType=DOUBLE},#{photo})
+values (default, #{subject},#{content},#{writer},#{category, jdbcType=VARCHAR},default,#{photo})
 </insert>
 
 <select id = "viewReview" resultType="com.example.demo.board.domain.ReviewVO">

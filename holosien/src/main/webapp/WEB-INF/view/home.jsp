@@ -123,8 +123,8 @@ function goLogin() {
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading">Creative Template</span>
-							Welcome <br>to MoGo
+							<span class="nino-subHeading">information</span>
+							자취 팁 <br>공유
 						</h2>
 						<a href="${pageContext.request.contextPath}/tip" class="nino-btn">More</a>
 					</div>
@@ -283,20 +283,7 @@ function goLogin() {
     	</div>  
     </section><!--/#nino-testimonial-->
     
-	<!-- Brand
-    ================================================== -->
-    <section id="nino-brand">
-    	<div class="container">
-    		<div class="verticalCenter fw" layout="row">
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-1.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-2.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-3.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-4.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-5.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-6.png" alt=""></a></div>
-    		</div>
-    	</div>
-    </section><!--/#nino-brand-->
+
 	<!-- Story About Us
     ================================================== -->
 	<section id="nino-story">
@@ -350,42 +337,15 @@ function goLogin() {
     	</div>	
 	</section><!--/#nino-story-->
 
-	<!-- Counting
-    ================================================== -->
-    <section id="nino-counting">
-    	<div class="container">
-    		<div layout="row" class="verticalStretch">
-    			<div class="item">
-    				<div class="number">42</div>
-    				<div class="text">Web Design Projects</div>
-    			</div>
-    			<div class="item">
-    				<div class="number">123</div>
-    				<div class="text">happy client</div>
-    			</div>
-    			<div class="item">
-    				<div class="number">15</div>
-    				<div class="text">award winner</div>
-    			</div>
-    			<div class="item">
-    				<div class="number">99</div>
-    				<div class="text">cup of coffee</div>
-    			</div>
-    			<div class="item">
-    				<div class="number">24</div>
-    				<div class="text">members</div>
-    			</div>
-    		</div>
-    	</div>
-    </section><!--/#nino-counting-->
+
 
     <!-- Services
     ================================================== -->
-    <section id="nino-services">
+    <section id="nino-happyClient">
     	<div class="container">
     		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">We work with</span>
-				Amazing Services
+				<span class="nino-subHeading">Tip</span>
+				나만의 자취 팁
 			</h2>
 			<div class="sectionContent">			
 				<div class="fw" layout="row">
@@ -445,144 +405,14 @@ function goLogin() {
 					</div>
 				</div>
 			</div>
+						<div align="center" >
+		<a href="${pageContext.request.contextPath}/tip" class="custom-border-btn">More</a>
+			
+    	</div>
     	</div>
     </section><!--/#nino-services-->
 
-    <!-- Unique Design
-    ================================================== -->
-    <section id="nino-uniqueDesign">
-    	<div class="container">
-    		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">For all devices</span>
-				Unique design
-			</h2>
-			<div class="sectionContent">
-				<div class="nino-devices">
-					<img class="tablet" src="${pageContext.request.contextPath}/resources/images/unique-design/img-1.png" alt="">
-					<img class="mobile" src="${pageContext.request.contextPath}/resources/images/unique-design/img-2.png" alt="">
-				</div>
-			</div>
-    	</div>
-    </section><!--/#nino-uniqueDesign-->
 
-    <!-- What We Do
-    ================================================== -->
-    <section id="nino-whatWeDo">
-    	<div class="container">
-    		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">Service</span>
-				what we do
-			</h2>
-			<p class="nino-sectionDesc">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-			</p>
-			<div class="sectionContent">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="text-center">
-							<img src="${pageContext.request.contextPath}/resources/images/what-we-do/img-1.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingOne">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-camera nino-icon"></i> 
-											Photography
-										</a>
-									</h4>
-								</div>
-								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-owl nino-icon"></i> 
-											creativity
-										</a>
-									</h4>
-								</div>
-								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									<div class="panel-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingThree">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-laptop-mac nino-icon"></i> 
-											web design
-										</a>
-									</h4>
-								</div>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									<div class="panel-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-    	</div>
-    </section><!--/#nino-whatWeDo-->
-
-    <!-- Testimonial
-    ================================================== -->
-    <section class="nino-testimonial">
-    	<div class="container">
-    		<div class="nino-testimonialSlider">
-				<ul>
-					<li>
-						<div layout="row">
-							<div class="nino-symbol fsr">
-								<i class="mdi mdi-comment-multiple-outline nino-icon"></i>
-							</div>
-							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Jon Doe</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div layout="row">
-							<div class="nino-symbol fsr">
-								<i class="mdi mdi-wechat nino-icon"></i>	
-							</div>
-							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Jon Doe</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div layout="row">
-							<div class="nino-symbol fsr">
-								<i class="mdi mdi-message-text-outline nino-icon"></i>
-							</div>
-							<div>
-								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
-								<span class="name">Jon Doe</span>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-    	</div>
-    </section><!--/#nino-testimonial-->
 
     <!-- Our Team
     ================================================== -->
@@ -602,7 +432,7 @@ function goLogin() {
 								<div class="content">
 									<a href="https://www.instagram.com/k__ryoung/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
-								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-1.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/images/our-team/kr.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
@@ -616,7 +446,7 @@ function goLogin() {
 								<div class="content">
 									<a href="https://www.instagram.com/sosoexn/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
-								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-2.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/images/our-team/se.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
@@ -630,7 +460,7 @@ function goLogin() {
 								<div class="content">
 									<a href="https://www.instagram.com/s_6v6_/?hl=ko" class="nino-icon" target="_blank"><i class="mdi mdi-instagram"></i></a>
 								</div>
-								<img src="${pageContext.request.contextPath}/resources/images/our-team/img-3.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/images/our-team/yk.jpg" alt="">
 							</div>
 						</div>
 						<div class="info">
@@ -643,155 +473,7 @@ function goLogin() {
 		</div>
 	</section><!--/#nino-ourTeam-->
 		
-    <!-- Happy Client
-    ================================================== -->
-    <section id="nino-happyClient">
-    	<div class="container">
-    		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">Tip</span>
-				나만의 자취 팁
-			</h2>
-			<div class="sectionContent">
-				<div class="row">
-					<div class="col-md-6">
-						<div layout="row" class="item">
-							<div class="nino-avatar fsr">
-								<img class="img-circle" src="${pageContext.request.contextPath}/resources/images/happy-client/img-1.jpg" alt="">
-							</div>
-							<div class="info">
-								<h4 class="name">Matthew Dix</h4>
-								<span class="regency">Graphic Design</span>
-								<p class="desc">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo cupiditate temporibus sapiente, sint, voluptatibus tempora esse. Consectetur voluptate nihil quo nulla voluptatem dolorem harum nostrum
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div layout="row" class="item">
-							<div class="nino-avatar fsr">
-								<img class="img-circle" src="${pageContext.request.contextPath}/resources/images/happy-client/img-2.jpg" alt="">
-							</div>
-							<div class="info">
-								<h4 class="name">Nick Karvounis</h4>
-								<span class="regency">Graphic Design</span>
-								<p class="desc">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo cupiditate temporibus sapiente, sint, voluptatibus tempora esse. Consectetur voluptate nihil quo nulla voluptatem dolorem harum nostrum
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div layout="row" class="item">
-							<div class="nino-avatar fsr">
-								<img class="img-circle" src="${pageContext.request.contextPath}/resources/images/happy-client/img-3.jpg" alt="">
-							</div>
-							<div class="info">
-								<h4 class="name">Jaelynn Castillo</h4>
-								<span class="regency">Graphic Design</span>
-								<p class="desc">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo cupiditate temporibus sapiente, sint, voluptatibus tempora esse. Consectetur voluptate nihil quo nulla voluptatem dolorem harum nostrum
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div layout="row" class="item">
-							<div class="nino-avatar fsr">
-								<img class="img-circle" src="${pageContext.request.contextPath}/resources/images/happy-client/img-4.jpg" alt="">
-							</div>
-							<div class="info">
-								<h4 class="name">Mike Petrucci</h4>
-								<span class="regency">Graphic Design</span>
-								<p class="desc">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illo cupiditate temporibus sapiente, sint, voluptatibus tempora esse. Consectetur voluptate nihil quo nulla voluptatem dolorem harum nostrum
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div align="center" >
-		<a href="${pageContext.request.contextPath}/tip" class="custom-border-btn">More</a>
-			
-    	</div>
-    	</div>
-    </section><!--/#nino-happyClient-->
-
-    <!-- Latest Blog
-    ================================================== -->
-    <section id="nino-latestBlog">
-    	<div class="container">
-    		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">Our stories</span>
-				Latest Blog
-			</h2>
-			<div class="sectionContent">
-				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<article>
-							<div class="articleThumb">
-								<a href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-1.jpg" alt=""></a>
-								<div class="date">
-									<span class="number">15</span>
-									<span class="text">Jan</span>
-								</div>
-							</div>
-							<h3 class="articleTitle"><a href="">Lorem ipsum dolor sit amet</a></h3>
-							<p class="articleDesc">
-								Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 543</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 15</a>
-							</div>
-						</article>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<article>
-							<div class="articleThumb">
-								<a href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-2.jpg" alt=""></a>
-								<div class="date">
-									<span class="number">14</span>
-									<span class="text">Jan</span>
-								</div>
-							</div>
-							<h3 class="articleTitle"><a href="">sed do eiusmod tempor</a></h3>
-							<p class="articleDesc">
-								Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 995</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 42</a>
-							</div>
-						</article>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<article>
-							<div class="articleThumb">
-								<a href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-3.jpg" alt=""></a>
-								<div class="date">
-									<span class="number">12</span>
-									<span class="text">Jan</span>
-								</div>
-							</div>
-							<h3 class="articleTitle"><a href="">incididunt ut labore et dolore</a></h3>
-							<p class="articleDesc">
-								Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 1264</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 69</a>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-    	</div>
-    </section><!--/#nino-latestBlog-->
-
+  
     <!-- Map
     ================================================== -->
     <section id="nino-map">
@@ -804,7 +486,7 @@ function goLogin() {
     		<div class="mapWrap">
 <!-- 	    		<iframe src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
  -->	    	
- <div id="map" style="width:100%;height:300px;"></div>
+ <div id="map" style="width:100%;height:450px;"></div>
         	<script type="text/javascript"	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0465833cd0a7a33e459cd71b363bc38e"></script>
 	
 			<script type="text/javascript">
@@ -889,13 +571,13 @@ function goLogin() {
 			
 			
 			</script>
-	    		<div align="center" >
+ 
+	    	</div>
+	    		    		<div align="center" >
 	    		<br>
 		<a href="${pageContext.request.contextPath}/map" class="custom-border-btn">More</a>
 			
-    	</div>  
-	    	</div>
-	    	
+    	</div> 
     	</div>
    
     </section><!--/#nino-map-->
@@ -904,89 +586,8 @@ function goLogin() {
     ================================================== -->
     <footer id="footer">
         <div class="container">
-        	<div class="row">
-        		<div class="col-md-4">
-        			<div class="colInfo">
-	        			<div class="footerLogo">
-	        				<a href="#" >MoGo</a>	
-	        			</div>
-	        			<p>
-	        				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-	        			</p>
-	        			<div class="nino-followUs">
-	        				<div class="totalFollow"><span>15k</span> followers</div>
-	        				<div class="socialNetwork">
-	        					<span class="text">Follow Us: </span>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-google-plus"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-youtube-play"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-dribbble"></i></a>
-	        					<a href="" class="nino-icon"><i class="mdi mdi-tumblr"></i></a>
-	        				</div>
-	        			</div>
-	        			<form action="" class="nino-subscribeForm">
-	        				<div class="input-group input-group-lg">
-								<input type="email" class="form-control" placeholder="Your Email" required>
-								<span class="input-group-btn">
-									<button class="btn btn-success" type="submit">Subscribe</button>
-								</span>
-							</div>
-	        			</form>
-        			</div>
-        		</div>
-        		<div class="col-md-4 col-sm-6">
-        			<div class="colInfo">
-	        			<h3 class="nino-colHeading">Blogs</h3>
-	        			<ul class="listArticles">
-	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-4.jpg" alt=""></a>
-	        					<div class="info">
-	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
-	        						<div class="date">Jan 9, 2016</div>
-	        					</div>
-	        				</li>
-	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-5.jpg" alt=""></a>
-	        					<div class="info">
-	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
-	        						<div class="date">Jan 9, 2016</div>
-	        					</div>
-	        				</li>
-	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="${pageContext.request.contextPath}/resources/images/our-blog/img-6.jpg" alt=""></a>
-	        					<div class="info">
-	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
-	        						<div class="date">Jan 9, 2016</div>
-	        					</div>
-	        				</li>
-	        			</ul>
-        			</div>
-        		</div>
-        		<div class="col-md-4 col-sm-6">
-        			<div class="colInfo">
-	        			<h3 class="nino-colHeading">instagram</h3>
-	        			<div class="instagramImages clearfix">
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-1.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-2.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-3.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-4.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-5.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-6.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-7.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-8.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-9.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-3.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-4.jpg" alt=""></a>
-	        				<a href="#"><img src="${pageContext.request.contextPath}/resources/images/instagram/img-5.jpg" alt=""></a>
-	        			</div>
-	        			<a href="#" class="morePhoto">View more photos</a>
-        			</div>
-        		</div>
-        	</div>
-			<div class="nino-copyright">Copyright &copy; 2016 <a target="_blank" href="http://www.ninodezign.com/" title="Ninodezign.com - Top quality open source resources for web developer and web designer">Ninodezign.com</a>. All Rights Reserved. <br/> MoGo free PSD template by <a href="https://www.behance.net/laaqiq">Laaqiq</a></div>
+
+			<div class="nino-copyright">Copyright &copy; 2018 김경령 박소은 신유경 All Rights Reserved. <br/> by Redhat Pink Coding Fest</div>
         </div>
     </footer><!--/#footer-->
 

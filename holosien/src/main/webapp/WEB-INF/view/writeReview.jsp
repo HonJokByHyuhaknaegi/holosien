@@ -74,14 +74,7 @@
             <label for="subject">제목</label> <input type="text"
                class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
          </div>
-         <div class="form-group">
-            <label for="location">주소</label> 
-            <button type="button" class ="btn btn-default btn-sm" id="searchLocation" name="searchLocation">검색하기</button>
-            <input type="text"
-               class="form-control" id="location_result" name="location_result" placeholder="주소를 입력하세요."> <br>
-               <input  type="text" name="location_position_y">
-               <input  type="text" name="location_position_x">
-               </div>
+
          <div class="form-group">
          <label for="img">대표사진</label>
          <input type="file" name="photo" size=40>
@@ -138,14 +131,7 @@
       var sHTML = '<img src="${pageContext.request.contextPath}/resources/editor/upload/'+filepath+'">';
       oEditors.getById["textAreaContent"].exec("PASTE_HTML", [sHTML]);
   }
-  //지도검색
-  $("#searchLocation").click(function(){
-      window.open(
-            "${pageContext.request.contextPath}/searchLocation",
-            "키워드검색",
-            "width = 1000, height = 540"
-            );
-   });
+
 
 </script>
 

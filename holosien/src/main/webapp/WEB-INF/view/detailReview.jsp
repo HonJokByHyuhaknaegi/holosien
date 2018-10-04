@@ -14,43 +14,6 @@
 $(document).ready(function() {
 	$("#menubar li:nth-child(3)").addClass('active');
 	
-	var point_x = ${review.point_x};
-	var point_y = ${review.point_y};
-
-	var container = document.getElementById('boardMap');
-	var options = {
-		center: new daum.maps.LatLng(point_y, point_x),
-		level: 3
-	};
-	var map = new daum.maps.Map(container, options);
-	
-	// 마커가 표시될 위치입니다 
-	var markerPosition  = new daum.maps.LatLng(point_y, point_x); 
-
-	// 마커를 생성합니다
-	var marker = new daum.maps.Marker({
-	    position: markerPosition
-	});
-
-	// 마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);
-	
-	// 주소-좌표 변환 객체를 생성합니다
-	var geocoder = new daum.maps.services.Geocoder();
-	
-	geocoder.coord2Address(point_x, point_y, function(result, status) {
-		console.log(result);
-		console.log(status);
-        if (status === daum.maps.services.Status.OK) {
-            var detailAddr = !!result[0].road_address ? '도로명주소 : ' + result[0].road_address.address_name +'<br>': '';
-            detailAddr += '지번 주소 : ' + result[0].address.address_name;
-                        
-            var infoDiv = document.getElementById('centerAddr');
-            
-            infoDiv.innerHTML = detailAddr;
-      
-        }   
-    });
 });
 
 function sendComment(){
@@ -85,7 +48,6 @@ function sendComment(){
 <h6>작성일 : ${review.reg_date}</h6>
 <h6>${review.content} </h6>
 <h6 id="centerAddr"></h6>
-<div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
 <div>
