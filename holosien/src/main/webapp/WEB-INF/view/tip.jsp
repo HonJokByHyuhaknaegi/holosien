@@ -10,6 +10,8 @@
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(4)").addClass('active');
+	$("#tip").hide();
+	
 	$("#external").click(function(){
 		$(this).focus();
 		$("#tip").hide();
@@ -61,7 +63,7 @@ $(document).ready(function() {
 </c:forEach>
 </div>
 
-<div id="tip" style="width:80%; margin:auto" style="display:none">
+<div id="tip" style="width:80%; margin:auto" style="display:none;">
 
 <c:forEach var="l" items="${tiplist}">
 <div style="width:100%; margin:auto;" >
@@ -71,7 +73,7 @@ $(document).ready(function() {
 <div id="right"  style="float:right; text-align:right; padding-right:30px">
 <h6>${l.writer}</h6>
 <h6>${l.reg_date}</h6>
-<button class="custom-border-btn" style="margin-top:10px; padding:5px 20px;"
+<button class="custom-border-btn" style="margin:7px 0px 7px; padding:5px 20px;"
 onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${l.bno}'">more</button>
 </div>
 <hr width=100% align="center">

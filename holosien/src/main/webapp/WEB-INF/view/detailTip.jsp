@@ -32,18 +32,18 @@ $(document).ready(function() {
  <div style="width:80%; margin:auto; margin-bottom:50px">
  
 <div id="detailBoard" style="margin-bottom:50px">
-<h2>${board.subject}</h2>
-<h6>no. ${board.bno}</h6>
-<h6>작성자 : ${board.writer} </h6>
-<h6>작성일 : ${board.reg_date}</h6>
-<h6>${board.content} </h6>
+<h2>${tip.subject}</h2>
+<h6>no. ${tip.bno}</h6>
+<h6>작성자 : ${tip.writer} </h6>
+<h6>작성일 : ${tip.reg_date}</h6>
+<h6>${tip.content} </h6>
 </div>
 
 <div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <c:import url="/comment">
-<c:param name="board" value="Together"/>
-<c:param name="boardNo" value="${board.bno}"/>
+<c:param name="board" value="tip"/>
+<c:param name="boardNo" value="${tip.bno}"/>
 </c:import>
 </div>
 
