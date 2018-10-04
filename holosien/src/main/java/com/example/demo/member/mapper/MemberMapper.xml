@@ -57,7 +57,7 @@ select * from comment where board=#{board} and boardNo=#{boardNo}
 </select>
 
 <insert id="insertReviews" parameterType="com.example.demo.board.domain.ReviewVO">
-insert into review (bno,subject,content,writer,category,reg_date,point_x,point_y,photo)
+insert into review (bno,subject,content,writer,category,reg_date,photo)
 values (default, #{subject},#{content},#{writer},#{category, jdbcType=VARCHAR},default,#{photo})
 </insert>
 
