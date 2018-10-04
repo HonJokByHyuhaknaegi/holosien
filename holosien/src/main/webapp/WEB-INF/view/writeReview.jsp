@@ -65,7 +65,7 @@
       
       <div class="form-group">
           <label for="InputAge">카테고리</label>
-           <select class="form-control" name="category" id="category" style="width:15%; margin:left;"required>
+           <select class="form-control" name="board_category" id="board_category" style="width:15%; margin:left;"required>
               <option value=local>국내</option>
              <option value=overseas>해외</option>
          </select>

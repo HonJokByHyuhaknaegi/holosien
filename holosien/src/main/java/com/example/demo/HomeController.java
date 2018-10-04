@@ -209,7 +209,7 @@ public class HomeController {
       }
    
    @RequestMapping(value="/sendReview")
-   public String sendReview(MultipartHttpServletRequest multi, Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
+   public String sendReview(MultipartHttpServletRequest multi, Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="board_category", required=false, defaultValue="all") String board_category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 
 	   MultipartFile mf = multi.getFile("photo"); //jsp file name mapping
@@ -220,7 +220,7 @@ public class HomeController {
        String path = defaultPath + original;
       
        mf.transferTo(new File(path));//파일을 위에 지정 경로로 업로드
-	   vo.setCategory((String) request.getParameter("category"));
+	   vo.setCategory((String) request.getParameter("board_category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
@@ -230,8 +230,8 @@ public class HomeController {
 	   
 	   bBoardService.reviewInsertService(vo);
 	   
-	   model.addAttribute("category", category);
-	   model.addAttribute("reviewlist", bBoardService.reviewListService(category));
+	   model.addAttribute("category", board_category);
+	   model.addAttribute("reviewlist", bBoardService.reviewListService(board_category));
 	   
        return "review";
       }

@@ -11,10 +11,11 @@
 <script>
 $(document).ready(function() {
 	$("#menubar li:nth-child(3)").addClass('active');
+	$('#${category}').focus();
 	$("#writeReview").click(function(){
 		location.href="${pageContext.request.contextPath}/writeReview"
 	});
-	$('#reviewAll').click(function(){
+	$('#all').click(function(){
 		location.href="${pageContext.request.contextPath}/review"
 			});
 		
@@ -42,7 +43,7 @@ $(document).ready(function() {
          </div>
          <br>
          <div id="together-menu" align="center">
-  <button autofocus class="together together-bnt" id="reviewAll">
+  <button class="together together-bnt" id="all">
     <span>전체보기</span>
   </button>
   <button class="together together-bnt" id="local">
