@@ -293,41 +293,23 @@ function goLogin() {
 				혼자 가기 좋은 코스 후기
 			</h2>
 			<div class="sectionContent">
+			<c:forEach var="m" items="${reviewlist}" begin="0" end="2" varStatus="status">
 				<div class="row nino-hoverEffect">
-					<div class="col-md-4 col-sm-4">
+					<div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${m.bno}'" class="col-md-4 col-sm-4">
 						<div class="item">
 							<a class="overlay" href="#">
 								<span class="content">
 									<i class="mdi mdi-account-multiple nino-icon"></i>
-									super team
+									${m.subject}
 								</span>
-								<img src="${pageContext.request.contextPath}/resources/images/story/img-1.jpg" alt="">
+								<img src="${pageContext.request.contextPath}/resources/editor/upload/${m.photo}" alt="">
 							</a>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="item">
-							<a class="overlay" href="#">
-								<span class="content">
-									<i class="mdi mdi-image-filter-center-focus-weak nino-icon"></i>
-									Creativity
-								</span>
-								<img src="${pageContext.request.contextPath}/resources/images/story/img-2.jpg" alt="">
-							</a>
-						</div>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="item">
-							<a class="overlay" href="#">
-								<span class="content">
-									<i class="mdi mdi-airplay nino-icon"></i>
-									Digital
-								</span>
-								<img src="${pageContext.request.contextPath}/resources/images/story/img-3.jpg" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
+					</c:forEach>
+
+
 			</div>
 		</div>	
 		<div align="center" >
