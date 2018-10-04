@@ -93,12 +93,21 @@ public class HomeController {
 	   return "review";
       }
    @RequestMapping(value="/tip")
-   public String tip(Model model, @RequestParam(value="keyword") String keyword) throws Exception {
+   public String tip() throws Exception {
+	 /*  JSONObject result = NaverBlogSearch.naverBlogSearch(keyword);
+	   model.addAttribute("result",result);
+	   
+	   model.addAttribute("tiplist", bBoardService.tipListService());*/
+         return "tip";
+      }
+   
+   @RequestMapping(value="/keywordTip")
+   public String keywordTip(Model model, @RequestParam(value="keyword") String keyword) throws Exception {
 	   JSONObject result = NaverBlogSearch.naverBlogSearch(keyword);
 	   model.addAttribute("result",result);
 	   
 	   model.addAttribute("tiplist", bBoardService.tipListService());
-         return "tip";
+         return "keywordTip";
       }
    @RequestMapping(value="/map")
    public String map(Model model,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {

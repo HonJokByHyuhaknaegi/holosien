@@ -34,6 +34,11 @@ $(document).ready(function() {
 	      }
 	});
 	
+	$("#keyword").click(function(){
+		$("#keyword_search").hide();
+		$("#search_result").show();
+
+	});
 	});
 </script>
 </head>
@@ -57,7 +62,14 @@ $(document).ready(function() {
   </button>
   </div>
   
-  <div id="search_result" style="width:80%; margin:auto">
+  <div id="keyword_search">
+  <span class='green_window'>
+	<input type='text' class='input_text' />
+</span>
+<button type="submit" class='sch_smit' id="keyword">검색</button>
+</div>
+
+<div id="search_result" style="width:80%; margin:auto">
       <c:forEach var="l" items="${result.items}">
 <div style="width:100%; margin:auto; padding:7px 0px 7px" >
 <h4 onclick="location.href='${l.link}'" style="cursor:pointer">${l.title}</h4>
@@ -68,6 +80,18 @@ $(document).ready(function() {
 <hr width=100% align="center">
 </c:forEach>
 </div>
+
+<%--   <div id="search_result" style="width:80%; margin:auto">
+      <c:forEach var="l" items="${result.items}">
+<div style="width:100%; margin:auto; padding:7px 0px 7px" >
+<h4 onclick="location.href='${l.link}'" style="cursor:pointer">${l.title}</h4>
+<h6>${l.description}</h6>
+<h6>${l.bloggername}</h6>
+<h6>${l.postdate}</h6>
+</div>
+<hr width=100% align="center">
+</c:forEach>
+</div> --%>
 
 <div id="tip" style="width:80%; margin:auto" style="display:none;">
 
