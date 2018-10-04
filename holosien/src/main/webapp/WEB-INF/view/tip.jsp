@@ -36,7 +36,7 @@ $(document).ready(function() {
 	
 	$("#keyword").click(function(){
 		$("#keyword_search").hide();
-		$("#search_result").show();
+		$("#keyword_result").show();
 
 	});
 	});
@@ -69,17 +69,10 @@ $(document).ready(function() {
 <button type="submit" class='sch_smit' id="keyword">검색</button>
 </div>
 
-<div id="search_result" style="width:80%; margin:auto">
-      <c:forEach var="l" items="${result.items}">
-<div style="width:100%; margin:auto; padding:7px 0px 7px" >
-<h4 onclick="location.href='${l.link}'" style="cursor:pointer">${l.title}</h4>
-<h6>${l.description}</h6>
-<h6>${l.bloggername}</h6>
-<h6>${l.postdate}</h6>
-</div>
-<hr width=100% align="center">
-</c:forEach>
-</div>
+<div id="keyword_result">
+            <jsp:include page="keywordTip.jsp" />
+  </div>
+
 
 <%--   <div id="search_result" style="width:80%; margin:auto">
       <c:forEach var="l" items="${result.items}">
