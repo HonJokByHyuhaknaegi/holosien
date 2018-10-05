@@ -26,13 +26,12 @@ $(document).ready(function() {
 <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">More.</span>
-            자세히보기.
+            ${tip.subject}
          </h2>
          </div>
  <div style="width:80%; margin:auto; margin-bottom:50px">
  
 <div id="detailBoard" style="margin-bottom:50px">
-<h2>${tip.subject}</h2>
 <h6>no. ${tip.bno}</h6>
 <h6>작성자 : ${tip.writer} </h6>
 <h6>작성일 : ${tip.reg_date}</h6>
