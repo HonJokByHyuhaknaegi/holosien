@@ -293,9 +293,9 @@ function goLogin() {
 				혼자 가기 좋은 코스 후기
 			</h2>
 			<div class="sectionContent">
-			<c:forEach var="m" items="${reviewlist}" begin="0" end="2" varStatus="status">
-				<div class="row nino-hoverEffect" >
-					<div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${m.bno}'" class="col-md-4 col-sm-4">
+			<c:forEach var="m" items="${reviewlist}" begin="0" end="3" varStatus="status">
+				<div class="nino-hoverEffect" >
+					<div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${m.bno}'" class="col-md-3 col-sm-3">
 						<div class="item" >
 							<a class="overlay" href="#">
 								<span class="content">
