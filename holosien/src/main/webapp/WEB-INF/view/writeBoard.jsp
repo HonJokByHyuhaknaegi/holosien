@@ -111,20 +111,7 @@
       sSkinURI: "${pageContext.request.contextPath}/resources/editor/SmartEditor2Skin.html",
       fCreator: "createSEditor2"
   });
-   
- /*  // submit
-  function submitContents(elClickedObj) {
-      // 에디터의 내용이 textarea에 적용된다.
-      oEditors.getById["textAreaContent"].exec("UPDATE_CONTENTS_FIELD", [ ]);
-      var con = document.w_form.content;
-      con.value = document.getElementById("textAreaContent").value;
-      
-      try {
-          elClickedObj.form.submit();
-      } catch(e) {
-       
-      }
-  } */
+
   //전송버튼 클릭이벤트
   $("#savebutton").click(function(){ 
      //id가 smarteditor인 textarea에 에디터에서 대입 
