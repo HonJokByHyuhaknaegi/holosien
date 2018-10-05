@@ -263,7 +263,7 @@ function goLogin() {
 				<ul>
 				<c:forEach var="l" items="${boardlist}" begin="0" end="2" varStatus="status">
 					<li>
-						<div layout="row" class="verticalCenter">
+						<div layout="row" class="verticalCenter" onclick="location.href='${pageContext.request.contextPath}/detailBoard?boardNo=${l.bno}'" style="cursor:pointer" >
 							<div class="nino-avatar fsr" name="together_img"> ${l.content}
 								<%-- <img class="img-circle img-thumbnail" src="${pageContext.request.contextPath}/resources/images/testimonial/img-1.jpg" alt=""> --%>
 							</div>
