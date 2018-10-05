@@ -252,7 +252,7 @@ public class HomeController {
 	   MultipartFile mf = multi.getFile("photo"); /*//jsp file name mapping
        String defaultPath = request.getSession().getServletContext().getRealPath("/resources/editor/upload/");*/
 	   String defaultPath = request.getSession().getServletContext().getRealPath("");
-       System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!"+defaultPath);
+       System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!"+defaultPath);
        String original = mf.getOriginalFilename();//업로드하는 파일 name 
        
        String path = defaultPath + original;
