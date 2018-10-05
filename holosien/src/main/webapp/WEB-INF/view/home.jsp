@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="ninodezign.com, ninodezign@gmail.com">
 	<meta name="copyright" content="ninodezign.com"> 
-	<title>Mogo | OnePage Responsive Theme</title>
+	<title>Holosien</title>
 	
 	<!-- favicon -->
     <link rel="shortcut icon" href="images/ico/favicon.jpg">

@@ -55,6 +55,21 @@ onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo
 <hr width=100% align="center">
 </div>
 </c:forEach>
+	<span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Tip</span><br><br>
+	<c:forEach var="n" items="${tiplist}">
+<div style="width:100%; margin:auto;" >
+<div id="left" style="float:left; padding-left:30px">
+<div id="title"><h4>${n.subject}</h4></div>
+</div>
+<div id="right"  style="float:right; text-align:right; padding-right:30px">
+<h6>${n.writer}</h6>
+<h6>${n.reg_date}</h6>
+<button class="custom-border-btn" style="margin:10px 0px 10px; padding:5px 20px;"
+onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${n.bno}'">more</button>
+</div>
+<hr width=100% align="center">
+</div>
+</c:forEach>
 	</div>
 </body>
 </html>
