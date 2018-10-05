@@ -65,7 +65,7 @@
       
       <div class="form-group">
           <label for="InputAge">카테고리</label>
-           <select class="form-control" name="category" id="category" style="width:15%; margin:left;"required>
+           <select class="form-control" name="together-category" id="together-category" style="width:15%; margin:left;"required>
               <option value=friend>친구찾기</option>
              <option value=roommate>룸메이트</option>
               <option value=pet>반려동물</option>

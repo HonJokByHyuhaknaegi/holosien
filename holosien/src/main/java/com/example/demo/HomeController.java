@@ -229,7 +229,7 @@ public class HomeController {
    public String send(Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="category", required=false, defaultValue="all") String category) throws Exception {
 	   BoardVO vo = new BoardVO();
 	   
-	   vo.setCategory((String) request.getParameter("category"));
+	   vo.setCategory((String) request.getParameter("together-category"));
 	   vo.setPoint_x(Double.parseDouble(request.getParameter("location_position_x")));
 	   vo.setPoint_y(Double.parseDouble(request.getParameter("location_position_y")));
 	   vo.setSubject(request.getParameter("subject"));
