@@ -102,10 +102,10 @@ public class HomeController {
       }
    
    @RequestMapping(value="/keywordTip")
-   public String keywordTip(Model model, @RequestParam(value="keyword") String keyword) throws Exception {
+   public String keywordTip(Model model, @RequestParam(required=false,name="keyword") String keyword) throws Exception {
 	   JSONObject result = NaverBlogSearch.naverBlogSearch(keyword);
 	   model.addAttribute("result",result);
-	   
+	   System.out.println(keyword+"!!!!!!!!!!!!!!!!!!!!!!!");
 	   model.addAttribute("tiplist", bBoardService.tipListService());
          return "keywordTip";
       }

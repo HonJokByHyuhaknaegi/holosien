@@ -33,7 +33,7 @@
 <body>
 <header id="nav-header">
 		<div id="nino-headerInner">					
-			<nav id="nino-navbar" class="navbar nino-fixed-nav" role="navigation">
+			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
 				<div class="container">
 
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -74,6 +74,8 @@
     	<input type="text" placeholder="Search..." class="form-control nino-searchInput" name="searchInput">
     	<i class="mdi mdi-close nino-close"></i>
     </form><!--/#nino-searchForm-->
+   
+   <a href="#" id="nino-scrollToTop">Go to Top</a>
     
 </body>
 </html>

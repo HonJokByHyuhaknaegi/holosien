@@ -15,12 +15,12 @@ $(document).ready(function() {
 	$("#external").click(function(){
 		$(this).focus();
 		$("#tip").hide();
-		$("#search_result").show();
+		$("#keyword_search").show();
 	});
 	
 	$("#internal").click(function(){
 		$(this).focus();
-		$("#search_result").hide();
+		$("#keyword_search").hide();
 		$("#tip").show();
 	});
 	
@@ -34,11 +34,7 @@ $(document).ready(function() {
 	      }
 	});
 	
-	$("#keyword").click(function(){
-		$("#keyword_search").hide();
-		$("#keyword_result").show();
 
-	});
 	});
 </script>
 </head>
@@ -62,16 +58,18 @@ $(document).ready(function() {
   </button>
   </div>
   
-  <div id="keyword_search">
+  <br><br>
+  <div id="keyword_search" align="center">
+  <form method="post" action="${pageContext.request.contextPath}/keywordTip">
   <span class='green_window'>
-	<input type='text' class='input_text' />
+	<input type="text" class='input_text' id="keyword" name="keyword">
 </span>
-<button type="submit" class='sch_smit' id="keyword">검색</button>
+<button type="submit" class='sch_smit' id="key_button">검색</button>
+<br><a>#자취</a> #자취팁 #혼밥
+</form>
 </div>
 
-<div id="keyword_result">
-            <jsp:include page="keywordTip.jsp" />
-  </div>
+
 
 
 <%--   <div id="search_result" style="width:80%; margin:auto">

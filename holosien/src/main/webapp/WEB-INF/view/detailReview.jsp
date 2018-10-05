@@ -50,6 +50,7 @@ function sendComment(){
 <h6 id="centerAddr"></h6>
 </div>
 
+<hr width=100% align="center">
 <div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <c:import url="/comment">

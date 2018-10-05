@@ -64,23 +64,27 @@ $(document).ready(function() {
 <div class="container">
          <h2 class="nino-sectionHeading">
             <span class="nino-subHeading">More.</span>
-            자세히보기.
+            ${board.subject}
          </h2>
          </div>
  <div style="width:80%; margin:auto; margin-bottom:50px">
  
 <div id="detailBoard" style="margin-bottom:50px">
-<h2>${board.subject}</h2>
 <h6>no. ${board.bno}</h6>
 <h6>${board.category}</h6>
 <h6>작성자 : ${board.writer} </h6>
 <h6>작성일 : ${board.reg_date}</h6>
 <h6>인원 : ${board.number}명</h6>
-<h6>${board.content} </h6>
+
+<hr width=100% align="center">
+<h6><b>내용 </b>${board.content} </h6>
+
+<hr width=100% align="center">
 <h6 id="centerAddr"></h6>
 <div id="boardMap" style="height: 0; overflow: hidden; padding-bottom:40%;"></div>
 </div>
 
+<hr width=100% align="center">
 <div>
 <span style="margin-bottom:50px; font-family: 'Kaushan Script', cursive; font-size: 20px; color:black;">Comment</span><br><br>
 <c:import url="/comment">
