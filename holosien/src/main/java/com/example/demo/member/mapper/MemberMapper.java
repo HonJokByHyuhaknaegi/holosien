@@ -33,6 +33,7 @@ public ReviewVO viewReview(ReviewVO board) throws Exception;
 
 public List<BoardVO> togetherSearchList(String searchInput) throws Exception;
 public List<ReviewVO> reviewSearchList(String searchInput) throws Exception;
+public List<TipVO> tipSearchList(String searchInput) throws Exception;
 
 public void insertTips(TipVO tip) throws Exception;
 public List<TipVO> tipList() throws Exception;

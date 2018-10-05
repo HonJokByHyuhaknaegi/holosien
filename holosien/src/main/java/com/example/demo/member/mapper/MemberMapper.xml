@@ -81,6 +81,10 @@ select * from board where subject like '%${_parameter}%'
 select * from review where subject like '%${_parameter}%'
 </select>
 
+<select id = "tipSearchList" resultType="com.example.demo.board.domain.TipVO" parameterType="String">
+select * from tip where subject like '%${_parameter}%'
+</select>
+
 <insert id="insertTips" parameterType="com.example.demo.board.domain.TipVO">
 insert into tip (bno,subject,content,writer,reg_date)
 values (default, #{subject},#{content},#{writer},default)
