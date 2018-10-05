@@ -46,6 +46,7 @@ public class HomeController {
    public String home(Model model) throws Exception {
 	   model.addAttribute("boardlist", bBoardService.boardListService("all"));
 	   model.addAttribute("reviewlist", bBoardService.reviewListService("all"));
+	   model.addAttribute("tiplist", bBoardService.tipListService());
          return "home";
       }
    
@@ -93,11 +94,8 @@ public class HomeController {
 	   return "review";
       }
    @RequestMapping(value="/tip")
-   public String tip() throws Exception {
-	 /*  JSONObject result = NaverBlogSearch.naverBlogSearch(keyword);
-	   model.addAttribute("result",result);
-	   
-	   model.addAttribute("tiplist", bBoardService.tipListService());*/
+   public String tip(Model model) throws Exception {
+	   model.addAttribute("tiplist", bBoardService.tipListService());
          return "tip";
       }
    

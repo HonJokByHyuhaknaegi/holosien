@@ -65,15 +65,15 @@ $(document).ready(function() {
   <div class="review">
   <c:forEach var="l" items="${reviewlist}">
    <div class="row nino-hoverEffect">
-   <div class="img-thumbnail">
+   <div class="img-thumbnail" >
       <div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'">
-						<div class="item">
+						<div class="item" style="width:240px; height:240px">
 							<a class="overlay" href="#">
 								<span class="content">
 									<i class="mdi mdi-account-multiple nino-icon"></i>
 									${l.subject}
 								</span>
-								<img src="${pageContext.request.contextPath}/resources/editor/upload/${l.photo}">
+								<imgs src="${pageContext.request.contextPath}/resources/editor/upload/${l.photo}">
 							</a>
 						</div>
 						</div>
