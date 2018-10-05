@@ -329,69 +329,32 @@ function goLogin() {
 				<span class="nino-subHeading">Tip</span>
 				나만의 자취 팁
 			</h2>
-			<div class="sectionContent">			
+			<div class="sectionContent">
+			<c:forEach var="n" items="${tiplist}" begin="0" end="5" varStatus="status">	
 				<div class="fw" layout="row">
 					<div class="col-md-4 col-sm-6 item ">
 						<div layout="row">
 							<i class="mdi mdi-apple-keyboard-command nino-icon fsr"></i>
 							<div>
-								<h4 class="nino-serviceTitle">Photography</h4>
-								<p>Photography is the science, art and practice of creating durable images by recording light or other electromagnetic radiation</p>
+								<h4 class="nino-serviceTitle" style="cursor:pointer">${n.subject}</h4>
+								<div style="text-overflow:ellipsis;-o-text-overflow:ellipsis; overflow:hidden; white-space:nowrap; width:200px;">
+								<h5 class="nino-serviceTitle">${n.content}</h5>
+							</div> 
+								<p onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${n.bno}'" >more</p>
 							</div>
+					
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 item ">
-						<div layout="row">
-							<i class="mdi mdi-blender nino-icon fsr"></i>
-							<div>
-								<h4 class="nino-serviceTitle">Web Design</h4>
-								<p>Web design encompasses many different skills and disciplines in the production and maintenance of websites.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 item ">
-						<div layout="row">
-							<i class="mdi mdi-bookmark-plus-outline nino-icon fsr"></i>
-							<div>
-								<h4 class="nino-serviceTitle">Creativity</h4>
-								<p>Creativity is a phenomenon whereby something new and somehow valuable is formed. The created item may be intangible or a physical object.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 item ">
-						<div layout="row">
-							<i class="mdi mdi-buffer nino-icon fsr"></i>
-							<div>
-								<h4 class="nino-serviceTitle">seo</h4>
-								<p>Search engine optimization (SEO) is the process of affecting the visibility of a website or a web page in a web search engine's unpaid results.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 item ">
-						<div layout="row">
-							<i class="mdi mdi-desktop-mac nino-icon fsr"></i>
-							<div>
-								<h4 class="nino-serviceTitle">Css/Html</h4>
-								<p>HyperText Markup Language, commonly abbreviated as HTML, is the standard markup language used to create web pages. </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 item ">
-						<div layout="row">
-							<i class="mdi mdi-diamond nino-icon fsr"></i>
-							<div>
-								<h4 class="nino-serviceTitle">digital</h4>
-								<p>With digital signals, system noise, provided it is not too great, will not change the quantification whereas with signals handled using analog processing.</p>
-							</div>
-						</div>
-					</div>
+					   	</div>
+					</c:forEach>
+
 				</div>
 			</div>
-						<div align="center" >
+		<div align="center" >
 		<a href="${pageContext.request.contextPath}/tip" class="custom-border-btn">More</a>
 			
     	</div>
-    	</div>
+ 
     </section><!--/#nino-services-->
 
 
