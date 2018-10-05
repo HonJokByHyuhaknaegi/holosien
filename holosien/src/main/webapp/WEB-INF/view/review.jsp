@@ -73,7 +73,7 @@ $(document).ready(function() {
 									<i class="mdi mdi-account-multiple nino-icon"></i>
 									${l.subject}
 								</span>
-								<imgs src="${pageContext.request.contextPath}/resources/editor/upload/${l.photo}">
+								<img src="${pageContext.request.contextPath}/resources/editor/upload/${l.photo}">
 							</a>
 						</div>
 						</div>

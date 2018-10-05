@@ -294,9 +294,9 @@ function goLogin() {
 			</h2>
 			<div class="sectionContent">
 			<c:forEach var="m" items="${reviewlist}" begin="0" end="2" varStatus="status">
-				<div class="row nino-hoverEffect">
+				<div class="row nino-hoverEffect" >
 					<div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${m.bno}'" class="col-md-4 col-sm-4">
-						<div class="item">
+						<div class="item" >
 							<a class="overlay" href="#">
 								<span class="content">
 									<i class="mdi mdi-account-multiple nino-icon"></i>
@@ -308,8 +308,6 @@ function goLogin() {
 					</div>
 					</div>
 					</c:forEach>
-
-
 			</div>
 		</div>	
 		<div align="center" >
