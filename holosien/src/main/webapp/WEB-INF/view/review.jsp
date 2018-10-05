@@ -68,7 +68,7 @@ $(document).ready(function() {
    <div class="img-thumbnail" >
       <div onclick="location.href='${pageContext.request.contextPath}/detailReview?reviewNo=${l.bno}'">
 						<div class="item" style="width:240px; height:240px">
-							<a class="overlay" href="#">
+													<a class="overlay" href="#">
 								<span class="content">
 									<i class="mdi mdi-account-multiple nino-icon"></i>
 									${l.subject}
