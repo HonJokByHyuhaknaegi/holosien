@@ -182,24 +182,7 @@ $(document).ready(function() {
          <br>
          <div class="map_wrap">
         <div id="map" style="width:100%;height:500px;position:relative;overflow:hidden;"></div>
-        <ul id="category">
-        <li id="BK9" data-order="0"> 
-            <span class="category_bg bank"></span>
-            친구찾기
-        </li>       
-        <li id="MT1" data-order="1"> 
-            <span class="category_bg mart"></span>
-            룸메이트
-        </li>  
-        <li id="PM9" data-order="2"> 
-            <span class="category_bg pharmacy"></span>
-            반려동물
-        </li>  
-        <li id="OL7" data-order="3"> 
-            <span class="category_bg oil"></span>
-            배달음식
-        </li>      
-    </ul>
+        
 </div>
 
 </div>
