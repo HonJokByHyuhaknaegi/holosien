@@ -61,6 +61,10 @@ public class BoardService {
 		return mMemberMapper.reviewSearchList(searchInput);
 	}
 	
+	public List<TipVO> searchTip(String searchInput) throws Exception {
+		return mMemberMapper.tipSearchList(searchInput);
+	}
+	
 	public void tipInsertService(TipVO tip) throws Exception {
 		mMemberMapper.insertTips(tip);
 	}

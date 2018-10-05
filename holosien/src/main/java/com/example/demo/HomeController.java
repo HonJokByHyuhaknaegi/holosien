@@ -119,6 +119,7 @@ public class HomeController {
 	   model.addAttribute("searchInput", searchInput);
 	   model.addAttribute("boardlist", bBoardService.searchTogether(searchInput));
 	   model.addAttribute("reviewlist", bBoardService.searchReview(searchInput));
+	   model.addAttribute("tiplist", bBoardService.searchTip(searchInput));
          return "search";
       }
 
@@ -248,13 +249,14 @@ public class HomeController {
    public String sendReview(MultipartHttpServletRequest multi, Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="board_category", required=false, defaultValue="all") String board_category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 
-	   MultipartFile mf = multi.getFile("photo"); //jsp file name mapping
-       String defaultPath = request.getSession().getServletContext().getRealPath("/resources/editor/upload/");
-       System.out.print(defaultPath);
+	   MultipartFile mf = multi.getFile("photo"); /*//jsp file name mapping
+       String defaultPath = request.getSession().getServletContext().getRealPath("/resources/editor/upload/");*/
+	   String defaultPath = request.getSession().getServletContext().getRealPath("");
+       System.out.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!"+defaultPath);
        String original = mf.getOriginalFilename();//업로드하는 파일 name 
        
        String path = defaultPath + original;
-      
+       System.out.print("6666666666666666666666666666666666666"+path);
        mf.transferTo(new File(path));//파일을 위에 지정 경로로 업로드
 	   vo.setCategory((String) request.getParameter("board_category"));
 	   vo.setSubject(request.getParameter("subject"));
