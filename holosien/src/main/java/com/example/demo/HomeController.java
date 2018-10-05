@@ -249,7 +249,7 @@ public class HomeController {
    public String sendReview(MultipartHttpServletRequest multi, Model model,HttpServletRequest request, HttpSession session,@RequestParam(value="board_category", required=false, defaultValue="all") String board_category) throws Exception {
 	   ReviewVO vo = new ReviewVO();
 
-	   MultipartFile mf = multi.getFile("photo"); //jsp file name mapping
+	   MultipartFile mf = multi.getFile("photo"); //jsp file name mapping.
        String defaultPath = request.getSession().getServletContext().getRealPath("/resources/editor/upload/");
        String original = mf.getOriginalFilename();//업로드하는 파일 name 
        
