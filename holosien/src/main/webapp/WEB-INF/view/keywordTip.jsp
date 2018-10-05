@@ -56,7 +56,7 @@ $(document).ready(function() {
 <div id="search_result" style="width:80%; margin:auto">
       <c:forEach var="l" items="${result.items}">
 <div style="width:100%; margin:auto; padding:7px 0px 7px" >
-<h4 onclick="location.href='${l.link}'" style="cursor:pointer">${l.title}</h4>
+<h4 onclick="location.href='${l.link}'" style="cursor:pointer"><a>${l.title}</a></h4>
 <h6>${l.description}</h6>
 <h6>${l.bloggername}</h6>
 <h6>${l.postdate}</h6>
@@ -82,7 +82,7 @@ $(document).ready(function() {
 <div id="tip" style="width:80%; margin:auto" style="display:none;">
 
 <c:forEach var="l" items="${tiplist}">
-<div style="width:100%; margin:auto;" >
+<div style="width:100%; margin:auto;" style="cursor:pointer" >
 <div id="left" style="float:left; padding-left:30px">
 <div id="title"><h4>${l.subject}</h4></div>
 </div>

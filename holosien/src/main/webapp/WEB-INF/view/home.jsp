@@ -336,9 +336,13 @@ function goLogin() {
 						<div layout="row">
 							<i class="mdi mdi-apple-keyboard-command nino-icon fsr"></i>
 							<div>
-								<h4 class="nino-serviceTitle">${n.subject}</h4>
-								<p onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${n.bno}'">more</p>
+								<h4 class="nino-serviceTitle" style="cursor:pointer">${n.subject}</h4>
+								<div style="text-overflow:ellipsis;-o-text-overflow:ellipsis; overflow:hidden; white-space:nowrap; width:200px;">
+								<h5 class="nino-serviceTitle">${n.content}</h5>
+							</div> 
+								<p onclick="location.href='${pageContext.request.contextPath}/detailTip?boardNo=${n.bno}'" >more</p>
 							</div>
+					
 						</div>
 					</div>
 					   	</div>
